@@ -1,0 +1,25 @@
+@import '../../../../../resources/mixins';
+
+.add-post {
+  max-width: rem(1000);
+  margin: 0 auto;
+
+  &__label {
+    margin-bottom: 0;
+    display: block;
+  }
+
+  &__submit {
+    margin-bottom: rem(24);
+  }
+
+  .ant-form-item {
+    margin-bottom: 0;
+  }
+
+  &__editor {
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid $gray-border;
+  }
+}
