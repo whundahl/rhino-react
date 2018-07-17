@@ -11,32 +11,40 @@ class HighchartSector extends React.Component {
     super(props)
     this.state = {
       store: [],
-      openPrice: []
+      openPrice: [],
+      LADR: [],      
     }
   }
     componentDidMount() {
       const tradier = new Tradier('7svYXqoAjts9fGptLU7mtKo4Z4Oa', 'sandbox');
       
       tradier.historical('LADR')
-      .then(history => history.day.map( result =>(
+      .then(history => history.day.map( res =>(
         {
-        open: `${result.open}`,
+        open: `${res.open}`,
        })))
        .then(newData => this.setState({openPrice: newData, store: newData}))
        .catch(error => alert(error))
 
     }
+
+    filterPrices(){
+      for (var key in this.state.openPrice) {
+        if (this.state.openPrice.hasOwnProperty(key)) {
+           this.setState({LADR: this.state.openPrice[key].open})
+        }
+     }
+    }
+
     render() {
 
-      const { openPrice } = this.state;
+      const { LADR } = this.state;
 
       const options = {
         title: {
           text: 'My stock chart'
         },
-        series: [{
-          data: openPrice
-        }]
+        series: [{LADR}]
       }
       
     return (

@@ -1,7 +1,8 @@
 import React from 'react'
-import TradeChart from './TradeChart'
-import { getData } from './TradeChart/utils'
-import { Spin, Alert, Table, Select, Tag, Radio, Form, Input, Affix } from 'antd'
+// import TradeChart from './TradeChart'
+import TradingViewWidget, { Themes } from 'react-tradingview-widget';
+
+import {Table, Select, Tag, Divider } from 'antd'
 import './style.scss'
 import { myOpenOrders, marketHistory, orderBookBuy, orderBookSell } from './data.json'
 
@@ -28,49 +29,10 @@ class DashboardCrypto extends React.Component {
     },
   }
 
-  componentDidMount() {
-    getData().then(data => {
-      this.setState({ graphData: data })
-    })
-  }
+  
 
-  handleMyOpenOrders = () => {
-    console.log(123)
-    this.setState({
-      myOpenOrders: {
-        ...this.state.myOpenOrders,
-        loading: true,
-      },
-    })
-    setTimeout(() => {
-      this.setState({
-        myOpenOrders: {
-          ...this.state.myOpenOrders,
-          loading: false,
-          loaded: true,
-        },
-      })
-    }, 1500)
-  }
 
-  handleMyOrderHistory = () => {
-    console.log(123)
-    this.setState({
-      myOrderHistory: {
-        ...this.state.myOrderHistory,
-        loading: true,
-      },
-    })
-    setTimeout(() => {
-      this.setState({
-        myOrderHistory: {
-          ...this.state.myOrderHistory,
-          loading: false,
-          loaded: true,
-        },
-      })
-    }, 1500)
-  }
+    
 
   toggleOrderType = e => {
     this.setState({
@@ -80,135 +42,11 @@ class DashboardCrypto extends React.Component {
 
   render() {
     const {
-      graphData,
-      myOpenOrders,
-      myOrderHistory,
-      marketHistory,
+    
       orderBook,
-      orderType,
+      
     } = this.state
 
-    const myOrderColumns = [
-      {
-        title: 'Order Date',
-        dataIndex: 'orderDate',
-        key: 'orderDate',
-      },
-      {
-        title: 'Open Date',
-        dataIndex: 'openDate',
-        key: 'openDate',
-      },
-      {
-        title: 'Type',
-        dataIndex: 'type',
-        key: 'type',
-        render: value => {
-          return <span style={{ color: value === 'SELL' ? '#f75535' : '#00a45b' }}>{value}</span>
-        },
-      },
-      {
-        title: 'Bid/Ask',
-        dataIndex: 'bidAsk',
-        key: 'bidAsk',
-      },
-      {
-        title: 'Filled',
-        dataIndex: 'filled',
-        key: 'filled',
-      },
-      {
-        title: 'Units Total',
-        dataIndex: 'unitsTotal',
-        key: 'unitsTotal',
-      },
-      {
-        title: 'Actual Rate',
-        dataIndex: 'actualRate',
-        key: 'actualRate',
-      },
-      {
-        title: 'Est. Total',
-        dataIndex: 'estTotal',
-        key: 'estTotal',
-      },
-    ]
-
-    const marketHistoryColumns = [
-      {
-        title: 'Date',
-        dataIndex: 'orderDate',
-        key: 'orderDate',
-      },
-      {
-        title: 'BUY/SELL',
-        dataIndex: 'type',
-        key: 'type',
-        render: value => {
-          return <span style={{ color: value === 'SELL' ? '#f75535' : '#00a45b' }}>{value}</span>
-        },
-      },
-      {
-        title: 'Bid/Ask',
-        dataIndex: 'bidAsk',
-        key: 'bidAsk',
-      },
-      {
-        title: 'Units Total',
-        dataIndex: 'unitsTotal',
-        key: 'unitsTotal',
-      },
-      {
-        title: 'Total Cost',
-        dataIndex: 'totalCost',
-        key: 'totalCost',
-      },
-    ]
-
-    const ordersSellColumns = [
-      {
-        title: 'SUM',
-        dataIndex: 'sum',
-        key: 'sum',
-        align: 'right',
-      },
-      {
-        title: 'Total',
-        dataIndex: 'total',
-        key: 'total',
-        align: 'right',
-      },
-      {
-        title: 'Size',
-        dataIndex: 'size',
-        key: 'size',
-        align: 'right',
-      },
-      {
-        title: 'BID',
-        dataIndex: 'bid',
-        key: 'bid',
-        width: 120,
-        align: 'right',
-        render: value => {
-          return <span style={{ color: '#00a45b' }}>{value}</span>
-        },
-      },
-      {
-        title: '',
-        dataIndex: 'sell',
-        key: 'sell',
-        width: 60,
-        align: 'right',
-        render: () => {
-          return (
-            <a href="javascript: void(0);" className="utils__link--blue mr-2">
-              <strong>SELL</strong>
-            </a>
-          )
-        },
-      },
-    ]
 
     const ordersBuyColumns = [
       {
@@ -252,6 +90,7 @@ class DashboardCrypto extends React.Component {
 
     return (
       <div className="crypto">
+        <Divider strong>Overview</Divider>
         <div className="crypto__listMobile">
           <div className="utils__title utils__title--flat mb-3">
             <strong>Listed REITs</strong>
@@ -325,8 +164,7 @@ class DashboardCrypto extends React.Component {
             </Select.Option>
           </Select>
         </div>
-        <div className="crypto__list">
-          <Affix offsetTop={20}>
+        <div className="crypto__list" >
             <div className="utils__title utils__title--flat mb-3">
               <strong>Listed REITs</strong>
             </div>
@@ -440,7 +278,6 @@ class DashboardCrypto extends React.Component {
                 1.03
               </span>
             </a>
-          </Affix>
         </div>
         <div className="crypto__content">
           <div className="utils__title utils__title--flat mb-3">
@@ -448,244 +285,177 @@ class DashboardCrypto extends React.Component {
           </div>
           <div className="card">
             <div className="card-body">
-              <div style={{ height: 400 }}>
+              <div style={{ height: 700 }}>
                
-               <TradeChart />}
+               {/* <TradeChart /> */}
+               <TradingViewWidget
+    symbol="NYSE:ARI"
+    locale="en"
+    theme={Themes.DARK}
+    autosize
+  />
+                 
                 
               </div>
             </div>
           </div>
           <div className="utils__title utils__title--flat mb-3">
-            <strong>Order Book</strong>
+            <strong>Recent Articles</strong>
           </div>
           <div className="card">
             <div className="card-body">
-              <div className="crypto__order">
+              <div className="crypto__order" style={{ height: 400 }}>
                 <div className="crypto__orderLeft">
                   <div className="crypto__table text-nowrap">
-                    <Table
-                      columns={ordersSellColumns}
-                      dataSource={orderBook.sell}
-                      pagination={true}
-                      size="small"
-                      scroll={{ x: true }}
-                    />
+                  
+                    
                   </div>
                 </div>
                 <div className="crypto__orderMiddle">
-                  <div className="crypto__form">
-                    <Form layout="vertical">
-                      <Form.Item>
-                        <Radio.Group
-                          onChange={this.toggleOrderType}
-                          value={orderType}
-                          style={{ width: '100%' }}
-                        >
-                          <Radio.Button value="buy" style={{ width: '50%', textAlign: 'center' }}>
-                            BUY
-                          </Radio.Button>
-                          <Radio.Button value="sell" style={{ width: '50%', textAlign: 'center' }}>
-                            SELL
-                          </Radio.Button>
-                        </Radio.Group>
-                      </Form.Item>
-                      {orderType === 'buy' && (
-                        <div>
-                          <span className="crypto__formLabel">ORDER TYPE</span>
-                          <Form.Item>
-                            <Select defaultValue="limit">
-                              <Select.Option value="limit">Limit (Default)</Select.Option>
-                              <Select.Option value="conditional">Conditional</Select.Option>
-                            </Select>
-                          </Form.Item>
-                          <span className="crypto__formLabel">QUANTITY (BTC)</span>
-                          <Form.Item>
-                            <Input value="0.00000000" />
-                          </Form.Item>
-                          <span className="crypto__formLabel">BID PRICE</span>
-                          <Form.Item>
-                            <Input value="0.00645198" />
-                          </Form.Item>
-                          <span className="crypto__formLabel">TOTAL</span>
-                          <Form.Item>
-                            <Input value="0.00000000" />
-                          </Form.Item>
-                          <span className="crypto__formLabel">TIME IN FORCE</span>
-                          <Form.Item>
-                            <Select defaultValue="good">
-                              <Select.Option value="good">
-                                Good 'Til Cancelled (Default)
-                              </Select.Option>
-                              <Select.Option value="immediate">Immediate or Cancel</Select.Option>
-                            </Select>
-                          </Form.Item>
-                          <div className="btn btn-success" style={{ width: '100%' }}>
-                            <strong>BUY BTC</strong>
-                          </div>
-                          <div className="my-3 text-center">
-                            <div>
-                              <strong>Available Balance</strong>
-                            </div>
-                            <div>12.92520000 BTC</div>
-                            <div>1450.00 USD</div>
-                            <div>
-                              <a
-                                href="javascript: void(0);"
-                                className="utils__link--blue utils__link--underlined"
-                              >
-                                <strong>Max Buy</strong>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                      {orderType === 'sell' && (
-                        <div>
-                          <span className="crypto__formLabel">ORDER TYPE</span>
-                          <Form.Item>
-                            <Select defaultValue="limit">
-                              <Select.Option value="limit">Limit (Default)</Select.Option>
-                              <Select.Option value="conditional">Conditional</Select.Option>
-                            </Select>
-                          </Form.Item>
-                          <span className="crypto__formLabel">QUANTITY (BTC)</span>
-                          <Form.Item>
-                            <Input value="0.00000000" />
-                          </Form.Item>
-                          <span className="crypto__formLabel">ASK PRICE</span>
-                          <Form.Item>
-                            <Input value="0.00645198" />
-                          </Form.Item>
-                          <span className="crypto__formLabel">TOTAL</span>
-                          <Form.Item>
-                            <Input value="0.00000000" />
-                          </Form.Item>
-                          <span className="crypto__formLabel">TIME IN FORCE</span>
-                          <Form.Item>
-                            <Select defaultValue="good">
-                              <Select.Option value="good">
-                                Good 'Til Cancelled (Default)
-                              </Select.Option>
-                              <Select.Option value="immediate">Immediate or Cancel</Select.Option>
-                            </Select>
-                          </Form.Item>
-                          <div className="btn btn-danger" style={{ width: '100%' }}>
-                            <strong>SELL BTC</strong>
-                          </div>
-                          <div className="my-3 text-center">
-                            <div>
-                              <strong>Available Balance</strong>
-                            </div>
-                            <div>12.92520000 BTC</div>
-                            <div>1450.00 USD</div>
-                            <div>
-                              <a
-                                href="javascript: void(0);"
-                                className="utils__link--blue utils__link--underlined"
-                              >
-                                <strong>Max SELL</strong>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </Form>
-                  </div>
+                 
                 </div>
                 <div className="crypto__orderRight">
                   <div className="crypto__table text-nowrap">
-                    <Table
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="utils__title utils__title--flat mb-3">
+            <strong>Recent News</strong>
+          </div>
+          <div className="card">
+            <div className="card-body">
+              <div className="crypto__table text-nowrap" style={{ height: 400 }}>
+                
+              </div>
+            </div>
+          </div>
+          <div className="utils__title utils__title--flat mb-3">
+            <strong>Rhino Ratings</strong>
+          </div>
+          <div className="card">
+            <div className="card-body" style={{ height: 200 }}>
+             
+          
+              </div>
+            </div>
+         
+          
+          </div>
+          <Divider strong>Sector Composition</Divider>
+
+          <div className="row">
+          <div className="col-lg-12 col-xl-6">
+            <div className="card" style={{ height: 400 }}>
+              <div className="card-header">
+                <div className="utils__title">
+                  <strong>Sector Breakdown</strong>
+
+
+                </div>
+                </div>
+                </div>
+                </div>
+
+                <div className="col-lg-12 col-xl-6">
+            <div className="card" style={{ height: 400 }}>
+              <div className="card-header">
+                <div className="utils__title">
+                  <strong>Sector Analysis</strong>
+
+
+                </div>
+                </div>
+                </div>
+                </div>
+
+
+                </div>
+                <div className="card">
+            <div className="card-body">
+              <div className="crypto__table text-nowrap" style={{ height: 400 }}>
+                
+                  <Table
                       columns={ordersBuyColumns}
                       dataSource={orderBook.buy}
                       pagination={true}
                       size="small"
                       scroll={{ x: true }}
                     />
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-          <div className="utils__title utils__title--flat mb-3">
-            <strong>Market History</strong>
-          </div>
-          <div className="card">
-            <div className="card-body">
-              <div className="crypto__table text-nowrap">
-                <Table
-                  columns={marketHistoryColumns}
-                  dataSource={marketHistory.data}
-                  pagination={true}
-                  size="small"
-                  scroll={{ x: true }}
-                />
-              </div>
-            </div>
-          </div>
-          <div className="utils__title utils__title--flat mb-3">
-            <strong>My Open Orders</strong>
-          </div>
-          <div className="card">
-            <div className="card-body">
-              <div>
-                {!myOpenOrders.loaded && (
-                  <div onClick={this.handleMyOpenOrders}>
-                    <Spin spinning={myOpenOrders.loading}>
-                      <Alert
-                        className="crypto__warning"
-                        message="Click to view open order details"
-                        type="info"
-                      />
-                    </Spin>
-                  </div>
-                )}
-                {myOpenOrders.loaded && (
-                  <div className="crypto__table text-nowrap">
-                    <Table
-                      columns={myOrderColumns}
-                      dataSource={myOpenOrders.data}
-                      pagination={true}
-                      size="small"
-                      scroll={{ x: true }}
-                    />
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-          <div className="utils__title utils__title--flat mb-3">
-            <strong>My Order History</strong>
-          </div>
-          <div className="card">
-            <div className="card-body">
-              <div>
-                {!myOrderHistory.loaded && (
-                  <div onClick={this.handleMyOrderHistory}>
-                    <Spin spinning={myOrderHistory.loading}>
-                      <Alert
-                        className="crypto__warning"
-                        message="Click to view order history details"
-                        type="info"
-                      />
-                    </Spin>
-                  </div>
-                )}
-                {myOrderHistory.loaded && (
-                  <div className="crypto__table text-nowrap">
-                    <Table
-                      columns={myOrderColumns}
-                      dataSource={myOpenOrders.data}
-                      pagination={true}
-                      size="small"
-                      scroll={{ x: true }}
-                    />
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
+          <Divider strong>Ratings</Divider>
+
+<div className="row">
+<div className="col-lg-12 col-xl-6">
+  <div className="card" style={{ height: 400 }}>
+    <div className="card-header">
+      <div className="utils__title">
+        <strong>Rhino Sector Rating</strong>
+
+
       </div>
+      </div>
+      </div>
+      </div>
+
+      <div className="col-lg-12 col-xl-6">
+  <div className="card" style={{ height: 400 }}>
+    <div className="card-header">
+      <div className="utils__title">
+        <strong>BUY  |  SELL  |  HOLD</strong>
+
+
+      </div>
+      </div>
+      </div>
+      </div>
+
+
+      </div>
+      <div className="card">
+  <div className="card-body">
+    <div className="crypto__table text-nowrap" style={{ height: 400 }}>
+      
+        <Table
+            columns={ordersBuyColumns}
+            dataSource={orderBook.buy}
+            pagination={true}
+            size="small"
+            scroll={{ x: true }}
+          />
+    </div>
+  </div>
+</div>
+<Divider strong>Valuation</Divider>
+         <div className="card">
+            <div className="card-body">
+              <div className="crypto__table text-nowrap" style={{ height: 600 }}>
+                
+      
+                  
+              </div>
+            </div>
+          </div>
+          <div className="card">
+  <div className="card-body">
+    <div className="crypto__table text-nowrap" style={{ height: 400 }}>
+      
+        <Table
+            columns={ordersBuyColumns}
+            dataSource={orderBook.buy}
+            pagination={true}
+            size="small"
+            scroll={{ x: true }}
+          />
+    </div>
+  </div>
+</div>
+
+        </div>
     )
   }
 }
