@@ -9,13 +9,13 @@ class Portfolios extends React.Component {
     return (
       <div>
         <div className="utils__title utils__title--flat mb-3">
-          <span className="text-uppercase font-size-16">Rhino Sectors</span>
+          <span className="text-uppercase font-size-16">Rhino Portfolios</span>
         </div>
         <div className="row">
           <div className="col-xl-4">
             <ChartCard
               title={'+ 1.64%'}
-              amount={'Health Care'}
+              amount={'DAVOS'}
               chartProps={{
                 width: 120,
                 height: 107,
@@ -55,7 +55,7 @@ class Portfolios extends React.Component {
           <div className="col-xl-4">
             <ChartCard
               title={'- 0.41%'}
-              amount={'Industrial'}
+              amount={'Durable Income'}
               chartProps={{
                 width: 120,
                 height: 107,
@@ -94,7 +94,7 @@ class Portfolios extends React.Component {
           <div className="col-xl-4">
             <ChartCard
               title={'+ 0.73%'}
-              amount={'Infrastructure'}
+              amount={'Small Cap'}
               chartProps={{
                 width: 120,
                 height: 107,
@@ -116,7 +116,7 @@ class Portfolios extends React.Component {
           <div className="col-xl-4">
             <ChartCard
               title={'+ 7.66%'}
-              amount={'Lodging'}
+              amount={'Monthly Dividend'}
               chartProps={{
                 width: 120,
                 height: 107,
@@ -158,7 +158,7 @@ class Portfolios extends React.Component {
           <div className="col-xl-4">
             <ChartCard
               title={'-4.29%'}
-              amount={'Malls'}
+              amount={'KISS'}
               chartProps={{
                 width: 120,
                 height: 107,
@@ -178,7 +178,7 @@ class Portfolios extends React.Component {
           <div className="col-xl-4">
             <ChartCardHouse
               title={'+ 7.46%'}
-              amount={'Man. Housing'}
+              amount={'New Money'}
               chartProps={{
                 width: 120,
                 height: 107,
@@ -224,7 +224,7 @@ class Portfolios extends React.Component {
           <div className="col-xl-4">
             <ChartCard
               title={'+ 5.73%'}
-              amount={'Mortgage REITs'}
+              amount={'Average Joe'}
               chartProps={{
                 width: 120,
                 height: 107,
@@ -241,234 +241,10 @@ class Portfolios extends React.Component {
               }}
             />
           </div>
-          <div className="col-xl-4">
-            <ChartCard
-              title={'+ 0.41%'}
-              amount={'Office'}
-              chartProps={{
-                width: 120,
-                height: 107,
-                lines: [
-                  {
-                    values: [20, 80, 67, 120, 132, 66, 97],
-                    colors: {
-                      // Green
-                      area: 'rgba(19, 158, 90, 0.5)',
-                      line: '#009966',
-                    },
-                  },
-                ],
-              }}
-            />
           </div>
-          <div className="col-xl-4">
-            <ChartCard
-              title={'- 3.95%'}
-              amount={'Other'}
-              chartProps={{
-                width: 120,
-                height: 107,
-                lines: [
-                  {
-                    values: [42, 40, 80, 67, 84, 20, 97],
-                    colors: {
-                      // Red
-                      area: 'rgba(204, 51, 51, 0.5)',
-                      line: '#ff0000',
-                    },
-                  },
-                ],
-              }}
-            />
           </div>
-        </div>
-        <div className="row">
-          <div className="col-xl-4">
-            <ChartCard
-              title={'+ 5.00%'}
-              amount={'Prison REITs'}
-              chartProps={{
-                width: 120,
-                height: 107,
-                lines: [
-                  {
-                    values: [2, 11, 8, 14, 18, 20, 26],
-                    colors: {
-                      // Green
-                      area: 'rgba(19, 158, 90, 0.5)',
-                      line: '#009966',
-                    },
-                  },
-                ],
-              }}
-            />
-          </div>
-          <div className="col-xl-4">
-            <ChartCard
-              title={'+ 4.57%'}
-              amount={'Residential'}
-              chartProps={{
-                width: 120,
-                height: 107,
-                lines: [
-                  {
-                    values: [20, 80, 67, 120, 132, 66, 97],
-                    colors: {
-                      // Green
-                      area: 'rgba(19, 158, 90, 0.5)',
-                      line: '#009966',
-                    },
-                  },
-                ],
-              }}
-            />
-          </div>
-          <div className="col-xl-4">
-            <ChartCard
-              title={'+ 15.53%'}
-              amount={'Self Storage'}
-              chartProps={{
-                width: 120,
-                height: 107,
-                lines: [
-                  {
-                    values: [42, 40, 80, 67, 84, 20, 97],
-                    colors: {
-                      // Green
-                      area: 'rgba(19, 158, 90, 0.5)',
-                      line: '#009966',
-                    },
-                  },
-                ],
-              }}
-            />
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-xl-4">
-            <ChartCard
-              title={'- 9.80%'}
-              amount={'Shopping Centers'}
-              chartProps={{
-                width: 120,
-                height: 107,
-                lines: [
-                  {
-                    values: [
-                      2,
-                      11,
-                      8,
-                      14,
-                      18,
-                      20,
-                      24,
-                      45,
-                      46,
-                      56,
-                      57,
-                      58,
-                      49,
-                      49,
-                      55,
-                      57,
-                      58,
-                      60,
-                      61,
-                    ],
-                    colors: {
-                      // Red
-                      area: 'rgba(204, 51, 51, 0.5)',
-                      line: '#ff0000',
-                    },
-                  },
-                ],
-              }}
-            />
-          </div>
-          <div className="col-xl-4">
-            <ChartCard
-              title={'+ 6.81%'}
-              amount={'Timber'}
-              chartProps={{
-                width: 120,
-                height: 107,
-                lines: [
-                  {
-                    values: [20, 80, 67, 120, 132, 66, 97],
-                    colors: {
-                      // Green
-                      area: 'rgba(19, 158, 90, 0.5)',
-                      line: '#009966',
-                    },
-                  },
-                ],
-              }}
-            />
-          </div>
-          <div className="col-xl-4">
-            <ChartCard
-              title={'+ 2.24%'}
-              amount={'Triple Net'}
-              chartProps={{
-                width: 120,
-                height: 107,
-                lines: [
-                  {
-                    values: [42, 40, 80, 67, 84, 20, 97],
-                    colors: {
-                      // Green
-                      area: 'rgba(19, 158, 90, 0.5)',
-                      line: '#009966',
-                    },
-                  },
-                ],
-              }}
-            />
-          </div>
-        </div>
-        <div class="row">
-          <div className="col-xl-4">
-            <ChartCard
-              title={'+ 2.24%'}
-              amount={'Gaming REITs'}
-              chartProps={{
-                width: 120,
-                height: 107,
-                lines: [
-                  {
-                    values: [42, 40, 80, 67, 84, 20, 97],
-                    colors: {
-                      // Green
-                      area: 'rgba(19, 158, 90, 0.5)',
-                      line: '#009966',
-                    },
-                  },
-                ],
-              }}
-            />
-          </div>
-          <div className="col-xl-4">
-            <ChartCard
-              title={'+ 2.24%'}
-              amount={'Farmland'}
-              chartProps={{
-                width: 120,
-                height: 107,
-                lines: [
-                  {
-                    values: [42, 40, 80, 67, 84, 20, 97],
-                    colors: {
-                      // Green
-                      area: 'rgba(19, 158, 90, 0.5)',
-                      line: '#009966',
-                    },
-                  },
-                ],
-              }}
-            />
-          </div>
-        </div>
-      </div>
+
+         
     )
   }
 }

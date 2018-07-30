@@ -58,8 +58,8 @@ const loadableRoutes = {
   '/dashboard/sectorComp': {
     component: loadable(() => import('pages/Dashboard/sectorHome')),
   },
-  '/dashboard/sectorTemp': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate')),
+  '/dashboard/sectorTemp1': {
+    component: loadable(() => import('pages/Dashboard/sectorTemplate1')),
   },
 
   // portfolios

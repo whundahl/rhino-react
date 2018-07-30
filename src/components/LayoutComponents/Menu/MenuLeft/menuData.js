@@ -48,8 +48,8 @@ export default [
       },
       {
         title: 'Commercial Mortgage',
-        key: 'ComMort',
-        url: '/dashboard/sectorTemp',
+        key: 'SectorTemp1',
+        url: '/dashboard/sectorTemp1',
       },
     ],
   },
