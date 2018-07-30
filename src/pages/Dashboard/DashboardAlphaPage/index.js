@@ -13,7 +13,7 @@ class DashboardAlphaPage extends React.Component {
     const props = this.props
     return (
       <Page {...props}>
-        <Helmet title="Dashboard Alpha" />
+        <Helmet title="Home" />
         <DashboardAlpha />
       </Page>
     )

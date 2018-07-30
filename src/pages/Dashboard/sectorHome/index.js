@@ -1,9 +1,9 @@
 import React from 'react'
 import Page from 'components/LayoutComponents/Page'
 import Helmet from 'react-helmet'
-import DashboardAlpha from './DashboardAlpha'
+import Sectors from './Sectors'
 
-class DashboardAlphaPage extends React.Component {
+class SectorHome extends React.Component {
   static defaultProps = {
     pathName: 'REIT Sectors',
     roles: ['agent', 'administrator'],
@@ -14,10 +14,10 @@ class DashboardAlphaPage extends React.Component {
     return (
       <Page {...props}>
         <Helmet title="REIT Sectors" />
-        <DashboardAlpha />
+        <Sectors />
       </Page>
     )
   }
 }
 
-export default DashboardAlphaPage
+export default SectorHome

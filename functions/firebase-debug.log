@@ -1,0 +1,93 @@
+[debug] [2018-07-29T23:09:08.712Z] ----------------------------------------------------------------------
+[debug] [2018-07-29T23:09:08.714Z] Command:       /Users/willhundahl/.nvm/versions/node/v8.11.3/bin/node /Users/willhundahl/.nvm/versions/node/v8.11.3/bin/firebase deploy
+[debug] [2018-07-29T23:09:08.714Z] CLI Version:   3.19.3
+[debug] [2018-07-29T23:09:08.714Z] Platform:      darwin
+[debug] [2018-07-29T23:09:08.714Z] Node Version:  v8.11.3
+[debug] [2018-07-29T23:09:08.715Z] Time:          Sun Jul 29 2018 18:09:08 GMT-0500 (CDT)
+[debug] [2018-07-29T23:09:08.715Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-29T23:09:08.727Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-29T23:09:08.727Z] > authorizing via signed-in user
+[debug] [2018-07-29T23:09:08.729Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rhinoapp-296c0  
+  
+ Sun Jul 29 2018 18:09:08 GMT-0500 (CDT)
+[debug] [2018-07-29T23:09:11.285Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-29T23:09:11.286Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/rhinoapp-296c0/tokens  
+  
+ Sun Jul 29 2018 18:09:11 GMT-0500 (CDT)
+[debug] [2018-07-29T23:09:13.368Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-29T23:09:57.267Z] ----------------------------------------------------------------------
+[debug] [2018-07-29T23:09:57.270Z] Command:       /Users/willhundahl/.nvm/versions/node/v8.11.3/bin/node /Users/willhundahl/.nvm/versions/node/v8.11.3/bin/firebase deploy
+[debug] [2018-07-29T23:09:57.270Z] CLI Version:   3.19.3
+[debug] [2018-07-29T23:09:57.270Z] Platform:      darwin
+[debug] [2018-07-29T23:09:57.270Z] Node Version:  v8.11.3
+[debug] [2018-07-29T23:09:57.271Z] Time:          Sun Jul 29 2018 18:09:57 GMT-0500 (CDT)
+[debug] [2018-07-29T23:09:57.271Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-29T23:09:57.282Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-29T23:09:57.282Z] > authorizing via signed-in user
+[debug] [2018-07-29T23:09:57.284Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rhinoapp-296c0  
+  
+ Sun Jul 29 2018 18:09:57 GMT-0500 (CDT)
+[debug] [2018-07-29T23:10:00.565Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-29T23:10:00.566Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/rhinoapp-296c0/tokens  
+  
+ Sun Jul 29 2018 18:10:00 GMT-0500 (CDT)
+[debug] [2018-07-29T23:10:03.068Z] <<< HTTP RESPONSE 200
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions.
+ Please upgrade using npm install --save firebase-functions@latest in your functions directory.
+[info] 
+[info] === Deploying to 'rhinoapp-296c0'...
+[info] 
+[info] i  deploying database, storage, firestore, functions, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-07-29T23:10:13.331Z] >>> HTTP REQUEST PUT https://rhinoapp-296c0.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+} 
+ Sun Jul 29 2018 18:10:13 GMT-0500 (CDT)
+[debug] [2018-07-29T23:10:49.115Z] Error: socket hang up
+    at TLSSocket.onHangUp (_tls_wrap.js:1137:19)
+    at Object.onceWrapper (events.js:313:30)
+    at emitNone (events.js:111:20)
+    at TLSSocket.emit (events.js:208:7)
+    at endReadableNT (_stream_readable.js:1064:12)
+    at _combinedTickCallback (internal/process/next_tick.js:138:11)
+    at process._tickDomainCallback (internal/process/next_tick.js:218:9)
+[error] 
+[error] Error: Server Error. socket hang up
+[debug] [2018-07-29T23:41:57.046Z] ----------------------------------------------------------------------
+[debug] [2018-07-29T23:41:57.048Z] Command:       /Users/willhundahl/.nvm/versions/node/v8.11.3/bin/node /Users/willhundahl/.nvm/versions/node/v8.11.3/bin/firebase functions:shell
+[debug] [2018-07-29T23:41:57.048Z] CLI Version:   3.19.3
+[debug] [2018-07-29T23:41:57.048Z] Platform:      darwin
+[debug] [2018-07-29T23:41:57.048Z] Node Version:  v8.11.3
+[debug] [2018-07-29T23:41:57.049Z] Time:          Sun Jul 29 2018 18:41:57 GMT-0500 (CDT)
+[debug] [2018-07-29T23:41:57.049Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-29T23:41:57.060Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-29T23:41:57.060Z] > authorizing via signed-in user
+[debug] [2018-07-29T23:41:57.063Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-07-29T23:41:57.063Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/RlQFdcDLQPP1WBcWeEpp1fiahAdE_7y593gAdX4aW1Q',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Jul 29 2018 18:41:57 GMT-0500 (CDT)
+[debug] [2018-07-29T23:42:01.391Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-29T23:42:01.408Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/rhinoapp-296c0  
+  
+ Sun Jul 29 2018 18:42:01 GMT-0500 (CDT)
+[debug] [2018-07-29T23:42:05.777Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-29T23:42:05.778Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/rhinoapp-296c0/tokens  
+  
+ Sun Jul 29 2018 18:42:05 GMT-0500 (CDT)
+[debug] [2018-07-29T23:42:07.655Z] <<< HTTP RESPONSE 200
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-07-29T23:42:08.539Z] Fetching environment
+[debug] [2018-07-29T23:42:08.542Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/rhinoapp-296c0  
+  
+ Sun Jul 29 2018 18:42:08 GMT-0500 (CDT)
