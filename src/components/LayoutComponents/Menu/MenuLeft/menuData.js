@@ -29,7 +29,7 @@ export default [
         url: '/blog/add-blog-post',
       },
     ],
-  }, 
+  },
   {
     title: 'Top Picks',
     key: 'topPicks',
@@ -51,7 +51,7 @@ export default [
         key: 'ComMort',
         url: '/dashboard/sectorTemp',
       },
-    ]
+    ],
   },
   {
     title: 'Rhino Portfolios',
@@ -98,7 +98,7 @@ export default [
         key: 'portfolioTemp7',
         url: '/dashboard/portfolioTemp7',
       },
-    ]
+    ],
   },
   {
     title: 'REIT Tool Box',
@@ -140,45 +140,47 @@ export default [
         key: 'reitMda',
         // url: '/dashboard/portfolioTemp',
       },
-    ]
+    ],
   },
   {
     divider: true,
   },
-{
-title: 'Media Library',
-key: 'mediaHome',
-icon: 'icmn icmn-youtube',
-children: [
-  { 
-    title: 'Podcast Library',
-    key: 'podcastLib',
-    icon: 'icm icmn-headphones'
-        // url: 'dashboard/',
-  },
   {
-    title: 'Article Library',
-    key: 'articleLib',
-    icon: 'icmn icmn-newspaper',
-    // url: 'dashboard/',
-  },
-  {
-    title: 'Video Library',
-    key: 'youtube',
-    icon: 'icmn icmn-tv',
+    title: 'Media Library',
+    key: 'mediaHome',
+    icon: 'icmn icmn-youtube',
     children: [
       {
-        title: 'Feed',
-        key: 'youtubeFeed',
-        url: '/youtube/feed',
+        title: 'Podcast Library',
+        key: 'podcastLib',
+        icon: 'icm icmn-headphones',
+        // url: 'dashboard/',
       },
       {
-        title: 'View',
-        key: 'youtubeView',
-        url: '/youtube/view',
+        title: 'Article Library',
+        key: 'articleLib',
+        icon: 'icmn icmn-newspaper',
+        // url: 'dashboard/',
+      },
+      {
+        title: 'Video Library',
+        key: 'youtube',
+        icon: 'icmn icmn-tv',
+        children: [
+          {
+            title: 'Feed',
+            key: 'youtubeFeed',
+            url: '/youtube/feed',
+          },
+          {
+            title: 'View',
+            key: 'youtubeView',
+            url: '/youtube/view',
+          },
+        ],
       },
     ],
-  }]},
+  },
   {
     title: 'My Account',
     key: 'account',
@@ -199,7 +201,7 @@ children: [
         key: 'chat',
         // url: '/dashboard/portfolioTemp',
       },
-    ]
+    ],
   },
   {
     divider: true,

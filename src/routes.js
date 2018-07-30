@@ -54,7 +54,6 @@ const loadableRoutes = {
     component: loadable(() => import('pages/Dashboard/DashboardCryptoPage')),
   },
 
-
   // Sectors
   '/dashboard/sectorComp': {
     component: loadable(() => import('pages/Dashboard/sectorHome')),
