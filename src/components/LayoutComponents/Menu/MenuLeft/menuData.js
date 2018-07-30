@@ -43,14 +43,107 @@ export default [
     children: [
       {
         title: 'Sector Comparison',
-        key: 'sectorComp',
+        key: 'SectorComp',
         url: '/dashboard/sectorComp',
+        icon: '',
       },
       {
-        title: 'Commercial Mortgage',
-        key: 'SectorTemp1',
-        url: '/dashboard/sectorTemp1',
-      },
+        title: 'Sectors',
+        key: 'reitSectorList',
+        icon: '',
+        children: [
+              {
+                title: 'Residential',
+                key: 'SectorTemp1',
+                url: '/dashboard/sectorTemp1',
+              },
+              {
+                title: 'Manufactured Housing',
+                key: 'SectorTemp2',
+                url: '/dashboard/sectorTemp2',
+              },
+              {
+                title: 'Single Family Rentals',
+                key: 'SectorTemp3',
+                url: '/dashboard/sectorTemp3',
+              },
+              {
+                title: 'Shopping Centers',
+                key: 'SectorTemp4',
+                url: '/dashboard/sectorTemp4',
+              },
+              {
+                title: 'Malls',
+                key: 'SectorTemp5',
+                url: '/dashboard/sectorTemp5',
+              },
+              {
+                title: 'Self Storage',
+                key: 'SectorTemp6',
+                url: '/dashboard/sectorTemp6',
+              },
+              {
+                title: 'Tripple Net',
+                key: 'SectorTemp7',
+                url: '/dashboard/sectorTemp7',
+              },
+              {
+                title: 'Gaming',
+                key: 'SectorTemp8',
+                url: '/dashboard/sectorTemp8',
+              },
+              {
+                title: 'Data Centers',
+                key: 'SectorTemp9',
+                url: '/dashboard/sectorTemp9',
+              },
+              {
+                title: 'Healthcare',
+                key: 'SectorTemp10',
+                url: '/dashboard/sectorTemp10',
+              },
+              {
+                title: 'Office',
+                key: 'SectorTemp11',
+                url: '/dashboard/sectorTemp11',
+              },
+              {
+                title: 'Industrial',
+                key: 'SectorTemp12',
+                url: '/dashboard/sectorTemp12',
+              },
+              {
+                title: 'Lodging',
+                key: 'SectorTemp13',
+                url: '/dashboard/sectorTemp13',
+              },
+              {
+                title: 'Prisons',
+                key: 'SectorTemp14',
+                url: '/dashboard/sectorTemp14',
+              },
+              {
+                title: 'Other',
+                key: 'SectorTemp15',
+                url: '/dashboard/sectorTemp15',
+              },
+              {
+                title: 'Mortgage',
+                key: 'SectorTemp16',
+                url: '/dashboard/sectorTemp16',
+              },
+              {
+                title: 'Timber',
+                key: 'SectorTemp17',
+                url: '/dashboard/sectorTemp17',
+              },
+              {
+                title: 'Infranstructure',
+                key: 'SectorTemp18',
+                url: '/dashboard/sectorTemp18',
+              },
+          ],
+        }
     ],
   },
   {
