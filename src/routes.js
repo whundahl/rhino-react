@@ -67,8 +67,26 @@ const loadableRoutes = {
   '/dashboard/portfolioComp': {
     component: loadable(() => import('pages/Dashboard/portfolioHome')),
   },
-  '/dashboard/portfolioTemp': {
-    component: loadable(() => import('pages/Dashboard/portfolioTemplate')),
+  '/dashboard/portfolioTemp1': {
+    component: loadable(() => import('pages/Dashboard/portfolioTemplate1')),
+  },
+  '/dashboard/portfolioTemp2': {
+    component: loadable(() => import('pages/Dashboard/portfolioTemplate2')),
+  },
+  '/dashboard/portfolioTemp3': {
+    component: loadable(() => import('pages/Dashboard/portfolioTemplate3')),
+  },
+  '/dashboard/portfolioTemp4': {
+    component: loadable(() => import('pages/Dashboard/portfolioTemplate4')),
+  },
+  '/dashboard/portfolioTemp5': {
+    component: loadable(() => import('pages/Dashboard/portfolioTemplate5')),
+  },
+  '/dashboard/portfolioTemp6': {
+    component: loadable(() => import('pages/Dashboard/portfolioTemplate6')),
+  },
+  '/dashboard/portfolioTemp7': {
+    component: loadable(() => import('pages/Dashboard/portfolioTemplate7')),
   },
 
   // Apps
