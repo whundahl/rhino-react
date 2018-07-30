@@ -241,10 +241,8 @@ class Portfolios extends React.Component {
               }}
             />
           </div>
-          </div>
-          </div>
-
-         
+        </div>
+      </div>
     )
   }
 }

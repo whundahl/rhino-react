@@ -1,8 +1,8 @@
 import React from 'react'
 // import TradeChart from './TradeChart'
-import TradingViewWidget, { Themes } from 'react-tradingview-widget';
+import TradingViewWidget, { Themes } from 'react-tradingview-widget'
 
-import {Table, Select, Tag, Divider } from 'antd'
+import { Table, Select, Tag, Divider } from 'antd'
 import './style.scss'
 import { myOpenOrders, marketHistory, orderBookBuy, orderBookSell } from './data.json'
 
@@ -29,11 +29,6 @@ class DashboardCrypto extends React.Component {
     },
   }
 
-  
-
-
-    
-
   toggleOrderType = e => {
     this.setState({
       orderType: e.target.value,
@@ -41,12 +36,7 @@ class DashboardCrypto extends React.Component {
   }
 
   render() {
-    const {
-    
-      orderBook,
-      
-    } = this.state
-
+    const { orderBook } = this.state
 
     const ordersBuyColumns = [
       {
@@ -109,7 +99,7 @@ class DashboardCrypto extends React.Component {
               </Tag>
             </Select.Option>
             <Select.Option value="BXMT">
-             BXMT
+              BXMT
               <Tag color="red" className="ml-3">
                 -7.2%
               </Tag>
@@ -133,7 +123,7 @@ class DashboardCrypto extends React.Component {
               </Tag>
             </Select.Option>
             <Select.Option value="KREF">
-             KREF
+              KREF
               <Tag color="red" className="ml-3">
                 -12.3%
               </Tag>
@@ -164,120 +154,120 @@ class DashboardCrypto extends React.Component {
             </Select.Option>
           </Select>
         </div>
-        <div className="crypto__list" >
-            <div className="utils__title utils__title--flat mb-3">
-              <strong>Listed REITs</strong>
-            </div>
-            <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--current">
-              <span className="crypto__listPercents">
-                <span>11.7%</span>
-                0.00016985
-              </span>
-              <span className="crypto__listCurrency">
-                <span>ARI</span>
-                97.20
-              </span>
-            </a>
-            <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-              <span className="crypto__listPercents">
-                <span>-2.3%</span>
-                0.00016985
-              </span>
-              <span className="crypto__listCurrency">
-                <span>ACRE</span>
-                44.90
-              </span>
-            </a>
-            <a href="javascript: void(0);" className="crypto__listItem">
-              <span className="crypto__listPercents">
-                <span>7.2%</span>
-                0.00016985
-              </span>
-              <span className="crypto__listCurrency">
-                <span>BXMT</span>
-                32.78
-              </span>
-            </a>
-            <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-              <span className="crypto__listPercents">
-                <span>-11.7%</span>
-                0.00016985
-              </span>
-              <span className="crypto__listCurrency">
-                <span>GPMT</span>
-                12.25
-              </span>
-            </a>
-            <a href="javascript: void(0);" className="crypto__listItem">
-              <span className="crypto__listPercents">
-                <span>67.5%</span>
-                0.00016985
-              </span>
-              <span className="crypto__listCurrency">
-                <span>HASI</span>
-                8.26
-              </span>
-            </a>
-            <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-              <span className="crypto__listPercents">
-                <span>-22.9%</span>
-                0.00016985
-              </span>
-              <span className="crypto__listCurrency">
-                <span>JCAP</span>
-                5.20
-              </span>
-            </a>
-            <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-              <span className="crypto__listPercents">
-                <span>-12.3%</span>
-                0.00016985
-              </span>
-              <span className="crypto__listCurrency">
-                <span>KREF</span>
-                3.20
-              </span>
-            </a>
-            <a href="javascript: void(0);" className="crypto__listItem">
-              <span className="crypto__listPercents">
-                <span>+4.3%</span>
-                0.00036234
-              </span>
-              <span className="crypto__listCurrency">
-                <span>LADR</span>
-                5.64
-              </span>
-            </a>
-            <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-              <span className="crypto__listPercents">
-                <span>-4.2%</span>
-                0.00035685
-              </span>
-              <span className="crypto__listCurrency">
-                <span>STWD</span>
-                6.36
-              </span>
-            </a>
-            <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-              <span className="crypto__listPercents">
-                <span>-1.7%</span>
-                0.00000985
-              </span>
-              <span className="crypto__listCurrency">
-                <span>TRTX</span>
-                6.35
-              </span>
-            </a>
-            <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-              <span className="crypto__listPercents">
-                <span>-2.8%</span>
-                0.00000152
-              </span>
-              <span className="crypto__listCurrency">
-                <span>CLNC</span>
-                1.03
-              </span>
-            </a>
+        <div className="crypto__list">
+          <div className="utils__title utils__title--flat mb-3">
+            <strong>Listed REITs</strong>
+          </div>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--current">
+            <span className="crypto__listPercents">
+              <span>11.7%</span>
+              0.00016985
+            </span>
+            <span className="crypto__listCurrency">
+              <span>ARI</span>
+              97.20
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.3%</span>
+              0.00016985
+            </span>
+            <span className="crypto__listCurrency">
+              <span>ACRE</span>
+              44.90
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem">
+            <span className="crypto__listPercents">
+              <span>7.2%</span>
+              0.00016985
+            </span>
+            <span className="crypto__listCurrency">
+              <span>BXMT</span>
+              32.78
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-11.7%</span>
+              0.00016985
+            </span>
+            <span className="crypto__listCurrency">
+              <span>GPMT</span>
+              12.25
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem">
+            <span className="crypto__listPercents">
+              <span>67.5%</span>
+              0.00016985
+            </span>
+            <span className="crypto__listCurrency">
+              <span>HASI</span>
+              8.26
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-22.9%</span>
+              0.00016985
+            </span>
+            <span className="crypto__listCurrency">
+              <span>JCAP</span>
+              5.20
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-12.3%</span>
+              0.00016985
+            </span>
+            <span className="crypto__listCurrency">
+              <span>KREF</span>
+              3.20
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem">
+            <span className="crypto__listPercents">
+              <span>+4.3%</span>
+              0.00036234
+            </span>
+            <span className="crypto__listCurrency">
+              <span>LADR</span>
+              5.64
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-4.2%</span>
+              0.00035685
+            </span>
+            <span className="crypto__listCurrency">
+              <span>STWD</span>
+              6.36
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-1.7%</span>
+              0.00000985
+            </span>
+            <span className="crypto__listCurrency">
+              <span>TRTX</span>
+              6.35
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>CLNC</span>
+              1.03
+            </span>
+          </a>
         </div>
         <div className="crypto__content">
           <div className="utils__title utils__title--flat mb-3">
@@ -286,16 +276,8 @@ class DashboardCrypto extends React.Component {
           <div className="card">
             <div className="card-body">
               <div style={{ height: 700 }}>
-               
-               {/* <TradeChart /> */}
-               <TradingViewWidget
-    symbol="NYSE:ARI"
-    locale="en"
-    theme={Themes.DARK}
-    autosize
-  />
-                 
-                
+                {/* <TradeChart /> */}
+                <TradingViewWidget symbol="NYSE:ARI" locale="en" theme={Themes.DARK} autosize />
               </div>
             </div>
           </div>
@@ -306,18 +288,11 @@ class DashboardCrypto extends React.Component {
             <div className="card-body">
               <div className="crypto__order" style={{ height: 400 }}>
                 <div className="crypto__orderLeft">
-                  <div className="crypto__table text-nowrap">
-                  
-                    
-                  </div>
+                  <div className="crypto__table text-nowrap" />
                 </div>
-                <div className="crypto__orderMiddle">
-                 
-                </div>
+                <div className="crypto__orderMiddle" />
                 <div className="crypto__orderRight">
-                  <div className="crypto__table text-nowrap">
-                 
-                  </div>
+                  <div className="crypto__table text-nowrap" />
                 </div>
               </div>
             </div>
@@ -327,135 +302,108 @@ class DashboardCrypto extends React.Component {
           </div>
           <div className="card">
             <div className="card-body">
-              <div className="crypto__table text-nowrap" style={{ height: 400 }}>
-                
-              </div>
+              <div className="crypto__table text-nowrap" style={{ height: 400 }} />
             </div>
           </div>
           <div className="utils__title utils__title--flat mb-3">
             <strong>Rhino Ratings</strong>
           </div>
           <div className="card">
-            <div className="card-body" style={{ height: 200 }}>
-             
-          
-              </div>
-            </div>
-         
-          
+            <div className="card-body" style={{ height: 200 }} />
           </div>
-          <Divider strong>Sector Composition</Divider>
+        </div>
+        <Divider strong>Sector Composition</Divider>
 
-          <div className="row">
+        <div className="row">
           <div className="col-lg-12 col-xl-6">
             <div className="card" style={{ height: 400 }}>
               <div className="card-header">
                 <div className="utils__title">
                   <strong>Sector Breakdown</strong>
+                </div>
+              </div>
+            </div>
+          </div>
 
-
-                </div>
-                </div>
-                </div>
-                </div>
-
-                <div className="col-lg-12 col-xl-6">
+          <div className="col-lg-12 col-xl-6">
             <div className="card" style={{ height: 400 }}>
               <div className="card-header">
                 <div className="utils__title">
                   <strong>Sector Analysis</strong>
-
-
                 </div>
-                </div>
-                </div>
-                </div>
-
-
-                </div>
-                <div className="card">
-            <div className="card-body">
-              <div className="crypto__table text-nowrap" style={{ height: 400 }}>
-                
-                  <Table
-                      columns={ordersBuyColumns}
-                      dataSource={orderBook.buy}
-                      pagination={true}
-                      size="small"
-                      scroll={{ x: true }}
-                    />
               </div>
             </div>
           </div>
-          <Divider strong>Ratings</Divider>
-
-<div className="row">
-<div className="col-lg-12 col-xl-6">
-  <div className="card" style={{ height: 400 }}>
-    <div className="card-header">
-      <div className="utils__title">
-        <strong>Rhino Sector Rating</strong>
-
-
-      </div>
-      </div>
-      </div>
-      </div>
-
-      <div className="col-lg-12 col-xl-6">
-  <div className="card" style={{ height: 400 }}>
-    <div className="card-header">
-      <div className="utils__title">
-        <strong>BUY  |  SELL  |  HOLD</strong>
-
-
-      </div>
-      </div>
-      </div>
-      </div>
-
-
-      </div>
-      <div className="card">
-  <div className="card-body">
-    <div className="crypto__table text-nowrap" style={{ height: 400 }}>
-      
-        <Table
-            columns={ordersBuyColumns}
-            dataSource={orderBook.buy}
-            pagination={true}
-            size="small"
-            scroll={{ x: true }}
-          />
-    </div>
-  </div>
-</div>
-<Divider strong>Valuation</Divider>
-         <div className="card">
-            <div className="card-body">
-              <div className="crypto__table text-nowrap" style={{ height: 600 }}>
-                
-      
-                  
-              </div>
-            </div>
-          </div>
-          <div className="card">
-  <div className="card-body">
-    <div className="crypto__table text-nowrap" style={{ height: 400 }}>
-      
-        <Table
-            columns={ordersBuyColumns}
-            dataSource={orderBook.buy}
-            pagination={true}
-            size="small"
-            scroll={{ x: true }}
-          />
-    </div>
-  </div>
-</div>
-
         </div>
+        <div className="card">
+          <div className="card-body">
+            <div className="crypto__table text-nowrap" style={{ height: 400 }}>
+              <Table
+                columns={ordersBuyColumns}
+                dataSource={orderBook.buy}
+                pagination={true}
+                size="small"
+                scroll={{ x: true }}
+              />
+            </div>
+          </div>
+        </div>
+        <Divider strong>Ratings</Divider>
+
+        <div className="row">
+          <div className="col-lg-12 col-xl-6">
+            <div className="card" style={{ height: 400 }}>
+              <div className="card-header">
+                <div className="utils__title">
+                  <strong>Rhino Sector Rating</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="col-lg-12 col-xl-6">
+            <div className="card" style={{ height: 400 }}>
+              <div className="card-header">
+                <div className="utils__title">
+                  <strong>BUY | SELL | HOLD</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-body">
+            <div className="crypto__table text-nowrap" style={{ height: 400 }}>
+              <Table
+                columns={ordersBuyColumns}
+                dataSource={orderBook.buy}
+                pagination={true}
+                size="small"
+                scroll={{ x: true }}
+              />
+            </div>
+          </div>
+        </div>
+        <Divider strong>Valuation</Divider>
+        <div className="card">
+          <div className="card-body">
+            <div className="crypto__table text-nowrap" style={{ height: 600 }} />
+          </div>
+        </div>
+        <div className="card">
+          <div className="card-body">
+            <div className="crypto__table text-nowrap" style={{ height: 400 }}>
+              <Table
+                columns={ordersBuyColumns}
+                dataSource={orderBook.buy}
+                pagination={true}
+                size="small"
+                scroll={{ x: true }}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     )
   }
 }
