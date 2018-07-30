@@ -2,16 +2,10 @@ import React from 'react'
 import ChartCard from 'components/CleanComponents/ChartCard'
 import ChartCardHouse from 'components/CleanComponents/manHousingCard'
 
-
 class Portfolios extends React.Component {
-  state = {
-
-  }
+  state = {}
 
   render() {
-
-
-    
     return (
       <div>
         <div className="utils__title utils__title--flat mb-3">
@@ -27,7 +21,27 @@ class Portfolios extends React.Component {
                 height: 107,
                 lines: [
                   {
-                    values: [2, 11, 8, 14, 18, 20, 26,30, 31, 33, 34, 35, 29, 35, 39, 20, 39, 40, 50],
+                    values: [
+                      2,
+                      11,
+                      8,
+                      14,
+                      18,
+                      20,
+                      26,
+                      30,
+                      31,
+                      33,
+                      34,
+                      35,
+                      29,
+                      35,
+                      39,
+                      20,
+                      39,
+                      40,
+                      50,
+                    ],
                     colors: {
                       // Green
                       area: 'rgba(19, 158, 90, 0.5)',
@@ -47,7 +61,26 @@ class Portfolios extends React.Component {
                 height: 107,
                 lines: [
                   {
-                    values: [20, 80, 67, 120, 132, 66, 97, 78, 67, 66, 48, 20, 30, 28, 27, 27, 26, 36],
+                    values: [
+                      20,
+                      80,
+                      67,
+                      120,
+                      132,
+                      66,
+                      97,
+                      78,
+                      67,
+                      66,
+                      48,
+                      20,
+                      30,
+                      28,
+                      27,
+                      27,
+                      26,
+                      36,
+                    ],
                     colors: {
                       // Red
                       area: 'rgba(204, 51, 51, 0.5)',
@@ -67,7 +100,7 @@ class Portfolios extends React.Component {
                 height: 107,
                 lines: [
                   {
-                    values: [42, 40, 40, 57, 54, 20, 97, 58,69, 70, 70, 76, 56, 48, 79, 90,],
+                    values: [42, 40, 40, 57, 54, 20, 97, 58, 69, 70, 70, 76, 56, 48, 79, 90],
                     colors: {
                       // Green
                       area: 'rgba(19, 158, 90, 0.5)',
@@ -89,7 +122,29 @@ class Portfolios extends React.Component {
                 height: 107,
                 lines: [
                   {
-                    values: [2, 11, 8, 14, 18, 20, 26, 27, 32, 34, 46, 54, 35, 37, 39, 44, 46, 65, 69, 57, 59],
+                    values: [
+                      2,
+                      11,
+                      8,
+                      14,
+                      18,
+                      20,
+                      26,
+                      27,
+                      32,
+                      34,
+                      46,
+                      54,
+                      35,
+                      37,
+                      39,
+                      44,
+                      46,
+                      65,
+                      69,
+                      57,
+                      59,
+                    ],
                     colors: {
                       // Green
                       area: 'rgba(19, 158, 90, 0.5)',
@@ -129,7 +184,31 @@ class Portfolios extends React.Component {
                 height: 107,
                 lines: [
                   {
-                    values: [22, 24, 34, 48, 46, 33, 35, 45, 40, 41, 43, 42, 45, 44, 55, 44, 44, 46, 37, 48, 49, 50, 52],
+                    values: [
+                      22,
+                      24,
+                      34,
+                      48,
+                      46,
+                      33,
+                      35,
+                      45,
+                      40,
+                      41,
+                      43,
+                      42,
+                      45,
+                      44,
+                      55,
+                      44,
+                      44,
+                      46,
+                      37,
+                      48,
+                      49,
+                      50,
+                      52,
+                    ],
                     colors: {
                       // Green
                       area: 'rgba(19, 158, 90, 0.5)',
@@ -153,9 +232,9 @@ class Portfolios extends React.Component {
                   {
                     values: [2, 11, 8, 14, 18, 20, 26],
                     colors: {
-                     // Green
-                     area: 'rgba(19, 158, 90, 0.5)',
-                     line: '#009966',
+                      // Green
+                      area: 'rgba(19, 158, 90, 0.5)',
+                      line: '#009966',
                     },
                   },
                 ],
@@ -173,9 +252,9 @@ class Portfolios extends React.Component {
                   {
                     values: [20, 80, 67, 120, 132, 66, 97],
                     colors: {
-                   // Green
-                   area: 'rgba(19, 158, 90, 0.5)',
-                   line: '#009966',
+                      // Green
+                      area: 'rgba(19, 158, 90, 0.5)',
+                      line: '#009966',
                     },
                   },
                 ],
@@ -193,9 +272,9 @@ class Portfolios extends React.Component {
                   {
                     values: [42, 40, 80, 67, 84, 20, 97],
                     colors: {
-                       // Red
-                       area: 'rgba(204, 51, 51, 0.5)',
-                       line: '#ff0000',
+                      // Red
+                      area: 'rgba(204, 51, 51, 0.5)',
+                      line: '#ff0000',
                     },
                   },
                 ],
@@ -215,9 +294,9 @@ class Portfolios extends React.Component {
                   {
                     values: [2, 11, 8, 14, 18, 20, 26],
                     colors: {
-                       // Green
-                   area: 'rgba(19, 158, 90, 0.5)',
-                   line: '#009966',
+                      // Green
+                      area: 'rgba(19, 158, 90, 0.5)',
+                      line: '#009966',
                     },
                   },
                 ],
@@ -235,9 +314,9 @@ class Portfolios extends React.Component {
                   {
                     values: [20, 80, 67, 120, 132, 66, 97],
                     colors: {
-                     // Green
-                     area: 'rgba(19, 158, 90, 0.5)',
-                     line: '#009966',
+                      // Green
+                      area: 'rgba(19, 158, 90, 0.5)',
+                      line: '#009966',
                     },
                   },
                 ],
@@ -255,9 +334,9 @@ class Portfolios extends React.Component {
                   {
                     values: [42, 40, 80, 67, 84, 20, 97],
                     colors: {
-                       // Green
-                   area: 'rgba(19, 158, 90, 0.5)',
-                   line: '#009966',
+                      // Green
+                      area: 'rgba(19, 158, 90, 0.5)',
+                      line: '#009966',
                     },
                   },
                 ],
@@ -275,11 +354,31 @@ class Portfolios extends React.Component {
                 height: 107,
                 lines: [
                   {
-                    values: [2, 11, 8, 14, 18, 20, 24, 45, 46, 56, 57, 58, 49, 49, 55, 57, 58, 60, 61],
+                    values: [
+                      2,
+                      11,
+                      8,
+                      14,
+                      18,
+                      20,
+                      24,
+                      45,
+                      46,
+                      56,
+                      57,
+                      58,
+                      49,
+                      49,
+                      55,
+                      57,
+                      58,
+                      60,
+                      61,
+                    ],
                     colors: {
-                        // Red
-                        area: 'rgba(204, 51, 51, 0.5)',
-                        line: '#ff0000',
+                      // Red
+                      area: 'rgba(204, 51, 51, 0.5)',
+                      line: '#ff0000',
                     },
                   },
                 ],
@@ -297,9 +396,9 @@ class Portfolios extends React.Component {
                   {
                     values: [20, 80, 67, 120, 132, 66, 97],
                     colors: {
-                     // Green
-                     area: 'rgba(19, 158, 90, 0.5)',
-                     line: '#009966',
+                      // Green
+                      area: 'rgba(19, 158, 90, 0.5)',
+                      line: '#009966',
                     },
                   },
                 ],
@@ -317,19 +416,19 @@ class Portfolios extends React.Component {
                   {
                     values: [42, 40, 80, 67, 84, 20, 97],
                     colors: {
-                     // Green
-                     area: 'rgba(19, 158, 90, 0.5)',
-                     line: '#009966',
+                      // Green
+                      area: 'rgba(19, 158, 90, 0.5)',
+                      line: '#009966',
                     },
                   },
                 ],
               }}
             />
-            </div>
-            </div>
-            <div class="row">
-            <div className="col-xl-4">
-             <ChartCard
+          </div>
+        </div>
+        <div class="row">
+          <div className="col-xl-4">
+            <ChartCard
               title={'+ 2.24%'}
               amount={'Gaming REITs'}
               chartProps={{
@@ -339,17 +438,17 @@ class Portfolios extends React.Component {
                   {
                     values: [42, 40, 80, 67, 84, 20, 97],
                     colors: {
-                     // Green
-                     area: 'rgba(19, 158, 90, 0.5)',
-                     line: '#009966',
+                      // Green
+                      area: 'rgba(19, 158, 90, 0.5)',
+                      line: '#009966',
                     },
                   },
                 ],
               }}
             />
-              </div>
-              <div className="col-xl-4">
-             <ChartCard
+          </div>
+          <div className="col-xl-4">
+            <ChartCard
               title={'+ 2.24%'}
               amount={'Farmland'}
               chartProps={{
@@ -359,16 +458,16 @@ class Portfolios extends React.Component {
                   {
                     values: [42, 40, 80, 67, 84, 20, 97],
                     colors: {
-                     // Green
-                     area: 'rgba(19, 158, 90, 0.5)',
-                     line: '#009966',
+                      // Green
+                      area: 'rgba(19, 158, 90, 0.5)',
+                      line: '#009966',
                     },
                   },
                 ],
               }}
             />
-              </div>
           </div>
+        </div>
       </div>
     )
   }
