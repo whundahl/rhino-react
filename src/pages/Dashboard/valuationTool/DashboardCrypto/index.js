@@ -1,13 +1,12 @@
 import React from 'react'
 // import TradeChart from './TradeChart'
 
-
 import { Table, Select, Tag, Divider } from 'antd'
 import './style.scss'
 import { myOpenOrders, marketHistory, orderBookBuy, orderBookSell } from './data.json'
 
-import { Tabs, Radio } from 'antd';
-const TabPane = Tabs.TabPane;
+import { Tabs, Radio } from 'antd'
+const TabPane = Tabs.TabPane
 
 class DashboardCrypto extends React.Component {
   state = {
@@ -83,60 +82,68 @@ class DashboardCrypto extends React.Component {
 
     return (
       <div className="crypto">
-      
-     
+        <Tabs defaultActiveKey="1" tabPosition="top" style={{ height: 1400 }}>
+          <TabPane tab="Overview" key="1">
+            {' '}
+            <div className="card">
+              <div className="card-body">
+                <div className="crypto__table text-nowrap" style={{ height: 600 }} />
+              </div>
+            </div>
+          </TabPane>
+          <TabPane tab="Returns" key="2">
+            {' '}
+            <div className="row">
+              <div className="col-lg-12 col-xl-2">
+                <div className="card" style={{ height: 250 }}>
+                  <div className="card-header">
+                    <div className="utils__title">
+                      <strong>Yearly Return</strong>
+                    </div>
+                  </div>
+                </div>
+                <div className="card" style={{ height: 250 }}>
+                  <div className="card-header">
+                    <div className="utils__title">
+                      <strong>Monthly Return</strong>
+                    </div>
+                  </div>
+                </div>
+                <div className="card" style={{ height: 250 }}>
+                  <div className="card-header">
+                    <div className="utils__title">
+                      <strong>Weekly Return</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-  <Tabs
-          defaultActiveKey="1"
-          tabPosition="top"
-          style={{ height: 1400 }}
-        >
-          <TabPane tab="Overview" key="1"> <div className="card">
-          <div className="card-body">
-            <div className="crypto__table text-nowrap" style={{ height: 600 }} />
-          </div>
-        </div></TabPane>
-          <TabPane tab="Returns" key="2">  <div className="row">
-          <div className="col-lg-12 col-xl-2">
-            <div className="card" style={{ height: 250 }}>
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>Yearly Return</strong>
+              <div className="col-lg-12 col-xl-10">
+                <div className="card" style={{ height: 810 }}>
+                  <div className="card-header">
+                    <div className="utils__title">
+                      <strong>REIT Chart</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="card" style={{ height: 250 }}>
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>Monthly Return</strong>
-                </div>
-              </div>
-            </div>
-            <div className="card" style={{ height: 250 }}>
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>Weekly Return</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-12 col-xl-10">
-            <div className="card" style={{ height: 810 }}>
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>REIT Chart</strong>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div></TabPane>
-          <TabPane tab="FFO Forcaster" key="3">Content of tab 3</TabPane>
-          <TabPane tab="Dividend Lab" key="4">Content of tab 4</TabPane>
-          <TabPane tab="Valuation" key="5">Content of tab 5</TabPane>
-          <TabPane tab="Ratings" key="6">Content of tab 6</TabPane>
-          <TabPane tab="Analyst Expectations" key="7">Content of tab 7</TabPane>
-  
+          </TabPane>
+          <TabPane tab="FFO Forcaster" key="3">
+            Content of tab 3
+          </TabPane>
+          <TabPane tab="Dividend Lab" key="4">
+            Content of tab 4
+          </TabPane>
+          <TabPane tab="Valuation" key="5">
+            Content of tab 5
+          </TabPane>
+          <TabPane tab="Ratings" key="6">
+            Content of tab 6
+          </TabPane>
+          <TabPane tab="Analyst Expectations" key="7">
+            Content of tab 7
+          </TabPane>
         </Tabs>
 
         <Divider strong>Sector Composition</Divider>
@@ -236,16 +243,3 @@ class DashboardCrypto extends React.Component {
 }
 
 export default DashboardCrypto
-
-
-
-
-
-
-
-
-
-
-
-
-     

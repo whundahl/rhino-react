@@ -285,9 +285,7 @@ class Portfolio1 extends React.Component {
           </div>
           <div className="card">
             <div className="card-body">
-              <div className="crypto__order" style={{ height: 400 }}>
-             
-              </div>
+              <div className="crypto__order" style={{ height: 400 }} />
             </div>
           </div>
         </div>
@@ -315,13 +313,11 @@ class Portfolio1 extends React.Component {
           </div>
         </div>
         <div className="utils__title utils__title--flat mb-3">
-            <strong>Portfolio Statistics</strong>
-          </div>
+          <strong>Portfolio Statistics</strong>
+        </div>
         <div className="card">
           <div className="card-body">
-            <div className="crypto__table text-nowrap" style={{ height: 400 }}>
-          
-            </div>
+            <div className="crypto__table text-nowrap" style={{ height: 400 }} />
           </div>
         </div>
         <Divider strong>Recent Trades</Divider>

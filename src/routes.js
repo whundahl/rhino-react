@@ -176,8 +176,6 @@ const loadableRoutes = {
   '/Dashboard/valTool': {
     component: loadable(() => import('pages/Dashboard/valuationTool')),
   },
-
-
 }
 
 class Routes extends React.Component {
