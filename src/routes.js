@@ -171,6 +171,13 @@ const loadableRoutes = {
   '/youtube/view': {
     component: loadable(() => import('pages/Apps/YouTube/YouTubeViewPage')),
   },
+
+  //ToolBox
+  '/Dashboard/valTool': {
+    component: loadable(() => import('pages/Dashboard/valuationTool')),
+  },
+
+
 }
 
 class Routes extends React.Component {
