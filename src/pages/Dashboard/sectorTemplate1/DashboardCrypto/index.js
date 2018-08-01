@@ -2,31 +2,36 @@ import React from 'react'
 // import TradeChart from './TradeChart'
 import TradingViewWidget, { Themes } from 'react-tradingview-widget'
 
-import { Table, Select, Tag, Divider, Input, Button, Icon  } from 'antd'
+import { Table, Select, Tag, Divider, Input, Button, Icon } from 'antd'
 import './style.scss'
-import {marketHistory} from './data.json'
+import { marketHistory } from './data.json'
 
-const data = [{
-  key: '1',
-  name: 'John Brown',
-  age: 32,
-  address: 'New York No. 1 Lake Park',
-}, {
-  key: '2',
-  name: 'Joe Black',
-  age: 42,
-  address: 'London No. 1 Lake Park',
-}, {
-  key: '3',
-  name: 'Jim Green',
-  age: 32,
-  address: 'Sidney No. 1 Lake Park',
-}, {
-  key: '4',
-  name: 'Jim Red',
-  age: 32,
-  address: 'London No. 2 Lake Park',
-}];
+const data = [
+  {
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York No. 1 Lake Park',
+  },
+  {
+    key: '2',
+    name: 'Joe Black',
+    age: 42,
+    address: 'London No. 1 Lake Park',
+  },
+  {
+    key: '3',
+    name: 'Jim Green',
+    age: 32,
+    address: 'Sidney No. 1 Lake Park',
+  },
+  {
+    key: '4',
+    name: 'Jim Red',
+    age: 32,
+    address: 'London No. 2 Lake Park',
+  },
+]
 
 class DashboardCrypto extends React.Component {
   state = {
@@ -39,80 +44,94 @@ class DashboardCrypto extends React.Component {
     filtered: false,
   }
 
-  onInputChange = (e) => {
-    this.setState({ searchText: e.target.value });
+  onInputChange = e => {
+    this.setState({ searchText: e.target.value })
   }
   onSearch = () => {
-    const { searchText } = this.state;
-    const reg = new RegExp(searchText, 'gi');
+    const { searchText } = this.state
+    const reg = new RegExp(searchText, 'gi')
     this.setState({
       filterDropdownVisible: false,
       filtered: !!searchText,
-      data: data.map((record) => {
-        const match = record.name.match(reg);
-        if (!match) {
-          return null;
-        }
-        return {
-          ...record,
-          name: (
-            <span>
-              {record.name.split(reg).map((text, i) => (
-                i > 0 ? [<span className="highlight">{match[0]}</span>, text] : text
-              ))}
-            </span>
-          ),
-        };
-      }).filter(record => !!record),
-    });
+      data: data
+        .map(record => {
+          const match = record.name.match(reg)
+          if (!match) {
+            return null
+          }
+          return {
+            ...record,
+            name: (
+              <span>
+                {record.name
+                  .split(reg)
+                  .map(
+                    (text, i) =>
+                      i > 0 ? [<span className="highlight">{match[0]}</span>, text] : text,
+                  )}
+              </span>
+            ),
+          }
+        })
+        .filter(record => !!record),
+    })
   }
 
-
   render() {
-  
-    const columns = [{
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-      filterDropdown: (
-        <div className="custom-filter-dropdown">
-          <Input
-            ref={ele => this.searchInput = ele}
-            placeholder="Search name"
-            value={this.state.searchText}
-            onChange={this.onInputChange}
-            onPressEnter={this.onSearch}
-          />
-          <Button type="primary" onClick={this.onSearch}>Search</Button>
-        </div>
-      ),
-      filterIcon: <Icon type="smile-o" style={{ color: this.state.filtered ? '#108ee9' : '#aaa' }} />,
-      filterDropdownVisible: this.state.filterDropdownVisible,
-      onFilterDropdownVisibleChange: (visible) => {
-        this.setState({
-          filterDropdownVisible: visible,
-        }, () => this.searchInput && this.searchInput.focus());
+    const columns = [
+      {
+        title: 'Name',
+        dataIndex: 'name',
+        key: 'name',
+        filterDropdown: (
+          <div className="custom-filter-dropdown">
+            <Input
+              ref={ele => (this.searchInput = ele)}
+              placeholder="Search name"
+              value={this.state.searchText}
+              onChange={this.onInputChange}
+              onPressEnter={this.onSearch}
+            />
+            <Button type="primary" onClick={this.onSearch}>
+              Search
+            </Button>
+          </div>
+        ),
+        filterIcon: (
+          <Icon type="smile-o" style={{ color: this.state.filtered ? '#108ee9' : '#aaa' }} />
+        ),
+        filterDropdownVisible: this.state.filterDropdownVisible,
+        onFilterDropdownVisibleChange: visible => {
+          this.setState(
+            {
+              filterDropdownVisible: visible,
+            },
+            () => this.searchInput && this.searchInput.focus(),
+          )
+        },
       },
-    }, {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
-    }, {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
-      filters: [{
-        text: 'London',
-        value: 'London',
-      }, {
-        text: 'New York',
-        value: 'New York',
-      }],
-      onFilter: (value, record) => record.address.indexOf(value) === 0,
-    }];
-    
- 
-    
+      {
+        title: 'Age',
+        dataIndex: 'age',
+        key: 'age',
+      },
+      {
+        title: 'Address',
+        dataIndex: 'address',
+        key: 'address',
+        filters: [
+          {
+            text: 'London',
+            value: 'London',
+          },
+          {
+            text: 'New York',
+            value: 'New York',
+          },
+        ],
+        onFilter: (value, record) => record.address.indexOf(value) === 0,
+      },
+    ]
 
     return (
       <div className="crypto">
@@ -374,17 +393,7 @@ class DashboardCrypto extends React.Component {
         <div className="card">
           <div className="card-body">
             <div className="crypto__table text-nowrap" style={{ height: 400 }}>
-            
-
-
-
-
-
-<Table columns={columns} dataSource={this.state.data} />
-
-
-
-
+              <Table columns={columns} dataSource={this.state.data} />
             </div>
           </div>
         </div>
@@ -414,15 +423,7 @@ class DashboardCrypto extends React.Component {
         <div className="card">
           <div className="card-body">
             <div className="crypto__table text-nowrap" style={{ height: 400 }}>
-            
-
-
-
-<Table columns={columns} dataSource={this.state.data} />
-
-
-
-
+              <Table columns={columns} dataSource={this.state.data} />
             </div>
           </div>
         </div>
@@ -435,11 +436,7 @@ class DashboardCrypto extends React.Component {
         <div className="card">
           <div className="card-body">
             <div className="crypto__table text-nowrap" style={{ height: 400 }}>
-          
-
-<Table columns={columns} dataSource={this.state.data} />
-
-
+              <Table columns={columns} dataSource={this.state.data} />
             </div>
           </div>
         </div>
