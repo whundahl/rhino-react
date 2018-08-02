@@ -208,7 +208,7 @@ class DashboardCrypto extends React.Component {
         </div>
         <div className="crypto__list">
           <div className="utils__title utils__title--flat mb-3">
-            <strong>Listed REITs</strong>
+            <strong>Listed Timber REITs</strong>
           </div>
           <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--current">
             <span className="crypto__listPercents">
@@ -216,7 +216,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>ARI</span>
+              <span>CTT</span>
               97.20
             </span>
           </a>
@@ -226,7 +226,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>ACRE</span>
+              <span>PCH</span>
               44.90
             </span>
           </a>
@@ -236,7 +236,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>BXMT</span>
+              <span>RYN</span>
               32.78
             </span>
           </a>
@@ -246,80 +246,11 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>GPMT</span>
+              <span>WY</span>
               12.25
             </span>
           </a>
-          <a href="javascript: void(0);" className="crypto__listItem">
-            <span className="crypto__listPercents">
-              <span>67.5%</span>
-              0.00016985
-            </span>
-            <span className="crypto__listCurrency">
-              <span>HASI</span>
-              8.26
-            </span>
-          </a>
-          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-            <span className="crypto__listPercents">
-              <span>-22.9%</span>
-              0.00016985
-            </span>
-            <span className="crypto__listCurrency">
-              <span>JCAP</span>
-              5.20
-            </span>
-          </a>
-          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-            <span className="crypto__listPercents">
-              <span>-12.3%</span>
-              0.00016985
-            </span>
-            <span className="crypto__listCurrency">
-              <span>KREF</span>
-              3.20
-            </span>
-          </a>
-          <a href="javascript: void(0);" className="crypto__listItem">
-            <span className="crypto__listPercents">
-              <span>+4.3%</span>
-              0.00036234
-            </span>
-            <span className="crypto__listCurrency">
-              <span>LADR</span>
-              5.64
-            </span>
-          </a>
-          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-            <span className="crypto__listPercents">
-              <span>-4.2%</span>
-              0.00035685
-            </span>
-            <span className="crypto__listCurrency">
-              <span>STWD</span>
-              6.36
-            </span>
-          </a>
-          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-            <span className="crypto__listPercents">
-              <span>-1.7%</span>
-              0.00000985
-            </span>
-            <span className="crypto__listCurrency">
-              <span>TRTX</span>
-              6.35
-            </span>
-          </a>
-          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
-            <span className="crypto__listPercents">
-              <span>-2.8%</span>
-              0.00000152
-            </span>
-            <span className="crypto__listCurrency">
-              <span>CLNC</span>
-              1.03
-            </span>
-          </a>
+         
         </div>
         <div className="crypto__content">
           <div className="utils__title utils__title--flat mb-3">

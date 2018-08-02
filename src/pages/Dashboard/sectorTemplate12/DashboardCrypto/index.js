@@ -216,7 +216,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>ARI</span>
+              <span>COLD</span>
               97.20
             </span>
           </a>
@@ -226,7 +226,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>ACRE</span>
+              <span>DCT</span>
               44.90
             </span>
           </a>
@@ -236,7 +236,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>BXMT</span>
+              <span>DRE</span>
               32.78
             </span>
           </a>
@@ -246,7 +246,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>GPMT</span>
+              <span>EGP</span>
               12.25
             </span>
           </a>
@@ -256,7 +256,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>HASI</span>
+              <span>FR</span>
               8.26
             </span>
           </a>
@@ -266,7 +266,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>JCAP</span>
+              <span>GPT</span>
               5.20
             </span>
           </a>
@@ -276,7 +276,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>KREF</span>
+              <span>MNR</span>
               3.20
             </span>
           </a>
@@ -286,7 +286,7 @@ class DashboardCrypto extends React.Component {
               0.00036234
             </span>
             <span className="crypto__listCurrency">
-              <span>LADR</span>
+              <span>PLD</span>
               5.64
             </span>
           </a>
@@ -296,7 +296,7 @@ class DashboardCrypto extends React.Component {
               0.00035685
             </span>
             <span className="crypto__listCurrency">
-              <span>STWD</span>
+              <span>PSB</span>
               6.36
             </span>
           </a>
@@ -306,7 +306,7 @@ class DashboardCrypto extends React.Component {
               0.00000985
             </span>
             <span className="crypto__listCurrency">
-              <span>TRTX</span>
+              <span>STAG</span>
               6.35
             </span>
           </a>
@@ -316,7 +316,7 @@ class DashboardCrypto extends React.Component {
               0.00000152
             </span>
             <span className="crypto__listCurrency">
-              <span>CLNC</span>
+              <span>TRNO</span>
               1.03
             </span>
           </a>

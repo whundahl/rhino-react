@@ -49,5 +49,7 @@ https://github.com/vporta/tradier-client
 - Blog interface- using Firebase and the realtime database, that seperates free articles from subscriber articles in seperate collections. 
 (RSS FEED adds articles from IREIT site.)
 
+- Add Mobile List for listed REITs in the Portfolios and in the Sectors 
+
 
 

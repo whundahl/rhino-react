@@ -216,7 +216,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>ARI</span>
+              <span>ADC</span>
               97.20
             </span>
           </a>
@@ -226,7 +226,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>ACRE</span>
+              <span>AFIN</span>
               44.90
             </span>
           </a>
@@ -236,7 +236,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>BXMT</span>
+              <span>EPR</span>
               32.78
             </span>
           </a>
@@ -246,7 +246,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>GPMT</span>
+              <span>EPRT</span>
               12.25
             </span>
           </a>
@@ -256,7 +256,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>HASI</span>
+              <span>FCPT</span>
               8.26
             </span>
           </a>
@@ -266,7 +266,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>JCAP</span>
+              <span>GNL</span>
               5.20
             </span>
           </a>
@@ -276,7 +276,7 @@ class DashboardCrypto extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>KREF</span>
+              <span>GTY</span>
               3.20
             </span>
           </a>
@@ -286,7 +286,7 @@ class DashboardCrypto extends React.Component {
               0.00036234
             </span>
             <span className="crypto__listCurrency">
-              <span>LADR</span>
+              <span>LXP</span>
               5.64
             </span>
           </a>
@@ -296,7 +296,7 @@ class DashboardCrypto extends React.Component {
               0.00035685
             </span>
             <span className="crypto__listCurrency">
-              <span>STWD</span>
+              <span>NMN</span>
               6.36
             </span>
           </a>
@@ -306,7 +306,7 @@ class DashboardCrypto extends React.Component {
               0.00000985
             </span>
             <span className="crypto__listCurrency">
-              <span>TRTX</span>
+              <span>O</span>
               6.35
             </span>
           </a>
@@ -316,7 +316,47 @@ class DashboardCrypto extends React.Component {
               0.00000152
             </span>
             <span className="crypto__listCurrency">
-              <span>CLNC</span>
+              <span>SMTA</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>SRC</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>STOR</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>VER</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>WPC</span>
               1.03
             </span>
           </a>
