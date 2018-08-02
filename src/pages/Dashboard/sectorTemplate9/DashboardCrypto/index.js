@@ -144,7 +144,6 @@ class DashboardCrypto extends React.Component {
                 11.7%
               </Tag>
             </Select.Option>
-         
           </Select>
         </div>
         <div className="crypto__list">

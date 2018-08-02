@@ -280,7 +280,6 @@ class DashboardCrypto extends React.Component {
               3.20
             </span>
           </a>
-        
         </div>
         <div className="crypto__content">
           <div className="utils__title utils__title--flat mb-3">
