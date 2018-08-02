@@ -210,6 +210,7 @@ export default [
       },
       {
         title: 'Technical Analysis',
+        disabled: true,
         key: 'techAnal',
         // url: '/dashboard/portfolioTemp',
       },
@@ -220,16 +221,19 @@ export default [
       },
       {
         title: 'Macro Analysis',
+        disabled: true,
         key: 'macroAnal',
         // url: '/dashboard/portfolioTemp',
       },
       {
         title: 'REIT IPOs',
+        disabled: true,
         key: 'reitIPO',
         // url: '/dashboard/portfolioTemp',
       },
       {
         title: 'REIT M&A',
+        disabled: true,
         key: 'reitMda',
         // url: '/dashboard/portfolioTemp',
       },
@@ -246,6 +250,7 @@ export default [
       {
         title: 'Podcast Library',
         key: 'podcastLib',
+        disabled: true,
         icon: 'icm icmn-headphones',
         // url: 'dashboard/',
       },

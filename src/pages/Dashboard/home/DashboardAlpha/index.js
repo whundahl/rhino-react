@@ -1,10 +1,5 @@
 import React from 'react'
-import PaymentCard from 'components/CleanComponents/PaymentCard'
-import PaymentAccount from 'components/CleanComponents/PaymentAccount'
-import PaymentTx from 'components/CleanComponents/PaymentTx'
-import ChartCard from 'components/CleanComponents/ChartCard'
-import { Button, Input, Icon, Table } from 'antd'
-import { tableData } from './data.json'
+
 
 class DashboardAlpha extends React.Component {
   state = {}

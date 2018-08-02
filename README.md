@@ -18,3 +18,32 @@ yarn
 
 Firebase CLI 
 
+### Application Setup 
+
+Yarn install - to correctly install all the dependency 
+
+Yarn start - to correctly serve development 
+
+Yarn run build - to correctly build the app 
+
+firebase deploy - to correctly deploy to firebase
+
+MY FIREBASE CRED.
+
+Login: will@rhinorea.com
+Pass: rhino1234
+
+
+
+##Issues 
+
+- Home Page does not upen to home page- instead to dashboard alpha 
+
+- Firebase Authentication not set up with the login page and system in place 
+
+- Profile icon in the top left doesnt link to the user's profile
+
+- Profiles need to display and allow for editing of personal information (Including profile picture)
+
+
+
