@@ -355,7 +355,6 @@ class Portfolio7 extends React.Component {
               1.03
             </span>
           </a>
-
         </div>
         <div className="crypto__content">
           <div className="utils__title utils__title--flat mb-3">

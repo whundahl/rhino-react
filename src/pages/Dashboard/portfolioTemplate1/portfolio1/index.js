@@ -212,21 +212,19 @@ class Portfolio1 extends React.Component {
           </div>
           <div className="card">
             <div className="card-body">
-              <div style={{ height: 700 }}>
-              </div>
+              <div style={{ height: 700 }} />
             </div>
           </div>
-     
         </div>
 
-             <div className="utils__title utils__title--flat mb-3">
-            <strong>Recent Articles</strong>
+        <div className="utils__title utils__title--flat mb-3">
+          <strong>Recent Articles</strong>
+        </div>
+        <div className="card">
+          <div className="card-body">
+            <div className="crypto__order" style={{ height: 400 }} />
           </div>
-          <div className="card">
-            <div className="card-body">
-              <div className="crypto__order" style={{ height: 400 }} />
-            </div>
-          </div>
+        </div>
         <Divider strong>Portfolio Composition</Divider>
 
         <div className="row">

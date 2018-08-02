@@ -354,7 +354,8 @@ class Portfolio5 extends React.Component {
               <span>LTC</span>
               1.03
             </span>
-          </a>     <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+          </a>{' '}
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
             <span className="crypto__listPercents">
               <span>-2.8%</span>
               0.00000152
@@ -363,7 +364,8 @@ class Portfolio5 extends React.Component {
               <span>MNR</span>
               1.03
             </span>
-          </a>     <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+          </a>{' '}
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
             <span className="crypto__listPercents">
               <span>-2.8%</span>
               0.00000152
@@ -372,7 +374,8 @@ class Portfolio5 extends React.Component {
               <span>NHI</span>
               1.03
             </span>
-          </a>     <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+          </a>{' '}
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
             <span className="crypto__listPercents">
               <span>-2.8%</span>
               0.00000152
@@ -381,7 +384,8 @@ class Portfolio5 extends React.Component {
               <span>O</span>
               1.03
             </span>
-          </a>     <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+          </a>{' '}
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
             <span className="crypto__listPercents">
               <span>-2.8%</span>
               0.00000152
@@ -390,7 +394,8 @@ class Portfolio5 extends React.Component {
               <span>OFC</span>
               1.03
             </span>
-          </a>     <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+          </a>{' '}
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
             <span className="crypto__listPercents">
               <span>-2.8%</span>
               0.00000152
@@ -530,7 +535,6 @@ class Portfolio5 extends React.Component {
               1.03
             </span>
           </a>
-         
         </div>
         <div className="crypto__content">
           <div className="utils__title utils__title--flat mb-3">
@@ -549,29 +553,29 @@ class Portfolio5 extends React.Component {
               <div className="crypto__order" style={{ height: 600 }} />
             </div>
           </div>
-         
-          <div className="row">
-          <div className="col-lg-12 col-xl-6">
-            <div className="card" style={{ height: 600 }}>
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>Sector Allocation</strong>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div className="col-lg-12 col-xl-6">
-            <div className="card" style={{ height: 600 }}>
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>REIT Allocation</strong>
+          <div className="row">
+            <div className="col-lg-12 col-xl-6">
+              <div className="card" style={{ height: 600 }}>
+                <div className="card-header">
+                  <div className="utils__title">
+                    <strong>Sector Allocation</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="col-lg-12 col-xl-6">
+              <div className="card" style={{ height: 600 }}>
+                <div className="card-header">
+                  <div className="utils__title">
+                    <strong>REIT Allocation</strong>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className="utils__title utils__title--flat mb-3">
+          <div className="utils__title utils__title--flat mb-3">
             <strong>Portfolio Statistics</strong>
           </div>
           <div className="card">
@@ -581,7 +585,6 @@ class Portfolio5 extends React.Component {
           </div>
         </div>
 
-       
         <Divider strong>Recent Trades</Divider>
 
         <div className="card">
