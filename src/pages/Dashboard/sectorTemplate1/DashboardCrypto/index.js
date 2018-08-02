@@ -442,15 +442,11 @@ class DashboardCrypto extends React.Component {
         </div>
         <Divider strong>Research</Divider>
 
-      
         <div className="card">
           <div className="card-body">
             <div className="crypto__table text-nowrap" style={{ height: 600 }} />
           </div>
         </div>
-
-   
-
       </div>
     )
   }
