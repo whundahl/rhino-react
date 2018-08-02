@@ -29,7 +29,7 @@ Pass: rhino1234
 
 
 
-### Issues 
+### Necessary Items for Completion  
 
 - Home Page does not upen to home page- instead to dashboard alpha 
 
@@ -38,6 +38,16 @@ Pass: rhino1234
 - Profile icon in the top left doesnt link to the user's profile
 
 - Profiles need to display and allow for editing of personal information (Including profile picture)
+
+- Highcharts Implimentation Using: https://github.com/whawker/react-jsx-highcharts
+
+- Market Data with node wrapper:
+https://github.com/vporta/tradier-client
+
+- Market data from Tradier's historical data endpoint deployed inHighcharts for UI
+
+- Blog interface- using Firebase and the realtime database, that seperates free articles from subscriber articles in seperate collections. 
+(RSS FEED adds articles from IREIT site.)
 
 
 
