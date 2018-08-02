@@ -31,11 +31,11 @@ Pass: rhino1234
 
 ### Necessary Items for Completion  
 
-- Home Page does not upen to home page- instead to dashboard alpha 
+- Home Page does not upen to home page- instead to dashboard alpha (Needs to be fixed) 
 
-- Firebase Authentication not set up with the login page and system in place 
+- Firebase Authentication not set up with the login page and system in place from the UI template. (Would like to add the ability to log in with your google credentials as well)
 
-- Profile icon in the top left doesnt link to the user's profile
+- Profile icon in the top left doesnt link to the user's profile and needs to link to the profile page 
 
 - Profiles need to display and allow for editing of personal information (Including profile picture)
 

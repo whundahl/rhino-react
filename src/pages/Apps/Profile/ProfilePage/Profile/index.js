@@ -92,7 +92,6 @@ class ProfileApp extends React.Component {
                   <br />
                   <Button.Group size="default">
                     <Button style={{ width: 150 }}>Follow</Button>
-                    <Button style={{ width: 150 }}>Add to Friend</Button>
                   </Button.Group>
                   <br />
                   <p className="text-white mt-2">{'Last activity: ' + lastActivity}</p>

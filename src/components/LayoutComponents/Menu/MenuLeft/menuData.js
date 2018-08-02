@@ -292,12 +292,12 @@ export default [
       {
         title: 'Support Forum',
         key: 'support',
-        // url: '/dashboard/portfolioTemp',
+        url: '/apps/supportForum',
       },
       {
         title: 'Chat',
         key: 'chat',
-        // url: '/dashboard/portfolioTemp',
+        url: '/apps/messaging',
       },
     ],
   },

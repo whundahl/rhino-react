@@ -152,6 +152,9 @@ const loadableRoutes = {
   '/apps/gallery': {
     component: loadable(() => import('pages/Apps/Gallery/GalleryListPage')),
   },
+  '/apps/supportForum': {
+    component: loadable(() => import('pages/Apps/GitHub/GitHubDiscussPage')),
+  },
 
   // Blog
   '/blog/feed': {
