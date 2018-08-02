@@ -35,7 +35,7 @@ Pass: rhino1234
 
 - Firebase Authentication not set up with the login page and system in place from the UI template. (Would like to add the ability to log in with your google credentials as well)
 
-    - Need to allow New users to add their information into the application and through the google authentication 
+    - Need to allow New users to add their information into the application and through the google authentication (Includes a new user form, which comes in the templatefrom CleanUI)
 
 - Profile icon in the top left doesnt link to the user's profile and needs to link to the profile page 
 
