@@ -105,21 +105,22 @@ class ProfileApp extends React.Component {
             <div className="card">
               <div className="card-body">
                 <h5 className="mb-3 text-black">
-                  <strong>Actions</strong>
+                  <strong>Payment Actions</strong>
                 </h5>
                 <div className="profile__actions">
-                  <Button style={{ display: 'block', width: '100%' }}>Send Message</Button>
-                  <Button style={{ display: 'block', width: '100%' }}>Send File</Button>
-                  <Button style={{ display: 'block', width: '100%' }}>Access History</Button>
-                  <Button style={{ display: 'block', width: '100%' }}>Rename User</Button>
-                  <Button style={{ display: 'block', width: '100%' }}>Ban User</Button>
+                  <Button style={{ display: 'block', width: '100%' }}>Renew Subscription</Button>
+                  <Button style={{ display: 'block', width: '100%' }}>Check Subscription Status</Button>
+                  <Button style={{ display: 'block', width: '100%' }}>Update Payment Information</Button>
+                  <Button style={{ display: 'block', width: '100%' }}>Upgrade Subscription</Button>
+                  <Button style={{ display: 'block', width: '100%' }}>Delete Account</Button>
+                  <Button style={{ display: 'block', width: '100%' }}>Update Billing Information</Button>
                 </div>
               </div>
             </div>
             <div className="card">
               <div className="card-body">
                 <h5 className="mb-3 text-black">
-                  <strong>Skills</strong>
+                  <strong>Engagement Tracker</strong>
                 </h5>
                 {skills.map((skill, index) => (
                   <div key={index}>
@@ -127,6 +128,31 @@ class ProfileApp extends React.Component {
                     <Progress percent={skill.value} showInfo={false} />
                   </div>
                 ))}
+              </div>
+            </div>
+           
+           
+          </div>
+          <div className="col-xl-8">
+            <div className="card profile__social-info">
+              <div className="profile__social-name">
+                <h2>
+                  <span className="text-black mr-2">
+                    <strong>{name}</strong>
+                  </span>
+                  <small className="text-muted">{nickname}</small>
+                </h2>
+                <p className="mb-1">{post}</p>
+              </div>
+              <div className="profile__social-counts">
+                <div className="text-center mr-3">
+                  <h2>{followersCount}</h2>
+                  <p className="mb-0">Followers</p>
+                </div>
+                <div className="text-center">
+                  <h2>{postsCount}</h2>
+                  <p className="mb-0">Posts</p>
+                </div>
               </div>
             </div>
             <div className="card">
@@ -156,187 +182,69 @@ class ProfileApp extends React.Component {
             </div>
             <div className="card">
               <div className="card-body">
-                <h5 className="mb-3 text-black">
-                  <strong>Calendar</strong>
+              <h5 className="mb-3 text-black">
+                  <strong>Settings</strong>
                 </h5>
-                <Calendar fullscreen={false} />
-              </div>
-            </div>
-          </div>
-          <div className="col-xl-8">
-            <div className="card profile__social-info">
-              <div className="profile__social-name">
-                <h2>
-                  <span className="text-black mr-2">
-                    <strong>{name}</strong>
-                  </span>
-                  <small className="text-muted">{nickname}</small>
-                </h2>
-                <p className="mb-1">{post}</p>
-              </div>
-              <div className="profile__social-counts">
-                <div className="text-center mr-3">
-                  <h2>{followersCount}</h2>
-                  <p className="mb-0">Followers</p>
-                </div>
-                <div className="text-center">
-                  <h2>{postsCount}</h2>
-                  <p className="mb-0">Posts</p>
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <div className="card-body">
-                <Tabs defaultActiveKey="1">
-                  <TabPane
+              
+              <Tabs defaultActiveKey="1">
+              <TabPane
                     tab={
                       <span>
-                        <i className="icmn-menu" /> Wall
+                        <i className="icmn-cog" /> Personal
                       </span>
                     }
                     key="1"
                   >
-                    <div className="py-3">
-                      <TextArea rows={3} />
-                      <div className="mt-3">
-                        <Button className="mr-2" type="primary" style={{ width: 200 }}>
-                          <i className="fa fa-send mr-2" />
-                          Create Post
-                        </Button>
-                        <Upload>
-                          <Button>
-                            <Icon type="upload" /> Attach File
-                          </Button>
-                        </Upload>
-                      </div>
-                    </div>
-                    <hr />
-                    {posts.map((post, index) => {
-                      return (
-                        <div key={index}>
-                          <div className="profile__wall-item clearfix" key={index}>
-                            <div className="profile__wall-avatar">
-                              <Avatar size="50" src={post.avatar} border={false} />
-                            </div>
-                            <div className="profile__wall-content">
-                              <div className="mb-3">
-                                <div className="pull-right">
-                                  <Dropdown overlay={actions}>
-                                    <a className="ant-dropdown-link" href="javascript: void(0);">
-                                      Actions <Icon type="down" />
-                                    </a>
-                                  </Dropdown>
-                                </div>
-                                <strong>{post.name}</strong> posted:
-                                <br />
-                                <small className="text-muted">{post.date}</small>
-                              </div>
-                              <div
-                                dangerouslySetInnerHTML={{ __html: post.content }}
-                                className="mb-3"
-                              />
-                              <div className="mr-3">
-                                <a href="javascript: void(0);" className="mr-3">
-                                  <i className="icmn-heart mr-2" />
-                                  {post.likesCount > 0 && <span>{post.likesCount + ' Likes'}</span>}
-                                  {post.likesCount === 0 && (
-                                    <span>{post.likesCount + ' Like'}</span>
-                                  )}
-                                </a>
-                                <a href="javascript: void(0);">
-                                  <i className="icmn-bubble mr-2" />
-                                  {post.commentsCount > 0 && (
-                                    <span>{post.commentsCount + ' Comments'}</span>
-                                  )}
-                                  {post.commentsCount === 0 && (
-                                    <span>{post.commentsCount + ' Comment'}</span>
-                                  )}
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="profile__wall-content profile__wall-content--inner">
-                            {post.comments.length > 0 && (
-                              <div className="profile__wall-comments">
-                                {post.comments.map((postComment, index) => (
-                                  <div className="profile__wall-item clearfix" key={index}>
-                                    <div className="profile__wall-avatar">
-                                      <Avatar size="50" src={postComment.avatar} border={false} />
-                                    </div>
-                                    <div className="profile__wall-content">
-                                      <div className="mb-3">
-                                        <div className="pull-right">
-                                          <Dropdown overlay={actions}>
-                                            <a
-                                              className="ant-dropdown-link"
-                                              href="javascript: void(0);"
-                                            >
-                                              Actions <Icon type="down" />
-                                            </a>
-                                          </Dropdown>
-                                        </div>
-                                        <strong>{postComment.name}</strong> posted:
-                                        <br />
-                                        <small className="text-muted">{postComment.date}</small>
-                                      </div>
-                                      <div
-                                        dangerouslySetInnerHTML={{ __html: postComment.content }}
-                                      />
-                                      <div>
-                                        <a href="javascript: void(0);" className="mr-2">
-                                          <i className="icmn-heart mr-2" />
-                                          {postComment.likesCount > 0 && (
-                                            <span>{postComment.likesCount + ' Likes'}</span>
-                                          )}
-                                          {postComment.likesCount === 0 && (
-                                            <span>{postComment.likesCount + ' Like'}</span>
-                                          )}
-                                        </a>
-                                      </div>
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-                            )}
-                          </div>
-                          <div className="form-group mt-4 mb-0">
-                            <TextArea rows={3} />
-                            <div className="mt-3">
-                              <Button className="mr-2" type="primary" style={{ width: 200 }}>
-                                <i className="fa fa-send mr-2" />
-                                Comment
-                              </Button>
-                              <Upload>
-                                <Button>
-                                  <Icon type="upload" /> Attach File
-                                </Button>
-                              </Upload>
-                            </div>
-                          </div>
-                        </div>
-                      )
-                    })}
+                   <SettingsForm />
                   </TabPane>
+              <TabPane
+                    tab={
+                      <span>
+                        <i className="icmn-cog" /> Notifications
+                      </span>
+                    }
+                    key="2"
+                  >
+                   
+                  </TabPane>
+                  <TabPane
+                    tab={
+                      <span>
+                        <i className="icmn-cog" /> Alerts
+                      </span>
+                    }
+                    key="3"
+                  >
+                   
+                  </TabPane>
+                  <TabPane
+                    tab={
+                      <span>
+                        <i className="icmn-cog" /> Email
+                      </span>
+                    }
+                    key="4"
+                  >
+                   
+                  </TabPane>
+                </Tabs>
+              </div>
+              </div>
+            <div className="card">
+              <div className="card-body">
+                <Tabs defaultActiveKey="1">
+
                   <TabPane
                     tab={
                       <span>
                         <i className="icmn-bubbles" /> Messages
                       </span>
                     }
-                    key="2"
+                    key="1"
                   >
                     <Chat />
                   </TabPane>
-                  <TabPane
-                    tab={
-                      <span>
-                        <i className="icmn-cog" /> Settings
-                      </span>
-                    }
-                    key="3"
-                  >
-                    <SettingsForm />
-                  </TabPane>
+                 
                 </Tabs>
               </div>
             </div>

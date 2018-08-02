@@ -1,11 +1,11 @@
 {
-  "name": "Artour Scott",
-  "nickname": "@arteezy",
-  "photo": "resources/images/avatars/4.jpg",
+  "name": "Brad Thomas",
+  "nickname": "@REITrapPro",
+  "photo": "resources/images/photos/12.jpeg",
   "background": "resources/images/photos/11.jpeg",
   "post": "Founder / CEO",
-  "postsCount": "17",
-  "followersCount": "154",
+  "postsCount": "2,700",
+  "followersCount": "55,000",
   "lastActivity": "13 May 2016 7:26PM",
   "status": "Offline",
   "skills": [{
@@ -14,9 +14,6 @@
   }, {
     "name": "Investing",
     "value": 85
-  }, {
-    "name": "Programming",
-    "value": 78
   }, {
     "name": "Leading",
     "value": 95
