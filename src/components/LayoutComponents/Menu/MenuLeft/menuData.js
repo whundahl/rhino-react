@@ -157,6 +157,11 @@ export default [
         url: '/dashboard/portfolioComp',
       },
       {
+        title: 'Portfolios',
+        key: 'reitPorfolioList',
+        icon: '',
+        children: [
+        {
         title: 'DAVOS',
         key: 'portfolioTemp1',
         url: '/dashboard/portfolioTemp1',
@@ -193,6 +198,8 @@ export default [
       },
     ],
   },
+],
+},
   {
     title: 'REIT Tool Box',
     key: 'reitToolsHome',
@@ -207,6 +214,11 @@ export default [
         title: 'ETF Tool',
         key: 'etfTool',
         // url: '/dashboard/portfolioTemp',
+      },
+      {
+        title: 'Earnings Calendar',
+        key: 'earnCal',
+        url: '/dashboard/EarnCal',
       },
       {
         title: 'Technical Analysis',

@@ -1,11 +1,11 @@
 import React from 'react'
 import Page from 'components/LayoutComponents/Page'
 import Helmet from 'react-helmet'
-import Portfolio5 from './portfolio1'
+import DashboardBeta from './DashboardBeta'
 
-class MortgagePortfolio extends React.Component {
+class DashboardBetaPage extends React.Component {
   static defaultProps = {
-    pathName: 'Portfolio Comparison',
+    pathName: 'Dashboard Beta',
     roles: ['agent', 'administrator'],
   }
 
@@ -13,11 +13,11 @@ class MortgagePortfolio extends React.Component {
     const props = this.props
     return (
       <Page {...props}>
-        <Helmet title="Portfolios" />
-        <Portfolio5 />
+        <Helmet title="Dashboard Beta" />
+        <DashboardBeta />
       </Page>
     )
   }
 }
 
-export default MortgagePortfolio
+export default DashboardBetaPage

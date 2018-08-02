@@ -40,104 +40,110 @@ const loadableRoutes = {
     component: loadable(() => import('pages/DefaultPages/InvoicePage')),
   },
 
-  // Dashboards
-  '/dashboard/alpha': {
-    component: loadable(() => import('pages/Dashboard/DashboardAlphaPage')),
-  },
-  '/dashboard/home': {
-    component: loadable(() => import('pages/Dashboard/home')),
-  },
-  '/dashboard/beta': {
-    component: loadable(() => import('pages/Dashboard/DashboardBetaPage')),
-  },
-  '/dashboard/crypto': {
-    component: loadable(() => import('pages/Dashboard/DashboardCryptoPage')),
-  },
+// Dashboards
+      '/dashboard/alpha': {
+        component: loadable(() => import('pages/Dashboard/DashboardAlphaPage')),
+      },
+      '/dashboard/home': {
+        component: loadable(() => import('pages/Dashboard/home')),
+      },
+      '/dashboard/beta': {
+        component: loadable(() => import('pages/Dashboard/DashboardBetaPage')),
+      },
+      '/dashboard/crypto': {
+        component: loadable(() => import('pages/Dashboard/DashboardCryptoPage')),
+      },
 
-  // Sectors
-  '/dashboard/sectorComp': {
-    component: loadable(() => import('pages/Dashboard/sectorHome')),
-  },
-  '/dashboard/sectorTemp1': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate1')),
-  },
-  '/dashboard/sectorTemp2': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate2')),
-  },
-  '/dashboard/sectorTemp3': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate3')),
-  },
-  '/dashboard/sectorTemp4': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate4')),
-  },
-  '/dashboard/sectorTemp5': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate5')),
-  },
-  '/dashboard/sectorTemp6': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate6')),
-  },
-  '/dashboard/sectorTemp7': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate7')),
-  },
-  '/dashboard/sectorTemp8': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate8')),
-  },
-  '/dashboard/sectorTemp9': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate9')),
-  },
-  '/dashboard/sectorTemp10': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate10')),
-  },
-  '/dashboard/sectorTemp11': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate11')),
-  },
-  '/dashboard/sectorTemp12': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate12')),
-  },
-  '/dashboard/sectorTemp13': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate13')),
-  },
-  '/dashboard/sectorTemp14': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate14')),
-  },
-  '/dashboard/sectorTemp15': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate15')),
-  },
-  '/dashboard/sectorTemp16': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate16')),
-  },
-  '/dashboard/sectorTemp17': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate17')),
-  },
-  '/dashboard/sectorTemp18': {
-    component: loadable(() => import('pages/Dashboard/sectorTemplate18')),
-  },
+      // Sectors
+      '/dashboard/sectorComp': {
+        component: loadable(() => import('pages/Dashboard/sectorHome')),
+      },
+      '/dashboard/sectorTemp1': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate1')),
+      },
+      '/dashboard/sectorTemp2': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate2')),
+      },
+      '/dashboard/sectorTemp3': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate3')),
+      },
+      '/dashboard/sectorTemp4': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate4')),
+      },
+      '/dashboard/sectorTemp5': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate5')),
+      },
+      '/dashboard/sectorTemp6': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate6')),
+      },
+      '/dashboard/sectorTemp7': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate7')),
+      },
+      '/dashboard/sectorTemp8': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate8')),
+      },
+      '/dashboard/sectorTemp9': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate9')),
+      },
+      '/dashboard/sectorTemp10': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate10')),
+      },
+      '/dashboard/sectorTemp11': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate11')),
+      },
+      '/dashboard/sectorTemp12': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate12')),
+      },
+      '/dashboard/sectorTemp13': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate13')),
+      },
+      '/dashboard/sectorTemp14': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate14')),
+      },
+      '/dashboard/sectorTemp15': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate15')),
+      },
+      '/dashboard/sectorTemp16': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate16')),
+      },
+      '/dashboard/sectorTemp17': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate17')),
+      },
+      '/dashboard/sectorTemp18': {
+        component: loadable(() => import('pages/Dashboard/sectorTemplate18')),
+      },
 
-  // portfolios
-  '/dashboard/portfolioComp': {
-    component: loadable(() => import('pages/Dashboard/portfolioHome')),
-  },
-  '/dashboard/portfolioTemp1': {
-    component: loadable(() => import('pages/Dashboard/portfolioTemplate1')),
-  },
-  '/dashboard/portfolioTemp2': {
-    component: loadable(() => import('pages/Dashboard/portfolioTemplate2')),
-  },
-  '/dashboard/portfolioTemp3': {
-    component: loadable(() => import('pages/Dashboard/portfolioTemplate3')),
-  },
-  '/dashboard/portfolioTemp4': {
-    component: loadable(() => import('pages/Dashboard/portfolioTemplate4')),
-  },
-  '/dashboard/portfolioTemp5': {
-    component: loadable(() => import('pages/Dashboard/portfolioTemplate5')),
-  },
-  '/dashboard/portfolioTemp6': {
-    component: loadable(() => import('pages/Dashboard/portfolioTemplate6')),
-  },
-  '/dashboard/portfolioTemp7': {
-    component: loadable(() => import('pages/Dashboard/portfolioTemplate7')),
-  },
+      // portfolios
+      '/dashboard/portfolioComp': {
+        component: loadable(() => import('pages/Dashboard/portfolioHome')),
+      },
+      '/dashboard/portfolioTemp1': {
+        component: loadable(() => import('pages/Dashboard/portfolioTemplate1')),
+      },
+      '/dashboard/portfolioTemp2': {
+        component: loadable(() => import('pages/Dashboard/portfolioTemplate2')),
+      },
+      '/dashboard/portfolioTemp3': {
+        component: loadable(() => import('pages/Dashboard/portfolioTemplate3')),
+      },
+      '/dashboard/portfolioTemp4': {
+        component: loadable(() => import('pages/Dashboard/portfolioTemplate4')),
+      },
+      '/dashboard/portfolioTemp5': {
+        component: loadable(() => import('pages/Dashboard/portfolioTemplate5')),
+      },
+      '/dashboard/portfolioTemp6': {
+        component: loadable(() => import('pages/Dashboard/portfolioTemplate6')),
+      },
+      '/dashboard/portfolioTemp7': {
+        component: loadable(() => import('pages/Dashboard/portfolioTemplate7')),
+      },
+
+      // Earnings Calandar
+
+      '/dashboard/EarnCal': {
+        component: loadable(() => import('pages/Dashboard/EarningsCalendar')),
+      },
 
   // Apps
   '/apps/messaging': {
@@ -155,6 +161,7 @@ const loadableRoutes = {
   '/apps/supportForum': {
     component: loadable(() => import('pages/Apps/GitHub/GitHubDiscussPage')),
   },
+  
 
   // Blog
   '/blog/feed': {

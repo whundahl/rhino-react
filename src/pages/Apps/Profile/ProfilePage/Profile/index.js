@@ -109,11 +109,17 @@ class ProfileApp extends React.Component {
                 </h5>
                 <div className="profile__actions">
                   <Button style={{ display: 'block', width: '100%' }}>Renew Subscription</Button>
-                  <Button style={{ display: 'block', width: '100%' }}>Check Subscription Status</Button>
-                  <Button style={{ display: 'block', width: '100%' }}>Update Payment Information</Button>
+                  <Button style={{ display: 'block', width: '100%' }}>
+                    Check Subscription Status
+                  </Button>
+                  <Button style={{ display: 'block', width: '100%' }}>
+                    Update Payment Information
+                  </Button>
                   <Button style={{ display: 'block', width: '100%' }}>Upgrade Subscription</Button>
                   <Button style={{ display: 'block', width: '100%' }}>Delete Account</Button>
-                  <Button style={{ display: 'block', width: '100%' }}>Update Billing Information</Button>
+                  <Button style={{ display: 'block', width: '100%' }}>
+                    Update Billing Information
+                  </Button>
                 </div>
               </div>
             </div>
@@ -130,8 +136,6 @@ class ProfileApp extends React.Component {
                 ))}
               </div>
             </div>
-           
-           
           </div>
           <div className="col-xl-8">
             <div className="card profile__social-info">
@@ -182,12 +186,12 @@ class ProfileApp extends React.Component {
             </div>
             <div className="card">
               <div className="card-body">
-              <h5 className="mb-3 text-black">
+                <h5 className="mb-3 text-black">
                   <strong>Settings</strong>
                 </h5>
-              
-              <Tabs defaultActiveKey="1">
-              <TabPane
+
+                <Tabs defaultActiveKey="1">
+                  <TabPane
                     tab={
                       <span>
                         <i className="icmn-cog" /> Personal
@@ -195,18 +199,16 @@ class ProfileApp extends React.Component {
                     }
                     key="1"
                   >
-                   <SettingsForm />
+                    <SettingsForm />
                   </TabPane>
-              <TabPane
+                  <TabPane
                     tab={
                       <span>
                         <i className="icmn-cog" /> Notifications
                       </span>
                     }
                     key="2"
-                  >
-                   
-                  </TabPane>
+                  />
                   <TabPane
                     tab={
                       <span>
@@ -214,9 +216,7 @@ class ProfileApp extends React.Component {
                       </span>
                     }
                     key="3"
-                  >
-                   
-                  </TabPane>
+                  />
                   <TabPane
                     tab={
                       <span>
@@ -224,16 +224,13 @@ class ProfileApp extends React.Component {
                       </span>
                     }
                     key="4"
-                  >
-                   
-                  </TabPane>
+                  />
                 </Tabs>
               </div>
-              </div>
+            </div>
             <div className="card">
               <div className="card-body">
                 <Tabs defaultActiveKey="1">
-
                   <TabPane
                     tab={
                       <span>
@@ -244,7 +241,6 @@ class ProfileApp extends React.Component {
                   >
                     <Chat />
                   </TabPane>
-                 
                 </Tabs>
               </div>
             </div>

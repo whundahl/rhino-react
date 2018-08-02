@@ -1,7 +1,7 @@
 import React from 'react'
 import Page from 'components/LayoutComponents/Page'
 import Helmet from 'react-helmet'
-import Portfolio1 from './portfolio1'
+import Portfolio3 from './portfolio1'
 
 class MortgagePortfolio extends React.Component {
   static defaultProps = {
@@ -14,7 +14,7 @@ class MortgagePortfolio extends React.Component {
     return (
       <Page {...props}>
         <Helmet title="Portfolios" />
-        <Portfolio1 />
+        <Portfolio3 />
       </Page>
     )
   }
