@@ -257,9 +257,7 @@ class DashboardBeta extends React.Component {
                 <div className="utils__title">
                   <strong>Earnings Calendar</strong>
                 </div>
-                <div className="utils__titleDescription">
-                  Earnings Updated by Tradier©
-                </div>
+                <div className="utils__titleDescription">Earnings Updated by Tradier©</div>
               </div>
               <div className="card-body">
                 <Calendar dateCellRender={dateCellRender} />

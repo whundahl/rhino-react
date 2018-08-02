@@ -161,45 +161,45 @@ export default [
         key: 'reitPorfolioList',
         icon: '',
         children: [
-        {
-        title: 'DAVOS',
-        key: 'portfolioTemp1',
-        url: '/dashboard/portfolioTemp1',
-      },
-      {
-        title: 'Durable Income',
-        key: 'portfolioTemp2',
-        url: '/dashboard/portfolioTemp2',
-      },
-      {
-        title: 'Small Cap',
-        key: 'portfolioTemp3',
-        url: '/dashboard/portfolioTemp3',
-      },
-      {
-        title: 'Monthly Dividend',
-        key: 'portfolioTemp4',
-        url: '/dashboard/portfolioTemp4',
-      },
-      {
-        title: 'KISS',
-        key: 'portfolioTemp5',
-        url: '/dashboard/portfolioTemp5',
-      },
-      {
-        title: 'New Money',
-        key: 'portfolioTemp6',
-        url: '/dashboard/portfolioTemp6',
-      },
-      {
-        title: 'Average Joe',
-        key: 'portfolioTemp7',
-        url: '/dashboard/portfolioTemp7',
+          {
+            title: 'DAVOS',
+            key: 'portfolioTemp1',
+            url: '/dashboard/portfolioTemp1',
+          },
+          {
+            title: 'Durable Income',
+            key: 'portfolioTemp2',
+            url: '/dashboard/portfolioTemp2',
+          },
+          {
+            title: 'Small Cap',
+            key: 'portfolioTemp3',
+            url: '/dashboard/portfolioTemp3',
+          },
+          {
+            title: 'Monthly Dividend',
+            key: 'portfolioTemp4',
+            url: '/dashboard/portfolioTemp4',
+          },
+          {
+            title: 'KISS',
+            key: 'portfolioTemp5',
+            url: '/dashboard/portfolioTemp5',
+          },
+          {
+            title: 'New Money',
+            key: 'portfolioTemp6',
+            url: '/dashboard/portfolioTemp6',
+          },
+          {
+            title: 'Average Joe',
+            key: 'portfolioTemp7',
+            url: '/dashboard/portfolioTemp7',
+          },
+        ],
       },
     ],
   },
-],
-},
   {
     title: 'REIT Tool Box',
     key: 'reitToolsHome',
