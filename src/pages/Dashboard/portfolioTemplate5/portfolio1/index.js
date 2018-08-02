@@ -153,7 +153,7 @@ class Portfolio5 extends React.Component {
         </div>
         <div className="crypto__list">
           <div className="utils__title utils__title--flat mb-3">
-            <strong>Listed REITs</strong>
+            <strong>Durable Income Listed REITs</strong>
           </div>
           <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--current">
             <span className="crypto__listPercents">
@@ -161,7 +161,7 @@ class Portfolio5 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>ARI</span>
+              <span>ACC</span>
               97.20
             </span>
           </a>
@@ -171,7 +171,7 @@ class Portfolio5 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>ACRE</span>
+              <span>APLE</span>
               44.90
             </span>
           </a>
@@ -181,7 +181,7 @@ class Portfolio5 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>BXMT</span>
+              <span>BHR</span>
               32.78
             </span>
           </a>
@@ -191,7 +191,7 @@ class Portfolio5 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>GPMT</span>
+              <span>BRX</span>
               12.25
             </span>
           </a>
@@ -201,7 +201,7 @@ class Portfolio5 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>HASI</span>
+              <span>BXMT</span>
               8.26
             </span>
           </a>
@@ -211,7 +211,7 @@ class Portfolio5 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>JCAP</span>
+              <span>CCI</span>
               5.20
             </span>
           </a>
@@ -221,7 +221,7 @@ class Portfolio5 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>KREF</span>
+              <span>CIO</span>
               3.20
             </span>
           </a>
@@ -231,7 +231,7 @@ class Portfolio5 extends React.Component {
               0.00036234
             </span>
             <span className="crypto__listCurrency">
-              <span>LADR</span>
+              <span>CONE</span>
               5.64
             </span>
           </a>
@@ -241,7 +241,7 @@ class Portfolio5 extends React.Component {
               0.00035685
             </span>
             <span className="crypto__listCurrency">
-              <span>STWD</span>
+              <span>DEA</span>
               6.36
             </span>
           </a>
@@ -251,7 +251,7 @@ class Portfolio5 extends React.Component {
               0.00000985
             </span>
             <span className="crypto__listCurrency">
-              <span>TRTX</span>
+              <span>DLR</span>
               6.35
             </span>
           </a>
@@ -261,10 +261,276 @@ class Portfolio5 extends React.Component {
               0.00000152
             </span>
             <span className="crypto__listCurrency">
-              <span>CLNC</span>
+              <span>DOC</span>
               1.03
             </span>
           </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>EPR</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>EXR</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>HASI</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>IRM</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>IRT</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>KIM</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>LADR</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>LAND</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>LTC</span>
+              1.03
+            </span>
+          </a>     <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>MNR</span>
+              1.03
+            </span>
+          </a>     <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>NHI</span>
+              1.03
+            </span>
+          </a>     <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>O</span>
+              1.03
+            </span>
+          </a>     <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>OFC</span>
+              1.03
+            </span>
+          </a>     <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>OHI</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>QTS</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>RHP</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>SBRA</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>SKT</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>SPG</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>STAG</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>STOR</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>TCO</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>TRTX</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>UMH</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>UNIT</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>VTR</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>WPC</span>
+              1.03
+            </span>
+          </a>
+         
         </div>
         <div className="crypto__content">
           <div className="utils__title utils__title--flat mb-3">
@@ -280,13 +546,11 @@ class Portfolio5 extends React.Component {
           </div>
           <div className="card">
             <div className="card-body">
-              <div className="crypto__order" style={{ height: 400 }} />
+              <div className="crypto__order" style={{ height: 600 }} />
             </div>
           </div>
-        </div>
-        <Divider strong>Portfolio Composition</Divider>
-
-        <div className="row">
+         
+          <div className="row">
           <div className="col-lg-12 col-xl-6">
             <div className="card" style={{ height: 600 }}>
               <div className="card-header">
@@ -308,18 +572,21 @@ class Portfolio5 extends React.Component {
           </div>
         </div>
         <div className="utils__title utils__title--flat mb-3">
-          <strong>Portfolio Statistics</strong>
-        </div>
-        <div className="card">
-          <div className="card-body">
-            <div className="crypto__table text-nowrap" style={{ height: 400 }} />
+            <strong>Portfolio Statistics</strong>
+          </div>
+          <div className="card">
+            <div className="card-body">
+              <div className="crypto__order" style={{ height: 510 }} />
+            </div>
           </div>
         </div>
+
+       
         <Divider strong>Recent Trades</Divider>
 
         <div className="card">
           <div className="card-body">
-            <div className="crypto__table text-nowrap" style={{ height: 400 }}>
+            <div className="crypto__table text-nowrap" style={{ height: 500 }}>
               <Table
                 columns={ordersBuyColumns}
                 dataSource={orderBook.buy}

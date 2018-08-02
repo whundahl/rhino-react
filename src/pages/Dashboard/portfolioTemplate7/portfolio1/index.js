@@ -161,7 +161,7 @@ class Portfolio7 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>ARI</span>
+              <span>ACC</span>
               97.20
             </span>
           </a>
@@ -171,7 +171,7 @@ class Portfolio7 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>ACRE</span>
+              <span>AVB</span>
               44.90
             </span>
           </a>
@@ -191,7 +191,7 @@ class Portfolio7 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>GPMT</span>
+              <span>CLDT</span>
               12.25
             </span>
           </a>
@@ -201,7 +201,7 @@ class Portfolio7 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>HASI</span>
+              <span>CONE</span>
               8.26
             </span>
           </a>
@@ -211,7 +211,7 @@ class Portfolio7 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>JCAP</span>
+              <span>DOC</span>
               5.20
             </span>
           </a>
@@ -221,7 +221,7 @@ class Portfolio7 extends React.Component {
               0.00016985
             </span>
             <span className="crypto__listCurrency">
-              <span>KREF</span>
+              <span>IRM</span>
               3.20
             </span>
           </a>
@@ -231,7 +231,7 @@ class Portfolio7 extends React.Component {
               0.00036234
             </span>
             <span className="crypto__listCurrency">
-              <span>LADR</span>
+              <span>LTC</span>
               5.64
             </span>
           </a>
@@ -241,7 +241,7 @@ class Portfolio7 extends React.Component {
               0.00035685
             </span>
             <span className="crypto__listCurrency">
-              <span>STWD</span>
+              <span>NHI</span>
               6.36
             </span>
           </a>
@@ -251,7 +251,7 @@ class Portfolio7 extends React.Component {
               0.00000985
             </span>
             <span className="crypto__listCurrency">
-              <span>TRTX</span>
+              <span>O</span>
               6.35
             </span>
           </a>
@@ -261,10 +261,101 @@ class Portfolio7 extends React.Component {
               0.00000152
             </span>
             <span className="crypto__listCurrency">
-              <span>CLNC</span>
+              <span>OHI</span>
               1.03
             </span>
           </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>QTS</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>SKT</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>SPG</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>STAG</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>STOR</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>VER</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>VNO</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>VTR</span>
+              1.03
+            </span>
+          </a>
+          <a href="javascript: void(0);" className="crypto__listItem crypto__listItem--negative">
+            <span className="crypto__listPercents">
+              <span>-2.8%</span>
+              0.00000152
+            </span>
+            <span className="crypto__listCurrency">
+              <span>WPC</span>
+              1.03
+            </span>
+          </a>
+
         </div>
         <div className="crypto__content">
           <div className="utils__title utils__title--flat mb-3">
@@ -280,7 +371,7 @@ class Portfolio7 extends React.Component {
           </div>
           <div className="card">
             <div className="card-body">
-              <div className="crypto__order" style={{ height: 400 }} />
+              <div className="crypto__order" style={{ height: 500 }} />
             </div>
           </div>
         </div>

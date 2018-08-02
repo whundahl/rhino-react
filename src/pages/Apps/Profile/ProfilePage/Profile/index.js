@@ -165,7 +165,7 @@ class ProfileApp extends React.Component {
                   <strong>Information</strong>
                 </h5>
                 <dl className="row">
-                  <dt className="col-xl-3">Courses End:</dt>
+                  <dt className="col-xl-3">About:</dt>
                   <dd className="col-xl-9">{coursesEnd}</dd>
                   <dt className="col-xl-3">Address:</dt>
                   <dd className="col-xl-9">{adress}</dd>
