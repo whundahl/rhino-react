@@ -1,7 +1,4 @@
 import React from 'react'
-// import TradeChart from './TradeChart'
-import TradingViewWidget, { Themes } from 'react-tradingview-widget'
-
 import { Table, Select, Tag, Divider, Input, Button, Icon } from 'antd'
 import './style.scss'
 import { marketHistory } from './data.json'
@@ -331,8 +328,7 @@ class DashboardCrypto extends React.Component {
           <div className="card">
             <div className="card-body">
               <div style={{ height: 700 }}>
-                {/* <TradeChart /> */}
-                <TradingViewWidget symbol="NYSE:ARI" locale="en" theme={Themes.DARK} autosize />
+          
               </div>
             </div>
           </div>
