@@ -263,6 +263,9 @@ class DashboardCrypto extends React.Component {
           <TabPane tab="Analyst Expectations" key="7">
             Content of tab 7
           </TabPane>
+          <TabPane tab="Research" key="8">
+            Content of tab 8
+          </TabPane>
         </Tabs>
       </div>
     )
