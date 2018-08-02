@@ -4,12 +4,6 @@ Web app for Rhino Real Estate Advisors. Using React, firebase, Tradier API, and 
 
 ## Getting Started
 
-Use Yarn start (starts deveopment server)
-
-Use Yarn run build (runs a build to update "build folder")
-
-Use Firebase Deploy (Updates the Rhino app in Firebase hosting)
-
 ### Prerequisites
 
 Node/ npm 
@@ -35,7 +29,7 @@ Pass: rhino1234
 
 
 
-##Issues 
+### Issues 
 
 - Home Page does not upen to home page- instead to dashboard alpha 
 
