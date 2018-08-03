@@ -1,11 +1,13 @@
 import React from 'react'
-import { Button, Progress, Calendar, Tabs, Upload, Icon, Input, Menu, Dropdown } from 'antd'
+import { Button, Progress, Calendar, Tabs, Upload, Icon, Input, Menu, Dropdown, Switch } from 'antd'
 import data from './data.json'
 import './style.scss'
 import Avatar from 'components/CleanComponents/Avatar'
 import Donut from 'components/CleanComponents/Donut'
 import Chat from 'components/CleanComponents/Chat'
 import SettingsForm from './SettingsForm'
+import { setLayoutState } from 'ducks/app'
+import { connect } from 'react-redux'
 
 const TabPane = Tabs.TabPane
 const { TextArea } = Input
@@ -24,6 +26,12 @@ const actions = (
   </Menu>
 )
 
+const mapStateToProps = (state, props) => ({
+  layoutState: state.app.layoutState,
+})
+
+@connect(mapStateToProps)
+
 class ProfileApp extends React.Component {
   state = {
     name: '',
@@ -35,6 +43,7 @@ class ProfileApp extends React.Component {
     followersCount: '',
     lastActivity: '',
     status: '',
+    layoutState: this.props.layoutState,
   }
 
   componentWillMount() {
@@ -58,6 +67,54 @@ class ProfileApp extends React.Component {
     })
   }
 
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      layoutState: newProps.layoutState,
+    })
+  }
+
+  closeSettings = () => {
+    const { dispatch } = this.props
+    dispatch(setLayoutState({ settingsOpened: false }))
+  }
+
+  setMenuCollapsed = state => {
+    const { dispatch } = this.props
+    dispatch(setLayoutState({ menuCollapsed: state }))
+  }
+
+  setMenuShadow = state => {
+    const { dispatch } = this.props
+    dispatch(setLayoutState({ menuShadow: state }))
+  }
+
+  setThemeLight = state => {
+    const { dispatch } = this.props
+    dispatch(setLayoutState({ themeLight: state }))
+  }
+
+  setSquaredBorders = state => {
+    const { dispatch } = this.props
+    dispatch(setLayoutState({ squaredBorders: state }))
+  }
+
+  setFixedWidth = state => {
+    const { dispatch } = this.props
+    dispatch(setLayoutState({ fixedWidth: state }))
+  }
+
+  setBorderLess = state => {
+    const { dispatch } = this.props
+    dispatch(setLayoutState({ borderLess: state }))
+  }
+
+  setIsMenuTop = state => {
+    const { dispatch } = this.props
+    dispatch(setLayoutState({ isMenuTop: state }))
+  }
+
+
+
   render() {
     let {
       name,
@@ -76,6 +133,7 @@ class ProfileApp extends React.Component {
       lastCompanies,
       personal,
       posts,
+      layoutState,
     } = this.state
     return (
       <div className="profile">
@@ -199,7 +257,42 @@ class ProfileApp extends React.Component {
                     }
                     key="1"
                   >
+                  <div className="row">
+                  <div className="col-lg-6">
+                      <div className="settingsSider__item">
+              <Switch checked={layoutState.isMenuTop} onChange={this.setIsMenuTop} />
+              <span className="settingsSider__itemLabel">Menu Top (Horizontal)</span>
+            </div>
+            <div className="settingsSider__item">
+              <Switch checked={layoutState.menuCollapsed} onChange={this.setMenuCollapsed} />
+              <span className="settingsSider__itemLabel">Collapsed Menu</span>
+            </div>
+            <div className="settingsSider__item">
+              <Switch checked={layoutState.menuShadow} onChange={this.setMenuShadow} />
+              <span className="settingsSider__itemLabel">Menu Shadow</span>
+            </div>
+            <div className="settingsSider__item">
+              <Switch checked={layoutState.themeLight} onChange={this.setThemeLight} />
+              <span className="settingsSider__itemLabel">Light Theme</span>
+            </div>
+            </div>
+            <div className="col-lg-6">
+            <div className="settingsSider__item">
+              <Switch checked={layoutState.borderLess} onChange={this.setBorderLess} />
+              <span className="settingsSider__itemLabel">Borderless Cards</span>
+            </div>
+            <div className="settingsSider__item">
+              <Switch checked={layoutState.squaredBorders} onChange={this.setSquaredBorders} />
+              <span className="settingsSider__itemLabel">Squared Borders</span>
+            </div>
+            <div className="settingsSider__item">
+              <Switch checked={layoutState.fixedWidth} onChange={this.setFixedWidth} />
+              <span className="settingsSider__itemLabel">Fixed Width</span>
+            </div>
+            </div>
+            </div>
                     <SettingsForm />
+                
                   </TabPane>
                   <TabPane
                     tab={
