@@ -41,5 +41,13 @@
     "name": "Attractions of our city",
     "date": "June 9, 2017",
     "author": "Mike Freeman"
-  }]
+  }],
+  "pictures": [
+    {
+      "pic1": "url(resources/images/login/8.jpg)",
+      "pic2": "url(resources/images/login/9.jpg)",
+      "pic3": "url(resources/images/login/10.jpg)",
+      "pic4": "url(resources/images/login/11.jpg)"
+    }
+  ]
 }

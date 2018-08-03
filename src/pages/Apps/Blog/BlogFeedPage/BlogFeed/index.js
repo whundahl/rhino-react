@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Icon, Button, Pagination } from 'antd'
+import { Input, Icon, Button, Pagination, Carousel } from 'antd'
 import './style.scss'
 import data from './data.json'
 
@@ -10,15 +10,39 @@ class BlogFeed extends React.Component {
     articlesData: data.articlesData,
     articlesCategories: data.articlesCategories,
     latesArticlesData: data.latesArticlesData,
+  
+
   }
+
+
+
 
   render() {
     let { articlesData, articlesCategories, latesArticlesData } = this.state
     return (
+<div>
+      <section className="card" style={{height: 300 }}>
+          <div className="card-header">
+            <div className="utils__title">
+              <strong>Top Articles</strong>
+            </div>
+          </div>
+          <div className="card-body">
+             
+              <Carousel autoplay>
+                  <div style={{backgroundImage: null }}><h3>1</h3></div>
+                  <div style={{backgroundImage: null }}><h3>2</h3></div>
+                  <div style={{backgroundImage: null }}><h3>3</h3></div>
+                  <div style={{backgroundImage: null }}><h3>4</h3></div>
+                </Carousel>
+           
+              </div>
+        </section>
+
       <section className="card">
         <div className="card-header">
           <div className="utils__title">
-            <strong>Blog Feed</strong>
+            <strong>Article Feed</strong>
           </div>
         </div>
         <div className="card-body">
@@ -183,6 +207,7 @@ class BlogFeed extends React.Component {
           </div>
         </div>
       </section>
+      </div>
     )
   }
 }

@@ -5,7 +5,7 @@ import BlogPost from './BlogPost'
 
 class BlogPostPage extends React.Component {
   static defaultProps = {
-    pathName: 'Blog Post',
+    pathName: 'Article Posting',
     roles: ['agent', 'administrator'],
   }
 
@@ -13,7 +13,7 @@ class BlogPostPage extends React.Component {
     const props = this.props
     return (
       <Page {...props}>
-        <Helmet title="Blog Post" />
+        <Helmet title="Article Posting" />
         <BlogPost />
       </Page>
     )

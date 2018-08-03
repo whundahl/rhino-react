@@ -57,6 +57,30 @@ https://github.com/vporta/tradier-client
 
 - Notification System For the MVP/ BEta? 
 
+- Article Library Page 
+
+    - Order of menu items for the media library 
+
+- Search Option Working 
+
+- Charts labled in position throughout the application 
+
+- use the react link funtion through the react router to get the pages to link to eachother
+
+
+# Rhino Static Site 
+
+- Creative Tim Templates That include footer examples and plugins throughout the site need to be added. (All written in bootstrap)
+
+- Get content added into the static home page and about page
+
+    - Continue the creation of the Free page 
+
+        - Free Page will include the RSS feed from the articles being posted (GraphQL and Axios calls from static page)
+
+
+
+
 
 
 

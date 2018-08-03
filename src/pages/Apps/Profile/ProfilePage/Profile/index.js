@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Progress, Calendar, Tabs, Upload, Icon, Input, Menu, Dropdown, Switch } from 'antd'
+import { Button, Progress, Tabs, Switch, Slider } from 'antd'
 import data from './data.json'
 import './style.scss'
 import Avatar from 'components/CleanComponents/Avatar'
@@ -9,22 +9,9 @@ import SettingsForm from './SettingsForm'
 import { setLayoutState } from 'ducks/app'
 import { connect } from 'react-redux'
 
-const TabPane = Tabs.TabPane
-const { TextArea } = Input
 
-const actions = (
-  <Menu>
-    <Menu.Item>
-      <Icon type="edit" /> Edit Post
-    </Menu.Item>
-    <Menu.Item>
-      <Icon type="delete" /> Delete Post
-    </Menu.Item>
-    <Menu.Item>
-      <Icon type="frown-o" /> Mark as a Spam
-    </Menu.Item>
-  </Menu>
-)
+const TabPane = Tabs.TabPane
+
 
 const mapStateToProps = (state, props) => ({
   layoutState: state.app.layoutState,
@@ -59,10 +46,12 @@ class ProfileApp extends React.Component {
       skills: data.skills,
       coursesEnd: data.coursesEnd,
       adress: data.adress,
+      date: data.date,
       profSkills: data.profSkills,
       lastCompanies: data.lastCompanies,
       personal: data.personal,
       posts: data.posts,
+      bio: data.bio,
     })
   }
 
@@ -126,11 +115,13 @@ class ProfileApp extends React.Component {
       skills,
       coursesEnd,
       adress,
+      date,
       profSkills,
       lastCompanies,
       personal,
       posts,
       layoutState,
+      bio,
     } = this.state
     return (
       <div className="profile">
@@ -191,6 +182,14 @@ class ProfileApp extends React.Component {
                 ))}
               </div>
             </div>
+            <div className="card" style={{ height: 500 }}>
+              <div className="card-body">
+                <h5 className="mb-3 text-black">
+                  <strong>Rhino Real Estate Advisors Alerts</strong>
+                </h5>
+           
+              </div>
+            </div>
           </div>
           <div className="col-xl-8">
             <div className="card profile__social-info">
@@ -220,11 +219,11 @@ class ProfileApp extends React.Component {
                   <strong>Information</strong>
                 </h5>
                 <dl className="row">
-                  <dt className="col-xl-3">About:</dt>
+                  <dt className="col-xl-3">Mebership Level:</dt>
                   <dd className="col-xl-9">{coursesEnd}</dd>
-                  <dt className="col-xl-3">Address:</dt>
-                  <dd className="col-xl-9">{adress}</dd>
-                  <dt className="col-xl-3">Skills:</dt>
+                  <dt className="col-xl-3">Member Since:</dt>
+                  <dd className="col-xl-9">{date}</dd>
+                  <dt className="col-xl-3">Sectors of Interest:</dt>
                   <dd className="col-xl-9">
                     {profSkills.map((skill, index) => (
                       <span className="badge badge-default mr-1" key={index}>
@@ -232,6 +231,9 @@ class ProfileApp extends React.Component {
                       </span>
                     ))}
                   </dd>
+                  <dt className="col-xl-3">Bio:</dt>
+                  <dd className="col-xl-9">{bio}</dd>
+                 
                   <dt className="col-xl-3">Last companies:</dt>
                   <dd className="col-xl-9">{lastCompanies}</dd>
                   <dt className="col-xl-3">Personal Information:</dt>
@@ -254,10 +256,20 @@ class ProfileApp extends React.Component {
                     }
                     key="1"
                   >
-                    <div className="row">
+                    <SettingsForm />
+                  </TabPane>
+                  <TabPane
+                    tab={
+                      <span>
+                        <i className="icmn-cog" /> Appearance
+                      </span>
+                    }
+                    key="2"
+                  >
+                 <div className="row">
                       <div className="col-lg-6">
                         <div className="settingsSider__item">
-                          <Switch checked={layoutState.isMenuTop} onChange={this.setIsMenuTop} />
+                          <Switch checked={null} onChange={null} />
                           <span className="settingsSider__itemLabel">Menu Top (Horizontal)</span>
                         </div>
                         <div className="settingsSider__item">
@@ -294,32 +306,117 @@ class ProfileApp extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <SettingsForm />
+                      
                   </TabPane>
                   <TabPane
+                    tab={
+                      <span>
+                        <i className="icmn-cog" /> Email Alerts
+                      </span>
+                    }
+                    key="3"
+                  >
+                     <div className="row">
+                      <div className="col-lg-6">
+                      <h5 className="mb-3 text-black">
+                  <strong>Receive Email Updates:</strong>
+                </h5>
+                        <div className="settingsSider__item">
+                          <Switch checked={null} onChange={null} />
+                          <span className="settingsSider__itemLabel">News Articles</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch
+                            checked={null}
+                            onChange={null}
+                          />
+                          <span className="settingsSider__itemLabel">New Videos</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch checked={null} onChange={null} />
+                          <span className="settingsSider__itemLabel">Promotions</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch checked={null} onChange={null} />
+                          <span className="settingsSider__itemLabel">Weekly Recap</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch checked={null} onChange={null} />
+                          <span className="settingsSider__itemLabel">Technology Updates</span>
+                        </div>
+                      </div>
+                    </div>
+                  </TabPane>
+                      <TabPane
                     tab={
                       <span>
                         <i className="icmn-cog" /> Notifications
                       </span>
                     }
-                    key="2"
-                  />
-                  <TabPane
-                    tab={
-                      <span>
-                        <i className="icmn-cog" /> Alerts
-                      </span>
-                    }
-                    key="3"
-                  />
-                  <TabPane
-                    tab={
-                      <span>
-                        <i className="icmn-cog" /> Email
-                      </span>
-                    }
                     key="4"
-                  />
+                  >
+                              <div className="row">
+                      <div className="col-lg-6">
+                      <h5 className="mb-3 text-black">
+                  <strong>Enable Application Notifications:</strong>
+                </h5>
+                        <div className="settingsSider__item">
+                          <Switch checked={null} onChange={null} />
+                          <span className="settingsSider__itemLabel">Tades</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch
+                            checked={null}
+                            onChange={null}
+                          />
+                          <span className="settingsSider__itemLabel">Price Alerts</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch checked={null} onChange={null} />
+                          <span className="settingsSider__itemLabel">News Articles</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch checked={null} onChange={null} />
+                          <span className="settingsSider__itemLabel">Messages</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch checked={null} onChange={null} />
+                          <span className="settingsSider__itemLabel">New Videos</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch checked={null} onChange={null} />
+                          <span className="settingsSider__itemLabel">New Podcasts</span>
+                        </div>
+                      </div>
+                    </div>
+                  </TabPane>
+                  <TabPane
+                    tab={
+                      <span>
+                        <i className="icmn-cog" /> Engagement Objectives
+                      </span>
+                    }
+                    key="5"
+                  >
+                    <h5 className="mb-3 text-black">
+                  <strong>Managment</strong>
+                </h5>
+                    <Slider defaultValue={30} disabled='true' />
+                    <h5 className="mb-3 text-black">
+                  <strong>Investing</strong>
+                </h5>
+                    <Slider range defaultValue={[20, 50]} disabled='true' />
+                    <h5 className="mb-3 text-black">
+                  <strong>Commenting</strong>
+                </h5>
+                    <Slider range defaultValue={[10, 80]} disabled='true' />
+                    <h5 className="mb-3 text-black">
+                  <strong>Messaging</strong>
+                </h5>
+                    <Slider range defaultValue={[80, 100]} disabled='true' />
+        
+                  
+                  </TabPane>
                 </Tabs>
               </div>
             </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input, Icon, Menu, Dropdown } from 'antd'
+import { Input, Icon, Menu, Dropdown, Carousel} from 'antd'
 import Avatar from 'components/CleanComponents/Avatar'
 import CommentForm from './CommentForm'
 import './style.scss'
@@ -32,10 +32,29 @@ class BlogPost extends React.Component {
   render() {
     let { articleData, articlesCategories, latesArticlesData, comments } = this.state
     return (
+<div>
+      <section className="card" style={{height: 300 }}>
+          <div className="card-header">
+            <div className="utils__title">
+              <strong>Top Articles</strong>
+            </div>
+          </div>
+          <div className="card-body">
+             
+              <Carousel autoplay>
+                  <div style={{backgroundImage: null }}><h3>1</h3></div>
+                  <div style={{backgroundImage: null }}><h3>2</h3></div>
+                  <div style={{backgroundImage: null }}><h3>3</h3></div>
+                  <div style={{backgroundImage: null }}><h3>4</h3></div>
+                </Carousel>
+           
+              </div>
+        </section>
+
       <section className="card">
         <div className="card-header">
           <div className="utils__title">
-            <strong>Blog Post</strong>
+            <strong>Article Posting</strong>
           </div>
         </div>
         <div className="card-body">
@@ -331,6 +350,7 @@ class BlogPost extends React.Component {
           </div>
         </div>
       </section>
+      </div>
     )
   }
 }

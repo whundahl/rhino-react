@@ -5,7 +5,7 @@ import GalleryList from './GalleryList'
 
 class GalleryAppPage extends React.Component {
   static defaultProps = {
-    pathName: 'Gallery',
+    pathName: 'Top Picks',
     roles: ['agent', 'administrator'],
   }
 
@@ -13,7 +13,7 @@ class GalleryAppPage extends React.Component {
     const props = this.props
     return (
       <Page {...props}>
-        <Helmet title="Gallery" />
+        <Helmet title="Top Picks" />
         <GalleryList />
       </Page>
     )
