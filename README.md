@@ -31,8 +31,6 @@ Pass: rhino1234
 
 ### Necessary Items for Completion  
 
-- Home Page does not upen to home page- instead to dashboard alpha (Needs to be fixed) 
-
 - Firebase Authentication not set up with the login page and system in place from the UI template. (Would like to add the ability to log in with your google credentials as well)
 
     - Need to allow New users to add their information into the application and through the google authentication (Includes a new user form, which comes in the templatefrom CleanUI)

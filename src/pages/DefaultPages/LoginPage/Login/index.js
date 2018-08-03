@@ -3,7 +3,9 @@ import LoginForm from './LoginForm'
 import './style.scss'
 
 class Login extends React.Component {
-  state = {}
+  state = {
+    backgroundImage: 'url(resources/images/login/7.jpg)',
+  }
 
   componentDidMount() {
     document.getElementsByTagName('body')[0].style.overflow = 'hidden'
@@ -13,9 +15,14 @@ class Login extends React.Component {
     document.getElementsByTagName('body')[0].style.overflow = ''
   }
 
+
+
   render() {
+
+    const { backgroundImage} = this.state
     return (
-      <div className="main-login main-login--fullscreen">
+      <div>
+      <div className="main-login main-login--fullscreen"  style={{ backgroundImage: backgroundImage }}>
         <div className="main-login__header">
           <div className="row">
             <div className="col-lg-12">
@@ -80,6 +87,7 @@ class Login extends React.Component {
             </li>
           </ul>
         </div>
+      </div>
       </div>
     )
   }
