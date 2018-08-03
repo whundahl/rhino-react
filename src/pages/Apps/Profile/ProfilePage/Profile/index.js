@@ -9,9 +9,7 @@ import SettingsForm from './SettingsForm'
 import { setLayoutState } from 'ducks/app'
 import { connect } from 'react-redux'
 
-
 const TabPane = Tabs.TabPane
-
 
 const mapStateToProps = (state, props) => ({
   layoutState: state.app.layoutState,
@@ -187,7 +185,6 @@ class ProfileApp extends React.Component {
                 <h5 className="mb-3 text-black">
                   <strong>Rhino Real Estate Advisors Alerts</strong>
                 </h5>
-           
               </div>
             </div>
           </div>
@@ -233,7 +230,7 @@ class ProfileApp extends React.Component {
                   </dd>
                   <dt className="col-xl-3">Bio:</dt>
                   <dd className="col-xl-9">{bio}</dd>
-                 
+
                   <dt className="col-xl-3">Last companies:</dt>
                   <dd className="col-xl-9">{lastCompanies}</dd>
                   <dt className="col-xl-3">Personal Information:</dt>
@@ -266,7 +263,7 @@ class ProfileApp extends React.Component {
                     }
                     key="2"
                   >
-                 <div className="row">
+                    <div className="row">
                       <div className="col-lg-6">
                         <div className="settingsSider__item">
                           <Switch checked={null} onChange={null} />
@@ -306,7 +303,6 @@ class ProfileApp extends React.Component {
                         </div>
                       </div>
                     </div>
-                      
                   </TabPane>
                   <TabPane
                     tab={
@@ -316,20 +312,17 @@ class ProfileApp extends React.Component {
                     }
                     key="3"
                   >
-                     <div className="row">
+                    <div className="row">
                       <div className="col-lg-6">
-                      <h5 className="mb-3 text-black">
-                  <strong>Receive Email Updates:</strong>
-                </h5>
+                        <h5 className="mb-3 text-black">
+                          <strong>Receive Email Updates:</strong>
+                        </h5>
                         <div className="settingsSider__item">
                           <Switch checked={null} onChange={null} />
                           <span className="settingsSider__itemLabel">News Articles</span>
                         </div>
                         <div className="settingsSider__item">
-                          <Switch
-                            checked={null}
-                            onChange={null}
-                          />
+                          <Switch checked={null} onChange={null} />
                           <span className="settingsSider__itemLabel">New Videos</span>
                         </div>
                         <div className="settingsSider__item">
@@ -347,7 +340,7 @@ class ProfileApp extends React.Component {
                       </div>
                     </div>
                   </TabPane>
-                      <TabPane
+                  <TabPane
                     tab={
                       <span>
                         <i className="icmn-cog" /> Notifications
@@ -355,20 +348,17 @@ class ProfileApp extends React.Component {
                     }
                     key="4"
                   >
-                              <div className="row">
+                    <div className="row">
                       <div className="col-lg-6">
-                      <h5 className="mb-3 text-black">
-                  <strong>Enable Application Notifications:</strong>
-                </h5>
+                        <h5 className="mb-3 text-black">
+                          <strong>Enable Application Notifications:</strong>
+                        </h5>
                         <div className="settingsSider__item">
                           <Switch checked={null} onChange={null} />
                           <span className="settingsSider__itemLabel">Tades</span>
                         </div>
                         <div className="settingsSider__item">
-                          <Switch
-                            checked={null}
-                            onChange={null}
-                          />
+                          <Switch checked={null} onChange={null} />
                           <span className="settingsSider__itemLabel">Price Alerts</span>
                         </div>
                         <div className="settingsSider__item">
@@ -399,23 +389,21 @@ class ProfileApp extends React.Component {
                     key="5"
                   >
                     <h5 className="mb-3 text-black">
-                  <strong>Managment</strong>
-                </h5>
-                    <Slider defaultValue={30} disabled='true' />
+                      <strong>Managment</strong>
+                    </h5>
+                    <Slider defaultValue={30} disabled="true" />
                     <h5 className="mb-3 text-black">
-                  <strong>Investing</strong>
-                </h5>
-                    <Slider range defaultValue={[20, 50]} disabled='true' />
+                      <strong>Investing</strong>
+                    </h5>
+                    <Slider range defaultValue={[20, 50]} disabled="true" />
                     <h5 className="mb-3 text-black">
-                  <strong>Commenting</strong>
-                </h5>
-                    <Slider range defaultValue={[10, 80]} disabled='true' />
+                      <strong>Commenting</strong>
+                    </h5>
+                    <Slider range defaultValue={[10, 80]} disabled="true" />
                     <h5 className="mb-3 text-black">
-                  <strong>Messaging</strong>
-                </h5>
-                    <Slider range defaultValue={[80, 100]} disabled='true' />
-        
-                  
+                      <strong>Messaging</strong>
+                    </h5>
+                    <Slider range defaultValue={[80, 100]} disabled="true" />
                   </TabPane>
                 </Tabs>
               </div>

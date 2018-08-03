@@ -79,38 +79,38 @@ class SettingsSider extends React.Component {
             </div>
             <div className="settingsSider__item" />
             <div className="row">
-          <div className="col">
-            <div className="card" style={{ height: 300 }}>
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>Recent News</strong>
+              <div className="col">
+                <div className="card" style={{ height: 300 }}>
+                  <div className="card-header">
+                    <div className="utils__title">
+                      <strong>Recent News</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          </div>
-          <div className="row">
-          <div className="col">
-            <div className="card" style={{ height: 300 }}>
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>Recent Articles</strong>
+            <div className="row">
+              <div className="col">
+                <div className="card" style={{ height: 300 }}>
+                  <div className="card-header">
+                    <div className="utils__title">
+                      <strong>Recent Articles</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          </div>
-          <div className="row">
-          <div className="col">
-            <div className="card" style={{ height: 300 }}>
-              <div className="card-header">
-                <div className="utils__title">
-                  <strong>Gainers/ Loosers</strong>
+            <div className="row">
+              <div className="col">
+                <div className="card" style={{ height: 300 }}>
+                  <div className="card-header">
+                    <div className="utils__title">
+                      <strong>Gainers/ Loosers</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          </div>
           </div>
         </Scrollbars>
       </div>
