@@ -14,7 +14,10 @@ const mapStateToProps = (state, props) => ({
   userState: state.app.userState,
 })
 
-@connect(mapStateToProps, mapDispatchToProps)
+@connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)
 class ProfileMenu extends React.Component {
   state = {
     count: 7,
@@ -49,7 +52,7 @@ class ProfileMenu extends React.Component {
           <div className="rfq__widget__system-status__item">
             <strong>Email:</strong> {userState.email}
             <br />
-            <strong></strong> 
+            <strong />
           </div>
         </Menu.Item>
         <Menu.Divider />

@@ -74,13 +74,10 @@ class SettingsSider extends React.Component {
               <span className="fa fa-times" onClick={this.closeSettings} />
             </div>
             <div className="settingsSider__description">
-             Welcome, _Username_, have a look around and see what Rhino Real Estate Advisors updated most recently.
+              Welcome, _Username_, have a look around and see what Rhino Real Estate Advisors
+              updated most recently.
             </div>
-            <div className="settingsSider__item">
-              
-           
-            </div>
-         
+            <div className="settingsSider__item" />
           </div>
         </Scrollbars>
       </div>
