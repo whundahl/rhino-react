@@ -31,7 +31,6 @@ const mapStateToProps = (state, props) => ({
 })
 
 @connect(mapStateToProps)
-
 class ProfileApp extends React.Component {
   state = {
     name: '',
@@ -112,8 +111,6 @@ class ProfileApp extends React.Component {
     const { dispatch } = this.props
     dispatch(setLayoutState({ isMenuTop: state }))
   }
-
-
 
   render() {
     let {
@@ -257,42 +254,47 @@ class ProfileApp extends React.Component {
                     }
                     key="1"
                   >
-                  <div className="row">
-                  <div className="col-lg-6">
-                      <div className="settingsSider__item">
-              <Switch checked={layoutState.isMenuTop} onChange={this.setIsMenuTop} />
-              <span className="settingsSider__itemLabel">Menu Top (Horizontal)</span>
-            </div>
-            <div className="settingsSider__item">
-              <Switch checked={layoutState.menuCollapsed} onChange={this.setMenuCollapsed} />
-              <span className="settingsSider__itemLabel">Collapsed Menu</span>
-            </div>
-            <div className="settingsSider__item">
-              <Switch checked={layoutState.menuShadow} onChange={this.setMenuShadow} />
-              <span className="settingsSider__itemLabel">Menu Shadow</span>
-            </div>
-            <div className="settingsSider__item">
-              <Switch checked={layoutState.themeLight} onChange={this.setThemeLight} />
-              <span className="settingsSider__itemLabel">Light Theme</span>
-            </div>
-            </div>
-            <div className="col-lg-6">
-            <div className="settingsSider__item">
-              <Switch checked={layoutState.borderLess} onChange={this.setBorderLess} />
-              <span className="settingsSider__itemLabel">Borderless Cards</span>
-            </div>
-            <div className="settingsSider__item">
-              <Switch checked={layoutState.squaredBorders} onChange={this.setSquaredBorders} />
-              <span className="settingsSider__itemLabel">Squared Borders</span>
-            </div>
-            <div className="settingsSider__item">
-              <Switch checked={layoutState.fixedWidth} onChange={this.setFixedWidth} />
-              <span className="settingsSider__itemLabel">Fixed Width</span>
-            </div>
-            </div>
-            </div>
+                    <div className="row">
+                      <div className="col-lg-6">
+                        <div className="settingsSider__item">
+                          <Switch checked={layoutState.isMenuTop} onChange={this.setIsMenuTop} />
+                          <span className="settingsSider__itemLabel">Menu Top (Horizontal)</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch
+                            checked={layoutState.menuCollapsed}
+                            onChange={this.setMenuCollapsed}
+                          />
+                          <span className="settingsSider__itemLabel">Collapsed Menu</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch checked={layoutState.menuShadow} onChange={this.setMenuShadow} />
+                          <span className="settingsSider__itemLabel">Menu Shadow</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch checked={layoutState.themeLight} onChange={this.setThemeLight} />
+                          <span className="settingsSider__itemLabel">Light Theme</span>
+                        </div>
+                      </div>
+                      <div className="col-lg-6">
+                        <div className="settingsSider__item">
+                          <Switch checked={layoutState.borderLess} onChange={this.setBorderLess} />
+                          <span className="settingsSider__itemLabel">Borderless Cards</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch
+                            checked={layoutState.squaredBorders}
+                            onChange={this.setSquaredBorders}
+                          />
+                          <span className="settingsSider__itemLabel">Squared Borders</span>
+                        </div>
+                        <div className="settingsSider__item">
+                          <Switch checked={layoutState.fixedWidth} onChange={this.setFixedWidth} />
+                          <span className="settingsSider__itemLabel">Fixed Width</span>
+                        </div>
+                      </div>
+                    </div>
                     <SettingsForm />
-                
                   </TabPane>
                   <TabPane
                     tab={

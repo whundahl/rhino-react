@@ -108,7 +108,7 @@ export function login(username, password, dispatch) {
       type: 'success',
       message: 'You have successfully logged in!',
       description:
-      'Welcome to Rhino Premium. Please be patient as we continue the devlopment of the our new web application.',
+        'Welcome to Rhino Premium. Please be patient as we continue the devlopment of the our new web application.',
     })
     return true
   }
