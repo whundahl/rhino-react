@@ -49,7 +49,7 @@ class ProfileMenu extends React.Component {
           <div className="rfq__widget__system-status__item">
             <strong>Email:</strong> {userState.email}
             <br />
-            <strong>Phone:</strong> +1-800-MEDIATEC
+            <strong></strong> 
           </div>
         </Menu.Item>
         <Menu.Divider />

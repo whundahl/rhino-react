@@ -218,7 +218,7 @@ class MenuLeft extends React.Component {
             className="menuLeft__navigation"
           >
             <Menu.Item key={'settings'}>
-              <span className="menuLeft__item-title">Rhino Shortcuts</span>
+              <span className="menuLeft__item-title">Rhino Widgets</span>
               <span
                 className={'icmn icmn-cog menuLeft__icon utils__spin-delayed--pseudo-selector'}
               />

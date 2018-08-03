@@ -221,14 +221,14 @@ export default [
         url: '/dashboard/EarnCal',
       },
       {
-        title: 'Technical Analysis',
-        disabled: true,
-        key: 'techAnal',
+        title: 'Buying Guide',
+        key: 'buyGuide',
         // url: '/dashboard/portfolioTemp',
       },
       {
-        title: 'Buying Guide',
-        key: 'buyGuide',
+        title: 'Technical Analysis',
+        disabled: true,
+        key: 'techAnal',
         // url: '/dashboard/portfolioTemp',
       },
       {
@@ -313,13 +313,5 @@ export default [
       },
     ],
   },
-  {
-    divider: true,
-  },
-  {
-    title: 'Disabled Item',
-    key: 'disabledItem',
-    disabled: true,
-    icon: 'icmn icmn-cancel-circle',
-  },
+
 ]

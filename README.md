@@ -51,6 +51,12 @@ https://github.com/vporta/tradier-client
 
 - Add Mobile List for listed REITs in the Portfolios and in the Sectors 
 
+- Valuation Tool OverView Page 
+
+- Rhino Portolios and Rhino Sector Comparisons (Put the chart and asector table below it ) 
+
+- Notification System For the MVP/ BEta? 
+
 
 
 
