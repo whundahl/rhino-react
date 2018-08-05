@@ -19,7 +19,7 @@ class GalleryList extends React.Component {
               <strong>Top Articles</strong>
             </div>
           </div>
-          <div className="card-body" style={{ backgroundColor: "#364d79" }}>
+          <div className="card-body" style={{ backgroundColor: '#364d79' }}>
             <Carousel autoplay>
               <div style={{ backgroundImage: null }}>
                 <h3>1</h3>
@@ -42,15 +42,13 @@ class GalleryList extends React.Component {
               <strong>Top Articles</strong>
             </div>
           </div>
-          <div className="card-body" style={{ backgroundColor: "#364d79" }}>
-            <Carousel autoplay >
+          <div className="card-body" style={{ backgroundColor: '#364d79' }}>
+            <Carousel autoplay>
               <div>
-                <div >
-          
-                 </div>
-                </div>
-          
-              <div >
+                <div />
+              </div>
+
+              <div>
                 <h3>2</h3>
               </div>
               <div style={{ backgroundImage: null }}>
@@ -68,7 +66,7 @@ class GalleryList extends React.Component {
               <strong>Top Articles</strong>
             </div>
           </div>
-          <div className="card-body" style={{ backgroundColor: "#364d79" }}>
+          <div className="card-body" style={{ backgroundColor: '#364d79' }}>
             <Carousel autoplay>
               <div style={{ backgroundImage: null }}>
                 <h3>1</h3>

@@ -75,6 +75,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.6",
+    "react-slack-chat": "^1.10.2",
     "react-stockcharts": "^0.7.0-beta.22",
     "react-syntax-highlighter": "^7.0.4",
     "react-tradingview-widget": "^1.2.5",
