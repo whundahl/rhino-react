@@ -24,7 +24,6 @@ class Portfolio2 extends React.Component {
       buy: orderBookBuy,
       sell: orderBookSell,
     },
-    
   }
 
   toggleOrderType = e => {
