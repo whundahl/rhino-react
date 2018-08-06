@@ -1,8 +1,12 @@
 import React from 'react'
-import { Table, Select, Tag, Divider, Input, Button, Icon } from 'antd'
+import { Table, Select, Tag, Divider, Input, Button, Icon, Slider, Tabs } from 'antd'
 import './style.scss'
 import { marketHistory } from './data.json'
 import HighchartWrapper from '../../highchart/index'
+import SectorBreakdown from '../../highchartPie/index'
+
+import Tradier from 'tradier-client';
+const tradier = new Tradier('TRADIER_ACCESS_TOKEN', 'sandbox');
 
 const data = [
   {
@@ -30,6 +34,23 @@ const data = [
     address: 'London No. 2 Lake Park',
   },
 ]
+
+tradier
+  .quote('AAPL')  // For multiple quotes, separate tickers with a comma: .quote('AAPL,KO,S')
+  .then(quote => {
+      this.setState(`
+      Symbol: ${quote.symbol}     
+      Volume: ${quote.volume} 
+      Open: ${quote.open} 
+      High: ${quote.high}
+      Low: ${quote.low} 
+      Close: ${quote.close}
+      Previous: ${quote.prevclose}  
+    `);
+  })
+  .catch(error => {
+    console.log(error);
+  })
 
 class DashboardCrypto extends React.Component {
   state = {
@@ -138,7 +159,7 @@ class DashboardCrypto extends React.Component {
           <div className="utils__title utils__title--flat mb-3">
             <strong>Listed REITs</strong>
           </div>
-          <Select showSearch size="large" defaultValue="btc" style={{ width: '100%' }}>
+          <Select showSearch size="large" defaultValue="Residential REITs" style={{ width: '100%' }}>
             <Select.Option value="ARI">
               ARI
               <Tag color="blue" className="ml-3">
@@ -358,17 +379,19 @@ class DashboardCrypto extends React.Component {
 
         <div className="row">
           <div className="col-lg-12 col-xl-6">
-            <div className="card" style={{ height: 400 }}>
+            <div className="card" style={{ height: 500 }}>
+          
               <div className="card-header">
                 <div className="utils__title">
                   <strong>Sector Breakdown</strong>
                 </div>
               </div>
+              <SectorBreakdown/>
             </div>
           </div>
 
           <div className="col-lg-12 col-xl-6">
-            <div className="card" style={{ height: 400 }}>
+            <div className="card" style={{ height: 500 }}>
               <div className="card-header">
                 <div className="utils__title">
                   <strong>Sector Analysis</strong>
