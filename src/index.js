@@ -25,6 +25,10 @@ import 'resources/AntStyles/AntDesign/antd.cleanui.scss'
 import 'resources/CleanStyles/Core/core.cleanui.scss'
 import 'resources/CleanStyles/Vendors/vendors.cleanui.scss'
 
+import { config } from "./push/firebaseConfig";
+import firebase from "firebase";
+firebase.initializeApp(config);
+
 const history = createHistory()
 const router = routerMiddleware(history)
 const middlewares = [router, thunk]
