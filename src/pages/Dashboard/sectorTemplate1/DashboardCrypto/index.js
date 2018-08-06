@@ -318,7 +318,7 @@ class DashboardCrypto extends React.Component {
           </div>
           <div className="card">
             <div className="card-body">
-              <div style={{ height: 700 }}>
+              <div>
                 <HighchartWrapper />
               </div>
             </div>

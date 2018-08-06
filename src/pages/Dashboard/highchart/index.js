@@ -1,60 +1,96 @@
 import React, { Component } from 'react'
-import Highcharts from 'highcharts'
+import Highcharts from 'highcharts/highstock'
 import {
-  HighchartsChart,
+  HighchartsStockChart,
   Chart,
   withHighcharts,
   XAxis,
   YAxis,
   Title,
-  Subtitle,
   Legend,
-  LineSeries,
-} from 'react-jsx-highcharts'
+  AreaSplineSeries,
+  SplineSeries,
+  Navigator,
+  RangeSelector,
+  Tooltip,
+} from 'react-jsx-highstock'
 
-const plotOptions = {
-  series: {
-    pointStart: 2010,
-  },
+const createDataPoint = (time = Date.now(), magnitude = 1000, offset = 0) => {
+  return [time + offset * magnitude, Math.round(Math.random() * 100 * 2) / 2]
 }
 
-const HighchartWrapper = () => (
-  <div className="app">
-    <HighchartsChart plotOptions={plotOptions}>
-      <Chart />
+const createRandomData = (time, magnitude, points = 100) => {
+  const data = []
+  let i = points * -1 + 1
+  for (i; i <= 0; i++) {
+    data.push(createDataPoint(time, magnitude, i))
+  }
+  return data
+}
 
-      <Title>Solar Employment Growth by Sector, 2010-2016</Title>
+class HighchartWrapper extends Component {
+  constructor(props) {
+    super(props)
 
-      <Subtitle>Source: thesolarfoundation.com</Subtitle>
+    const now = Date.now()
+    this.state = {
+      data1: createRandomData(now, 1e7, 500),
+      data2: createRandomData(now, 1e7, 500),
+    }
+  }
 
-      <Legend layout="vertical" align="right" verticalAlign="middle" />
+  render() {
+    const { data1, data2 } = this.state
 
-      <XAxis>
-        <XAxis.Title>Time</XAxis.Title>
-      </XAxis>
+    return (
+      <div className="app">
+        <HighchartsStockChart>
+          <Chart zoomType="x" />
 
-      <YAxis>
-        <YAxis.Title>Number of employees</YAxis.Title>
-        <LineSeries
-          name="Installation"
-          data={[43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]}
-        />
-        <LineSeries
-          name="Manufacturing"
-          data={[24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]}
-        />
-        <LineSeries
-          name="Sales & Distribution"
-          data={[11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]}
-        />
-        <LineSeries
-          name="Project Development"
-          data={[null, null, 7988, 12169, 15112, 22452, 34400, 34227]}
-        />
-        <LineSeries name="Other" data={[12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]} />
-      </YAxis>
-    </HighchartsChart>
-  </div>
-)
+          <Title>Highstocks Example</Title>
+
+          <Legend>
+            <Legend.Title>Key</Legend.Title>
+          </Legend>
+
+          <RangeSelector>
+            <RangeSelector.Button count={1} type="day">
+              1d
+            </RangeSelector.Button>
+            <RangeSelector.Button count={7} type="day">
+              7d
+            </RangeSelector.Button>
+            <RangeSelector.Button count={1} type="month">
+              1m
+            </RangeSelector.Button>
+            <RangeSelector.Button type="all">All</RangeSelector.Button>
+            <RangeSelector.Input boxBorderColor="#7cb5ec" />
+          </RangeSelector>
+
+          <Tooltip />
+
+          <XAxis>
+            <XAxis.Title>Time</XAxis.Title>
+          </XAxis>
+
+          <YAxis>
+            <YAxis.Title>Price</YAxis.Title>
+            <AreaSplineSeries id="profit" name="Profit" data={data1} />
+          </YAxis>
+
+          <YAxis opposite>
+            <YAxis.Title>Social Buzz</YAxis.Title>
+            <SplineSeries id="twitter" name="Twitter mentions" data={data2} />
+          </YAxis>
+
+          <Navigator>
+            <Navigator.Series seriesId="profit" />
+            <Navigator.Series seriesId="twitter" />
+          </Navigator>
+        </HighchartsStockChart>
+      </div>
+    )
+  }
+}
 
 export default withHighcharts(HighchartWrapper, Highcharts)
