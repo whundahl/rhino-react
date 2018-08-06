@@ -25,7 +25,6 @@ import 'resources/AntStyles/AntDesign/antd.cleanui.scss'
 import 'resources/CleanStyles/Core/core.cleanui.scss'
 import 'resources/CleanStyles/Vendors/vendors.cleanui.scss'
 
-
 const history = createHistory()
 const router = routerMiddleware(history)
 const middlewares = [router, thunk]

@@ -15,7 +15,6 @@ import {
   Tooltip,
 } from 'react-jsx-highstock'
 
-
 const createDataPoint = (time = Date.now(), magnitude = 1000, offset = 0) => {
   return [time + offset * magnitude, Math.round(Math.random() * 100 * 2) / 2]
 }
@@ -28,7 +27,6 @@ const createRandomData = (time, magnitude, points = 100) => {
   }
   return data
 }
-
 
 class HighchartWrapper extends Component {
   constructor(props) {

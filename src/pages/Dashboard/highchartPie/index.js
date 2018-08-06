@@ -1,22 +1,32 @@
-import React, { Component } from 'react';
-import Highcharts from 'highcharts';
+import React, { Component } from 'react'
+import Highcharts from 'highcharts'
 import {
-  HighchartsChart, Chart, withHighcharts, XAxis, YAxis, Title, Legend, PieSeries
-} from 'react-jsx-highcharts';
+  HighchartsChart,
+  Chart,
+  withHighcharts,
+  XAxis,
+  YAxis,
+  Title,
+  Legend,
+  PieSeries,
+} from 'react-jsx-highcharts'
 
 class SectorBreakdown extends Component {
-
   render() {
-    const pieData = [{
-      name: 'Jane',
-      y: 13
-    }, {
-      name: 'John',
-      y: 23
-    }, {
-      name: 'Joe',
-      y: 19
-    }];
+    const pieData = [
+      {
+        name: 'Jane',
+        y: 13,
+      },
+      {
+        name: 'John',
+        y: 23,
+      },
+      {
+        name: 'Joe',
+        y: 19,
+      },
+    ]
 
     return (
       <div className="app">
@@ -33,9 +43,8 @@ class SectorBreakdown extends Component {
             <PieSeries name="Total consumption" data={pieData} size={300} showInLegend={false} />
           </YAxis>
         </HighchartsChart>
-
       </div>
-    );
+    )
   }
 }
 

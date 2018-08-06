@@ -1,32 +1,37 @@
-import React, { Component } from 'react';
-import Highcharts from 'highcharts';
+import React, { Component } from 'react'
+import Highcharts from 'highcharts'
 import {
-  HighchartsChart, withHighcharts, Title, Subtitle, XAxis, YAxis, TreemapSeries, Tooltip
-} from 'react-jsx-highcharts';
-
-
+  HighchartsChart,
+  withHighcharts,
+  Title,
+  Subtitle,
+  XAxis,
+  YAxis,
+  TreemapSeries,
+  Tooltip,
+} from 'react-jsx-highcharts'
 
 class Heatmap extends Component {
-
-  constructor (props) {
-    super(props);
+  constructor(props) {
+    super(props)
 
     this.state = {
-      treeData: null
-    };
+      treeData: null,
+    }
   }
-  render () {
-
-    const levels = [{
-      level: 1,
-      dataLabels: {
-        enabled: true
+  render() {
+    const levels = [
+      {
+        level: 1,
+        dataLabels: {
+          enabled: true,
+        },
+        borderWidth: 3,
       },
-      borderWidth: 3
-    }];
-    const tooltipFormatter = function () {
-      return `${this.key}: ${this.point.value}`;
-    };
+    ]
+    const tooltipFormatter = function() {
+      return `${this.key}: ${this.point.value}`
+    }
 
     return (
       <div className="app">
@@ -45,15 +50,16 @@ class Heatmap extends Component {
               animationLimit={1000}
               dataLabels={{ enabled: false }}
               levelIsConstant={false}
-              levels={levels} />
+              levels={levels}
+            />
           </YAxis>
 
           <Tooltip formatter={tooltipFormatter} />
         </HighchartsChart>
->
+        >
       </div>
-    );
+    )
   }
 }
 
-export default withHighcharts(Heatmap, Highcharts);
+export default withHighcharts(Heatmap, Highcharts)
