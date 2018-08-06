@@ -77,7 +77,7 @@ class Portfolio1 extends React.Component {
 
     return (
       <div className="crypto">
-        <Divider strong>Overview</Divider>
+        <Divider style={{ fontWeight: 'bold' }}>Overview</Divider>
         <div className="crypto__listMobile">
           <div className="utils__title utils__title--flat mb-3">
             <strong>Listed REITs</strong>
@@ -225,7 +225,7 @@ class Portfolio1 extends React.Component {
             <div className="crypto__order" style={{ height: 400 }} />
           </div>
         </div>
-        <Divider strong>Portfolio Composition</Divider>
+        <Divider style={{ fontWeight: 'bold' }}>Portfolio Composition</Divider>
 
         <div className="row">
           <div className="col-lg-12 col-xl-6">
@@ -256,7 +256,7 @@ class Portfolio1 extends React.Component {
             <div className="crypto__table text-nowrap" style={{ height: 400 }} />
           </div>
         </div>
-        <Divider strong>Recent Trades</Divider>
+        <Divider style={{ fontWeight: 'bold' }}>Recent Trades</Divider>
 
         <div className="card">
           <div className="card-body">

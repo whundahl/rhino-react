@@ -77,7 +77,7 @@ class Portfolio2 extends React.Component {
 
     return (
       <div className="crypto">
-        <Divider strong>Overview</Divider>
+        <Divider style={{ fontWeight: 'bold' }}>Overview</Divider>
         <div className="crypto__listMobile">
           <div className="utils__title utils__title--flat mb-3">
             <strong>Listed REITs</strong>
@@ -605,7 +605,7 @@ class Portfolio2 extends React.Component {
           </div>
         </div>
 
-        <Divider strong>Recent Trades</Divider>
+        <Divider style={{ fontWeight: 'bold' }}>Recent Trades</Divider>
 
         <div className="card">
           <div className="card-body">
