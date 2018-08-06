@@ -49,11 +49,15 @@
     }
     &__promo {
       padding: 0 0 rem(60);
+      border-radius: 10px;
       max-width: rem(800);
       font-size: rem(16);
+      padding: rem(20) rem(20) rem(20);
       line-height: rem(26);
       text-align: center;
-      margin: 0 auto;
+      margin: 30px auto;
+      background-color: $white;
+      box-shadow: 0 10px 40px -20px rgba(0,0,50,.2),  0 10px 80px -20px rgba(0,0,50,.1);
     }
 
     &__sidebar {
@@ -161,7 +165,7 @@
   &__footer {
     align-self: flex-end;
     width: 100%;
-    color: $text;
+    color: $white;
     padding: rem(40);
 
     @media (max-width: $md-max-width) {
@@ -177,7 +181,7 @@
           margin-right: 0;
         }
         a {
-          color: $text;
+          color: $white;
           opacity: .7;
           line-height: 1.4;
           display: inline-block;
