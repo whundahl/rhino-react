@@ -2,6 +2,7 @@ import React from 'react'
 import { Table, Select, Tag, Divider, Input, Button, Icon } from 'antd'
 import './style.scss'
 import { marketHistory } from './data.json'
+import HighchartWrapper from '../../highchart/index'
 
 const data = [
   {
@@ -132,7 +133,7 @@ class DashboardCrypto extends React.Component {
 
     return (
       <div className="crypto">
-        <Divider strong>Overview</Divider>
+        <Divider style={{ fontWeight: 'bold' }}>Overview</Divider>
         <div className="crypto__listMobile">
           <div className="utils__title utils__title--flat mb-3">
             <strong>Listed REITs</strong>
@@ -317,7 +318,9 @@ class DashboardCrypto extends React.Component {
           </div>
           <div className="card">
             <div className="card-body">
-              <div style={{ height: 700 }} />
+              <div>
+                <HighchartWrapper />
+              </div>
             </div>
           </div>
           <div className="utils__title utils__title--flat mb-3">
@@ -351,7 +354,7 @@ class DashboardCrypto extends React.Component {
             <div className="card-body" style={{ height: 200 }} />
           </div>
         </div>
-        <Divider strong>Sector Composition</Divider>
+        <Divider style={{ fontWeight: 'bold' }}>Sector Composition</Divider>
 
         <div className="row">
           <div className="col-lg-12 col-xl-6">
@@ -381,7 +384,7 @@ class DashboardCrypto extends React.Component {
             </div>
           </div>
         </div>
-        <Divider strong>Ratings</Divider>
+        <Divider style={{ fontWeight: 'bold' }}>Ratings</Divider>
 
         <div className="row">
           <div className="col-lg-12 col-xl-6">
@@ -411,7 +414,7 @@ class DashboardCrypto extends React.Component {
             </div>
           </div>
         </div>
-        <Divider strong>Valuation</Divider>
+        <Divider style={{ fontWeight: 'bold' }}>Valuation</Divider>
         <div className="card">
           <div className="card-body">
             <div className="crypto__table text-nowrap" style={{ height: 600 }} />
@@ -424,7 +427,7 @@ class DashboardCrypto extends React.Component {
             </div>
           </div>
         </div>
-        <Divider strong>Research</Divider>
+        <Divider style={{ fontWeight: 'bold' }}>Research</Divider>
 
         <div className="card">
           <div className="card-body">
