@@ -36,7 +36,6 @@ Highcharts.theme = {
     '#aaeeee',
   ],
   chart: {
-    
     style: {
       fontFamily: "'Unica One', sans-serif",
     },

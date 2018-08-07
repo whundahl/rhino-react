@@ -8,8 +8,6 @@ import HeatmapResidential from '../../highchartHeatmap/index'
 import TopPerformers from '../../HomeTopPerformers/index'
 import BottomPerformers from '../../HomeBottomPerformers/index'
 
-
-
 const TabPane = Tabs.TabPane
 
 const data = [
@@ -39,15 +37,12 @@ const data = [
   },
 ]
 
-
-
 class DashboardAlpha extends React.Component {
   state = {
     filterDropdownVisible: false,
     data,
     searchText: '',
     filtered: false,
-
   }
 
   onInputChange = e => {
@@ -162,7 +157,7 @@ class DashboardAlpha extends React.Component {
             </div>
           </div>
         </div>
-        
+
         <div className="row">
           <div className="col-lg-12">
             <div className="card" style={{ height: 800 }}>
@@ -175,8 +170,6 @@ class DashboardAlpha extends React.Component {
             </div>
           </div>
         </div>
-
-        
 
         <div className="row">
           <div className="col-lg-12 col-xl-6">
@@ -208,7 +201,6 @@ class DashboardAlpha extends React.Component {
               <div className="card-header">
                 <div className="utils__title">
                   <strong>Top Performers</strong>
-                
                 </div>
               </div>
               <TopPerformers />
@@ -220,7 +212,6 @@ class DashboardAlpha extends React.Component {
               <div className="card-header">
                 <div className="utils__title">
                   <strong>Bottom Performers</strong>
-                 
                 </div>
               </div>
               <BottomPerformers />

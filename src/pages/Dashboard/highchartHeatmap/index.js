@@ -1,87 +1,95 @@
-import React, { Component } from 'react';
-import Highcharts from 'highcharts';
+import React, { Component } from 'react'
+import Highcharts from 'highcharts'
 import {
-  HighchartsChart, withHighcharts, Title, Subtitle, XAxis, YAxis, TreemapSeries, Tooltip
-} from 'react-jsx-highcharts';
+  HighchartsChart,
+  withHighcharts,
+  Title,
+  Subtitle,
+  XAxis,
+  YAxis,
+  TreemapSeries,
+  Tooltip,
+} from 'react-jsx-highcharts'
 
 const formatData = data => {
-  const colours = Highcharts.getOptions().colors;
-  const formattedData = [];
+  const colours = Highcharts.getOptions().colors
+  const formattedData = []
   Object.keys(data).forEach((regionName, rIndex) => {
     const region = {
       id: `id_${rIndex}`,
       name: regionName,
-      color: colours[rIndex]
-    };
-    let regionSum = 0;
+      color: colours[rIndex],
+    }
+    let regionSum = 0
 
-    const countries = Object.keys(data[regionName]);
+    const countries = Object.keys(data[regionName])
     countries.forEach((countryName, cIndex) => {
       const country = {
         id: `${region.id}_${cIndex}`,
         name: countryName,
-        parent: region.id
-      };
-      formattedData.push(country);
+        parent: region.id,
+      }
+      formattedData.push(country)
 
       Object.keys(data[regionName][countryName]).forEach((causeName, index) => {
         const cause = {
           id: `${country.id}_${index}`,
           name: causeName,
           parent: country.id,
-          value: Math.round(parseFloat(data[regionName][countryName][causeName]))
-        };
-        formattedData.push(cause);
-        regionSum += cause.value;
+          value: Math.round(parseFloat(data[regionName][countryName][causeName])),
+        }
+        formattedData.push(cause)
+        regionSum += cause.value
       })
-    });
+    })
 
-    region.value = Math.round(regionSum / countries.length);
-    formattedData.push(region);
-  });
+    region.value = Math.round(regionSum / countries.length)
+    formattedData.push(region)
+  })
 
-  return formattedData;
-};
+  return formattedData
+}
 
 class HeatmapResidential extends Component {
-
-  constructor (props) {
-    super(props);
+  constructor(props) {
+    super(props)
 
     this.state = {
-      treeData: null
-    };
+      treeData: null,
+    }
   }
 
-  componentDidMount () {
+  componentDidMount() {
     fetch('data.json')
       .then(res => {
         if (res.ok) {
-          return res.json();
+          return res.json()
         }
-        throw new Error('Network response was not ok.');
+        throw new Error('Network response was not ok.')
       })
       .then(json => {
         this.setState({
-          treeData: formatData(json)
+          treeData: formatData(json),
         })
-      });
+      })
   }
 
-  render () {
-    const treeData = this.state.treeData;
-    if (!treeData) return null;
+  render() {
+    const treeData = this.state.treeData
+    if (!treeData) return null
 
-    const levels = [{
-      level: 1,
-      dataLabels: {
-        enabled: true
+    const levels = [
+      {
+        level: 1,
+        dataLabels: {
+          enabled: true,
+        },
+        borderWidth: 3,
       },
-      borderWidth: 3
-    }];
-    const tooltipFormatter = function () {
-      return `${this.key}: ${this.point.value}`;
-    };
+    ]
+    const tooltipFormatter = function() {
+      return `${this.key}: ${this.point.value}`
+    }
 
     return (
       <div className="app">
@@ -100,15 +108,15 @@ class HeatmapResidential extends Component {
               animationLimit={1000}
               dataLabels={{ enabled: false }}
               levelIsConstant={false}
-              levels={levels} />
+              levels={levels}
+            />
           </YAxis>
 
           <Tooltip formatter={tooltipFormatter} />
         </HighchartsChart>
-
       </div>
-    );
+    )
   }
 }
 
-export default withHighcharts(HeatmapResidential, Highcharts);
+export default withHighcharts(HeatmapResidential, Highcharts)

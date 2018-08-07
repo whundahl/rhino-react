@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
-import Highcharts from 'highcharts';
+import React, { Component } from 'react'
+import Highcharts from 'highcharts'
 import {
-  HighchartsChart, Chart, withHighcharts, XAxis, YAxis, Title, Legend, ColumnSeries,
-} from 'react-jsx-highcharts';
-
+  HighchartsChart,
+  Chart,
+  withHighcharts,
+  XAxis,
+  YAxis,
+  Title,
+  Legend,
+  ColumnSeries,
+} from 'react-jsx-highcharts'
 
 class TopPerformers extends Component {
-
   render() {
-
     return (
       <div className="residentialBar">
         <HighchartsChart>
@@ -22,14 +26,11 @@ class TopPerformers extends Component {
 
           <YAxis>
             <ColumnSeries name="Rhino Rating" data={[3, 2, 1, 3, 4]} />
-
           </YAxis>
         </HighchartsChart>
-
-     
       </div>
-    );
+    )
   }
 }
 
-export default withHighcharts(TopPerformers, Highcharts);
+export default withHighcharts(TopPerformers, Highcharts)

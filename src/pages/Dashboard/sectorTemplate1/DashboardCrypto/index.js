@@ -422,7 +422,7 @@ class DashboardCrypto extends React.Component {
         <div className="row">
           <div className="col-lg-12">
             <div className="card" style={{ height: 600 }}>
-            <div className="card-header">
+              <div className="card-header">
                 <div className="utils__title">
                   <strong>Rhino Sector Rating</strong>
                 </div>
@@ -437,14 +437,14 @@ class DashboardCrypto extends React.Component {
                     }
                     key="1"
                   >
-                   <ResidentialSectorRating />
+                    <ResidentialSectorRating />
                   </TabPane>
                 </Tabs>
               </div>
             </div>
           </div>
-          </div>
-<div className="row"> 
+        </div>
+        <div className="row">
           <div className="col-lg-12">
             <div className="card" style={{ height: 500 }}>
               <div className="card-header">
