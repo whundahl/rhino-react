@@ -426,7 +426,7 @@ class Sectors extends React.Component {
             />
           </div>
         </div>
-        <div class="row">
+        <div className="row">
           <div className="col-xl-4">
             <ChartCard
               title={'+ 2.24%'}
