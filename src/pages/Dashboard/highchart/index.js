@@ -98,7 +98,7 @@ Highcharts.theme = {
     },
     pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
     valueDecimals: 1,
-    split: true
+    split: true,
   },
   plotOptions: {
     series: {
