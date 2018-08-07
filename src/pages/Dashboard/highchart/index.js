@@ -15,6 +15,8 @@ import {
   RangeSelector,
   Tooltip,
 } from 'react-jsx-highstock'
+import applyExporting from 'highcharts/modules/exporting'
+import applyOffline from 'highcharts/modules/offline-exporting'
 import Tradier from 'tradier-client'
 
 const TRADIER_API_TOKEN = '7svYXqoAjts9fGptLU7mtKo4Z4Oa'
@@ -44,6 +46,7 @@ Highcharts.theme = {
       fontFamily: "'Unica One', sans-serif",
     },
     plotBorderColor: '#606063',
+    renderTo: 'container',
   },
   title: {
     style: {
@@ -235,6 +238,9 @@ Highcharts.theme = {
   maskColor: 'rgba(255,255,255,0.3)',
 }
 Highcharts.setOptions(Highcharts.theme)
+
+applyExporting(Highcharts)
+applyOffline(Highcharts)
 
 class HighchartWrapper extends Component {
   constructor(props) {
