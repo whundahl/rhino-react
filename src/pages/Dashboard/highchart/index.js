@@ -96,6 +96,9 @@ Highcharts.theme = {
     style: {
       color: '#F0F0F0',
     },
+    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
+    valueDecimals: 1,
+    split: true
   },
   plotOptions: {
     series: {
@@ -327,8 +330,6 @@ class HighchartWrapper extends Component {
               {REITs.map((r, idx) => (
                 <Navigator.Series key={'reit-navigation' + idx} seriesId={r} />
               ))}
-
-              <Navigator.Series seriesId="group2" />
             </Navigator>
           </HighchartsStockChart>
         </div>
