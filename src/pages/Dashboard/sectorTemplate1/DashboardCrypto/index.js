@@ -4,9 +4,14 @@ import './style.scss'
 import { marketHistory } from './data.json'
 import HighchartWrapper from '../../highchart/index'
 import SectorBreakdown from '../../highchartPie/index'
+import BuySellHold from '../../HighchartBuySellHold/index'
+import HeatmapResidential from '../../highchartHeatmap/index'
+import ResidentialSectorRating from '../../ResidentialBarChart/index'
 
 import Tradier from 'tradier-client'
 const tradier = new Tradier('TRADIER_ACCESS_TOKEN', 'sandbox')
+
+const TabPane = Tabs.TabPane
 
 const data = [
   {
@@ -401,6 +406,7 @@ class DashboardCrypto extends React.Component {
                   <strong>Sector Analysis</strong>
                 </div>
               </div>
+              {/* <HeatmapResidential/> */}
             </div>
           </div>
         </div>
@@ -414,23 +420,39 @@ class DashboardCrypto extends React.Component {
         <Divider style={{ fontWeight: 'bold' }}>Ratings</Divider>
 
         <div className="row">
-          <div className="col-lg-12 col-xl-6">
-            <div className="card" style={{ height: 400 }}>
-              <div className="card-header">
+          <div className="col-lg-12">
+            <div className="card" style={{ height: 600 }}>
+            <div className="card-header">
                 <div className="utils__title">
                   <strong>Rhino Sector Rating</strong>
                 </div>
               </div>
+              <div className="card-body">
+                <Tabs defaultActiveKey="1">
+                  <TabPane
+                    tab={
+                      <span>
+                        <i className="icmn-home3" /> Residential
+                      </span>
+                    }
+                    key="1"
+                  >
+                   <ResidentialSectorRating />
+                  </TabPane>
+                </Tabs>
+              </div>
             </div>
           </div>
-
-          <div className="col-lg-12 col-xl-6">
-            <div className="card" style={{ height: 400 }}>
+          </div>
+<div className="row"> 
+          <div className="col-lg-12">
+            <div className="card" style={{ height: 500 }}>
               <div className="card-header">
                 <div className="utils__title">
                   <strong>BUY | SELL | HOLD</strong>
                 </div>
               </div>
+              <BuySellHold />
             </div>
           </div>
         </div>

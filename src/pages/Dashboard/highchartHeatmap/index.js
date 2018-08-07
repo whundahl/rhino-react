@@ -1,37 +1,87 @@
-import React, { Component } from 'react'
-import Highcharts from 'highcharts'
+import React, { Component } from 'react';
+import Highcharts from 'highcharts';
 import {
-  HighchartsChart,
-  withHighcharts,
-  Title,
-  Subtitle,
-  XAxis,
-  YAxis,
-  TreemapSeries,
-  Tooltip,
-} from 'react-jsx-highcharts'
+  HighchartsChart, withHighcharts, Title, Subtitle, XAxis, YAxis, TreemapSeries, Tooltip
+} from 'react-jsx-highcharts';
 
-class Heatmap extends Component {
-  constructor(props) {
-    super(props)
+const formatData = data => {
+  const colours = Highcharts.getOptions().colors;
+  const formattedData = [];
+  Object.keys(data).forEach((regionName, rIndex) => {
+    const region = {
+      id: `id_${rIndex}`,
+      name: regionName,
+      color: colours[rIndex]
+    };
+    let regionSum = 0;
+
+    const countries = Object.keys(data[regionName]);
+    countries.forEach((countryName, cIndex) => {
+      const country = {
+        id: `${region.id}_${cIndex}`,
+        name: countryName,
+        parent: region.id
+      };
+      formattedData.push(country);
+
+      Object.keys(data[regionName][countryName]).forEach((causeName, index) => {
+        const cause = {
+          id: `${country.id}_${index}`,
+          name: causeName,
+          parent: country.id,
+          value: Math.round(parseFloat(data[regionName][countryName][causeName]))
+        };
+        formattedData.push(cause);
+        regionSum += cause.value;
+      })
+    });
+
+    region.value = Math.round(regionSum / countries.length);
+    formattedData.push(region);
+  });
+
+  return formattedData;
+};
+
+class HeatmapResidential extends Component {
+
+  constructor (props) {
+    super(props);
 
     this.state = {
-      treeData: null,
-    }
+      treeData: null
+    };
   }
-  render() {
-    const levels = [
-      {
-        level: 1,
-        dataLabels: {
-          enabled: true,
-        },
-        borderWidth: 3,
+
+  componentDidMount () {
+    fetch('data.json')
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+        throw new Error('Network response was not ok.');
+      })
+      .then(json => {
+        this.setState({
+          treeData: formatData(json)
+        })
+      });
+  }
+
+  render () {
+    const treeData = this.state.treeData;
+    if (!treeData) return null;
+
+    const levels = [{
+      level: 1,
+      dataLabels: {
+        enabled: true
       },
-    ]
-    const tooltipFormatter = function() {
-      return `${this.key}: ${this.point.value}`
-    }
+      borderWidth: 3
+    }];
+    const tooltipFormatter = function () {
+      return `${this.key}: ${this.point.value}`;
+    };
 
     return (
       <div className="app">
@@ -44,22 +94,21 @@ class Heatmap extends Component {
 
           <YAxis>
             <TreemapSeries
-              data={null}
+              data={treeData}
               allowDrillToNode
               layoutAlgorithm="squarified"
               animationLimit={1000}
               dataLabels={{ enabled: false }}
               levelIsConstant={false}
-              levels={levels}
-            />
+              levels={levels} />
           </YAxis>
 
           <Tooltip formatter={tooltipFormatter} />
         </HighchartsChart>
-        >
+
       </div>
-    )
+    );
   }
 }
 
-export default withHighcharts(Heatmap, Highcharts)
+export default withHighcharts(HeatmapResidential, Highcharts);
