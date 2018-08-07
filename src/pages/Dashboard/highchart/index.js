@@ -232,7 +232,6 @@ class HighchartWrapper extends Component {
   constructor(props) {
     super(props)
 
-    const now = Date.now()
     this.state = {
       reitData: [],
       loading: true,
@@ -240,8 +239,8 @@ class HighchartWrapper extends Component {
   }
 
   componentDidMount() {
+    this.mounted = true
     const tradier = new Tradier(TRADIER_API_TOKEN, 'sandbox')
-
     const promises = []
 
     for (let i = 0; i < REITs.length; i++) {
@@ -268,7 +267,10 @@ class HighchartWrapper extends Component {
             }
         }
       }
-      this.setState({ reitData: res, loading: false })
+
+      if (this.mounted) {
+        this.setState({ reitData: res, loading: false })
+      }
     })
   }
 
@@ -332,6 +334,10 @@ class HighchartWrapper extends Component {
         </div>
       )
     }
+  }
+
+  componentWillUnmount() {
+    this.mounted = false
   }
 }
 
