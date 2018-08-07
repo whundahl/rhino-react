@@ -19,6 +19,7 @@ import Tradier from 'tradier-client'
 
 const TRADIER_API_TOKEN = '7svYXqoAjts9fGptLU7mtKo4Z4Oa'
 const REITs = ['ACC', 'APTS', 'AVB', 'CPT', 'EQR', 'ESS', 'IRET', 'IRT', 'NRZ', 'NXRT']
+const SECTOR = 'Residential'
 
 Highcharts.theme = {
   colors: [
@@ -256,13 +257,13 @@ class HighchartWrapper extends Component {
       for (let i = 0; i < res.length; i++) {
         if (res[i]) {
           const reitLen = res[i].length
-          const reitData = res[i]
+          const reit = res[i]
           for (let j = 0; j < reitLen; j++)
             for (let k = j + 1; k < reitLen - 1; k++) {
-              if (reitData[j][0] > reitData[k][0]) {
-                reitData[j][0] = reitData[j][0] + reitData[k][0]
-                reitData[k][0] = reitData[j][0] - reitData[k][0]
-                reitData[j][0] = reitData[j][0] - reitData[k][0]
+              if (reit[j][0] > reit[k][0]) {
+                reit[j][0] = reit[j][0] + reit[k][0]
+                reit[k][0] = reit[j][0] - reit[k][0]
+                reit[j][0] = reit[j][0] - reit[k][0]
               }
             }
         }
@@ -282,7 +283,7 @@ class HighchartWrapper extends Component {
           <HighchartsStockChart>
             <Chart zoomType="x" height={700} />
 
-            <Title>Highstocks Example</Title>
+            <Title>{SECTOR.toUpperCase()}</Title>
 
             <Legend>
               <Legend.Title>Key</Legend.Title>
@@ -309,16 +310,24 @@ class HighchartWrapper extends Component {
             </XAxis>
 
             <YAxis>
-              <YAxis.Title>Open Price</YAxis.Title>
+              <YAxis.Title>Open Value</YAxis.Title>
               {reitData.map((r, idx) => (
-                <SplineSeries key={'reit-series-' + idx} id="group1" name={REITs[idx]} data={r} />
+                <SplineSeries
+                  key={'reit-series-' + idx}
+                  id={REITs[idx]}
+                  name={REITs[idx]}
+                  data={r}
+                />
               ))}
             </YAxis>
 
-            {/* <Navigator>
-              <Navigator.Series seriesId="group1" />
+            <Navigator>
+              {REITs.map((r, idx) => (
+                <Navigator.Series key={'reit-navigation' + idx} seriesId={r} />
+              ))}
+
               <Navigator.Series seriesId="group2" />
-            </Navigator> */}
+            </Navigator>
           </HighchartsStockChart>
         </div>
       )
