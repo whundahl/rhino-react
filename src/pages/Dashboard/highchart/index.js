@@ -17,19 +17,6 @@ import {
 } from 'react-jsx-highstock'
 import Tradier from 'tradier-client'
 
-const createDataPoint = (time = Date.now(), magnitude = 1000, offset = 0) => {
-  return [time + offset * magnitude, Math.round(Math.random() * 200 * 2) / 2]
-}
-
-const createRandomData = (time, magnitude, points = 100) => {
-  const data = []
-  let i = points * -1 + 1
-  for (i; i <= 0; i++) {
-    data.push(createDataPoint(time, magnitude, i))
-  }
-  return data
-}
-
 const TRADIER_API_TOKEN = '7svYXqoAjts9fGptLU7mtKo4Z4Oa'
 const REITs = ['ACC', 'APTS', 'AVB', 'CPT', 'EQR', 'ESS', 'IRET', 'IRT', 'NRZ', 'NXRT']
 
@@ -246,9 +233,6 @@ class HighchartWrapper extends Component {
 
     const now = Date.now()
     this.state = {
-      data1: createRandomData(now, 1e7, 500),
-      data2: createRandomData(now, 1e7, 500),
-
       reitData: [],
       loading: true,
     }
@@ -269,18 +253,19 @@ class HighchartWrapper extends Component {
     }
 
     Promise.all(promises).then(res => {
-      console.log('RES', res)
       for (let i = 0; i < res.length; i++) {
-        const reitLen = res[i].length
-        const reitData = res[i]
-        for (let j = 0; j < reitLen; j++)
-          for (let k = j + 1; k < reitLen - 1; k++) {
-            if (reitData[j][0] > reitData[k][0]) {
-              reitData[j][0] = reitData[j][0] + reitData[k][0]
-              reitData[k][0] = reitData[j][0] - reitData[k][0]
-              reitData[j][0] = reitData[j][0] - reitData[k][0]
+        if (res[i]) {
+          const reitLen = res[i].length
+          const reitData = res[i]
+          for (let j = 0; j < reitLen; j++)
+            for (let k = j + 1; k < reitLen - 1; k++) {
+              if (reitData[j][0] > reitData[k][0]) {
+                reitData[j][0] = reitData[j][0] + reitData[k][0]
+                reitData[k][0] = reitData[j][0] - reitData[k][0]
+                reitData[j][0] = reitData[j][0] - reitData[k][0]
+              }
             }
-          }
+        }
       }
       this.setState({ reitData: res, loading: false })
     })
@@ -288,8 +273,6 @@ class HighchartWrapper extends Component {
 
   render() {
     const { loading, reitData } = this.state
-
-    console.log('REITDATA', reitData)
 
     if (loading) {
       return <div className="app">Loading...</div>
@@ -328,7 +311,7 @@ class HighchartWrapper extends Component {
             <YAxis>
               <YAxis.Title>Open Price</YAxis.Title>
               {reitData.map((r, idx) => (
-                <SplineSeries key={'reit-series-' + idx} id="group1" name="group A" data={r} />
+                <SplineSeries key={'reit-series-' + idx} id="group1" name={REITs[idx]} data={r} />
               ))}
             </YAxis>
 
