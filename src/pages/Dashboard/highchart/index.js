@@ -129,6 +129,11 @@ Highcharts.theme = {
     itemHiddenStyle: {
       color: '#606063',
     },
+    title: {
+      style: {
+        color: 'silver',
+      },
+    },
   },
   credits: {
     style: {
@@ -291,7 +296,7 @@ class HighchartWrapper extends Component {
             <Title>{SECTOR.toUpperCase()}</Title>
 
             <Legend>
-              <Legend.Title>Key</Legend.Title>
+              <Legend.Title>REITs</Legend.Title>
             </Legend>
 
             <RangeSelector>
@@ -315,7 +320,7 @@ class HighchartWrapper extends Component {
             </XAxis>
 
             <YAxis>
-              <YAxis.Title>Open Value</YAxis.Title>
+              <YAxis.Title>Open Price</YAxis.Title>
               {reitData.map((r, idx) => (
                 <SplineSeries
                   key={'reit-series-' + idx}
