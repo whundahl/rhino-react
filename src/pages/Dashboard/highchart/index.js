@@ -15,6 +15,7 @@ import {
   RangeSelector,
   Tooltip,
 } from 'react-jsx-highstock'
+import Tradier from 'tradier-client'
 
 const createDataPoint = (time = Date.now(), magnitude = 1000, offset = 0) => {
   return [time + offset * magnitude, Math.round(Math.random() * 200 * 2) / 2]
@@ -28,6 +29,9 @@ const createRandomData = (time, magnitude, points = 100) => {
   }
   return data
 }
+
+const TRADIER_API_TOKEN = '7svYXqoAjts9fGptLU7mtKo4Z4Oa'
+const REITs = ['ACC', 'APTS', 'AVB', 'CPT', 'EQR', 'ESS', 'IRET', 'IRT', 'NRZ', 'NXRT']
 
 Highcharts.theme = {
   colors: [
@@ -234,7 +238,6 @@ Highcharts.theme = {
   contrastTextColor: '#F0F0F3',
   maskColor: 'rgba(255,255,255,0.3)',
 }
-
 Highcharts.setOptions(Highcharts.theme)
 
 class HighchartWrapper extends Component {
@@ -245,59 +248,98 @@ class HighchartWrapper extends Component {
     this.state = {
       data1: createRandomData(now, 1e7, 500),
       data2: createRandomData(now, 1e7, 500),
-      data3: createRandomData(now, 1e7, 500),
+
+      reitData: [],
+      loading: true,
     }
   }
 
+  componentDidMount() {
+    const tradier = new Tradier(TRADIER_API_TOKEN, 'sandbox')
+
+    const promises = []
+
+    for (let i = 0; i < REITs.length; i++) {
+      promises.push(
+        tradier
+          .historical(REITs[i])
+          .then(history => history.day.map(res => [new Date(res.date).getTime(), res.open]))
+          .catch(error => alert(error)),
+      )
+    }
+
+    Promise.all(promises).then(res => {
+      console.log('RES', res)
+      for (let i = 0; i < res.length; i++) {
+        const reitLen = res[i].length
+        const reitData = res[i]
+        for (let j = 0; j < reitLen; j++)
+          for (let k = j + 1; k < reitLen - 1; k++) {
+            if (reitData[j][0] > reitData[k][0]) {
+              reitData[j][0] = reitData[j][0] + reitData[k][0]
+              reitData[k][0] = reitData[j][0] - reitData[k][0]
+              reitData[j][0] = reitData[j][0] - reitData[k][0]
+            }
+          }
+      }
+      this.setState({ reitData: res, loading: false })
+    })
+  }
+
   render() {
-    const { data1, data2, data3, data4 } = this.state
+    const { loading, reitData } = this.state
 
-    return (
-      <div className="app">
-        <HighchartsStockChart>
-          <Chart zoomType="x" height={700} />
+    console.log('REITDATA', reitData)
 
-          <Title>Highstocks Example</Title>
+    if (loading) {
+      return <div className="app">Loading...</div>
+    } else {
+      return (
+        <div className="app">
+          <HighchartsStockChart>
+            <Chart zoomType="x" height={700} />
 
-          <Legend>
-            <Legend.Title>Key</Legend.Title>
-          </Legend>
+            <Title>Highstocks Example</Title>
 
-          <RangeSelector>
-            <RangeSelector.Button count={1} type="day">
-              1d
-            </RangeSelector.Button>
-            <RangeSelector.Button count={7} type="day">
-              7d
-            </RangeSelector.Button>
-            <RangeSelector.Button count={1} type="month">
-              1m
-            </RangeSelector.Button>
-            <RangeSelector.Button type="all">All</RangeSelector.Button>
-            <RangeSelector.Input boxBorderColor="#7cb5ec" />
-          </RangeSelector>
+            <Legend>
+              <Legend.Title>Key</Legend.Title>
+            </Legend>
 
-          <Tooltip />
+            <RangeSelector>
+              <RangeSelector.Button count={1} type="day">
+                1d
+              </RangeSelector.Button>
+              <RangeSelector.Button count={7} type="day">
+                7d
+              </RangeSelector.Button>
+              <RangeSelector.Button count={1} type="month">
+                1m
+              </RangeSelector.Button>
+              <RangeSelector.Button type="all">All</RangeSelector.Button>
+              <RangeSelector.Input boxBorderColor="#7cb5ec" />
+            </RangeSelector>
 
-          <XAxis>
-            <XAxis.Title>Time</XAxis.Title>
-          </XAxis>
+            <Tooltip />
 
-          <YAxis>
-            <YAxis.Title>Price</YAxis.Title>
-            <SplineSeries id="group1" name="group A" data={data1} />
-            <SplineSeries id="group2" name="group B" data={data2} />
-            <SplineSeries id="group3" name="group C" data={data3} />
-          </YAxis>
+            <XAxis>
+              <XAxis.Title>Time</XAxis.Title>
+            </XAxis>
 
-          <Navigator>
-            <Navigator.Series seriesId="group1" />
-            <Navigator.Series seriesId="group2" />
-            <Navigator.Series seriesId="group3" />
-          </Navigator>
-        </HighchartsStockChart>
-      </div>
-    )
+            <YAxis>
+              <YAxis.Title>Open Price</YAxis.Title>
+              {reitData.map((r, idx) => (
+                <SplineSeries key={'reit-series-' + idx} id="group1" name="group A" data={r} />
+              ))}
+            </YAxis>
+
+            {/* <Navigator>
+              <Navigator.Series seriesId="group1" />
+              <Navigator.Series seriesId="group2" />
+            </Navigator> */}
+          </HighchartsStockChart>
+        </div>
+      )
+    }
   }
 }
 
