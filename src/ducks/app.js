@@ -88,7 +88,6 @@ export function login(username, password, dispatch) {
   auth
     .doSignInWithEmailAndPassword(username, password)
     .then(() => {
-      console.log('Login Success')
       window.localStorage.setItem('app.Authorization', '')
       window.localStorage.setItem('app.Role', 'administrator')
       dispatch(_setHideLogin(true))
@@ -122,6 +121,9 @@ export const logout = () => (dispatch, getState) => {
   )
   window.localStorage.setItem('app.Authorization', '')
   window.localStorage.setItem('app.Role', '')
+
+  auth.doSignOut().then(() => console.log('Log out success'))
+
   dispatch(push('/login'))
 }
 
