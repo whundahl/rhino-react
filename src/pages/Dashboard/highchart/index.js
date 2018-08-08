@@ -111,6 +111,8 @@ Highcharts.theme = {
       marker: {
         lineColor: '#333',
       },
+      compare: 'percent',
+      compareBase: 0,
     },
     boxplot: {
       fillColor: '#505053',
