@@ -15,6 +15,8 @@ import {
   RangeSelector,
   Tooltip,
 } from 'react-jsx-highstock'
+import applyExporting from 'highcharts/modules/exporting'
+import applyOffline from 'highcharts/modules/offline-exporting'
 import Tradier from 'tradier-client'
 
 const TRADIER_API_TOKEN = '7svYXqoAjts9fGptLU7mtKo4Z4Oa'
@@ -44,6 +46,7 @@ Highcharts.theme = {
       fontFamily: "'Unica One', sans-serif",
     },
     plotBorderColor: '#606063',
+    renderTo: 'container',
   },
   title: {
     style: {
@@ -96,6 +99,9 @@ Highcharts.theme = {
     style: {
       color: '#F0F0F0',
     },
+    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b><br/>',
+    valueDecimals: 1,
+    split: true,
   },
   plotOptions: {
     series: {
@@ -105,6 +111,8 @@ Highcharts.theme = {
       marker: {
         lineColor: '#333',
       },
+      compare: 'percent',
+      compareBase: 0,
     },
     boxplot: {
       fillColor: '#505053',
@@ -125,6 +133,11 @@ Highcharts.theme = {
     },
     itemHiddenStyle: {
       color: '#606063',
+    },
+    title: {
+      style: {
+        color: 'silver',
+      },
     },
   },
   credits: {
@@ -228,6 +241,9 @@ Highcharts.theme = {
 }
 Highcharts.setOptions(Highcharts.theme)
 
+applyExporting(Highcharts)
+applyOffline(Highcharts)
+
 class HighchartWrapper extends Component {
   constructor(props) {
     super(props)
@@ -288,7 +304,7 @@ class HighchartWrapper extends Component {
             <Title>{SECTOR.toUpperCase()}</Title>
 
             <Legend>
-              <Legend.Title>Key</Legend.Title>
+              <Legend.Title>REITs</Legend.Title>
             </Legend>
 
             <RangeSelector>
@@ -312,7 +328,7 @@ class HighchartWrapper extends Component {
             </XAxis>
 
             <YAxis>
-              <YAxis.Title>Open Value</YAxis.Title>
+              <YAxis.Title>Open Price</YAxis.Title>
               {reitData.map((r, idx) => (
                 <SplineSeries
                   key={'reit-series-' + idx}
@@ -327,8 +343,6 @@ class HighchartWrapper extends Component {
               {REITs.map((r, idx) => (
                 <Navigator.Series key={'reit-navigation' + idx} seriesId={r} />
               ))}
-
-              <Navigator.Series seriesId="group2" />
             </Navigator>
           </HighchartsStockChart>
         </div>
