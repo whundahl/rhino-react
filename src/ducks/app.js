@@ -2,6 +2,7 @@ import { createAction, createReducer } from 'redux-act'
 import { push } from 'react-router-redux'
 import { pendingTask, begin, end } from 'react-redux-spinner'
 import { notification } from 'antd'
+import { auth } from '../firebase'
 
 const REDUCER = 'app'
 const NS = `@@${REDUCER}/`
@@ -83,35 +84,26 @@ export const initAuth = roles => (dispatch, getState) => {
 }
 
 export function login(username, password, dispatch) {
-  // Use Axios there to get User Auth Token with Basic Method Authentication
-
-  if (username === 'admin@rhinorea.com' && password === '123123') {
-    window.localStorage.setItem('app.Authorization', '')
-    window.localStorage.setItem('app.Role', 'administrator')
-    dispatch(_setHideLogin(true))
-    dispatch(push('/dashboard/alpha'))
-    notification.open({
-      type: 'success',
-      message: 'You have successfully logged in!',
-      description:
-        'Welcome to Rhino Premium. Please be patient as we continue the devlopment of the our new web application.',
+  //firebase login
+  auth
+    .doSignInWithEmailAndPassword(username, password)
+    .then(() => {
+      console.log('Login Success')
+      window.localStorage.setItem('app.Authorization', '')
+      window.localStorage.setItem('app.Role', 'administrator')
+      dispatch(_setHideLogin(true))
+      dispatch(push('/dashboard/alpha'))
+      notification.open({
+        type: 'success',
+        message: 'You have successfully logged in!',
+        description:
+          'Welcome to Rhino Premium. Please be patient as we continue the devlopment of the our new web application.',
+      })
+      return true
     })
-    return true
-  }
-
-  if (username === 'agent@rhinorea.com' && password === '123123') {
-    window.localStorage.setItem('app.Authorization', '')
-    window.localStorage.setItem('app.Role', 'agent')
-    dispatch(_setHideLogin(true))
-    dispatch(push('/dashboard/alpha'))
-    notification.open({
-      type: 'success',
-      message: 'You have successfully logged in!',
-      description:
-        'Welcome to Rhino Premium. Please be patient as we continue the devlopment of the our new web application.',
+    .catch(error => {
+      console.log(error)
     })
-    return true
-  }
 
   dispatch(push('/login'))
   dispatch(_setFrom(''))
