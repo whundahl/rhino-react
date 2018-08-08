@@ -15,7 +15,7 @@ const loadable = loader =>
 
 const loadableRoutes = {
   // Default Pages
- 
+
   '/login': {
     component: loadable(() => import('pages/DefaultPages/LoginPage')),
   },
@@ -30,8 +30,6 @@ const loadableRoutes = {
   '/dashboard/home': {
     component: loadable(() => import('pages/Dashboard/home')),
   },
-
-
 
   // Sectors
   '/dashboard/sectorComp': {
