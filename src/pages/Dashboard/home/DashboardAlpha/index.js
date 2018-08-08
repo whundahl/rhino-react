@@ -1,12 +1,6 @@
 import React from 'react'
 import { Table, Select, Tag, Divider, Input, Button, Icon, Slider, Tabs } from 'antd'
 
-import HomeSectorChart from '../../HomeSectorChart/index'
-import SectorBreakdown from '../../highchartPie/index'
-import BuySellHold from '../../HighchartBuySellHold/index'
-import HeatmapResidential from '../../highchartHeatmap/index'
-import TopPerformers from '../../HomeTopPerformers/index'
-import BottomPerformers from '../../HomeBottomPerformers/index'
 
 const TabPane = Tabs.TabPane
 
@@ -166,7 +160,7 @@ class DashboardAlpha extends React.Component {
                   <strong>Sector Performance</strong>
                 </div>
               </div>
-              <HomeSectorChart />
+             
             </div>
           </div>
         </div>
@@ -203,7 +197,7 @@ class DashboardAlpha extends React.Component {
                   <strong>Top Performers</strong>
                 </div>
               </div>
-              <TopPerformers />
+            
             </div>
           </div>
 
@@ -214,7 +208,7 @@ class DashboardAlpha extends React.Component {
                   <strong>Bottom Performers</strong>
                 </div>
               </div>
-              <BottomPerformers />
+      
             </div>
           </div>
         </div>

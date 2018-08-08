@@ -3,10 +3,7 @@ import { Table, Select, Tag, Divider, Input, Button, Icon, Slider, Tabs } from '
 import './style.scss'
 import { marketHistory } from './data.json'
 import HighchartWrapper from '../../highchart/index'
-import SectorBreakdown from '../../highchartPie/index'
-import BuySellHold from '../../HighchartBuySellHold/index'
-import HeatmapResidential from '../../highchartHeatmap/index'
-import ResidentialSectorRating from '../../ResidentialBarChart/index'
+
 
 import Tradier from 'tradier-client'
 const tradier = new Tradier('TRADIER_ACCESS_TOKEN', 'sandbox')
@@ -374,7 +371,7 @@ class DashboardCrypto extends React.Component {
                   <strong>Sector Breakdown</strong>
                 </div>
               </div>
-              <SectorBreakdown />
+          
             </div>
           </div>
 
@@ -385,7 +382,7 @@ class DashboardCrypto extends React.Component {
                   <strong>Sector Analysis</strong>
                 </div>
               </div>
-              {/* <HeatmapResidential/> */}
+             
             </div>
           </div>
         </div>
@@ -416,7 +413,7 @@ class DashboardCrypto extends React.Component {
                     }
                     key="1"
                   >
-                    <ResidentialSectorRating />
+               
                   </TabPane>
                 </Tabs>
               </div>
@@ -431,7 +428,7 @@ class DashboardCrypto extends React.Component {
                   <strong>BUY | SELL | HOLD</strong>
                 </div>
               </div>
-              <BuySellHold />
+           
             </div>
           </div>
         </div>
