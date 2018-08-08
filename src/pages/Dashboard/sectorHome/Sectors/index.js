@@ -91,8 +91,8 @@ class Sectors extends React.Component {
               }}
             />
           </div>
-          </div>
-          <div className="row">
+        </div>
+        <div className="row">
           <div className="col-lg-12 col-xl-6">
             <ChartCard
               title={'+ 0.73%'}
@@ -155,8 +155,8 @@ class Sectors extends React.Component {
               }}
             />
           </div>
-          </div>
-          <div className="row">
+        </div>
+        <div className="row">
           <div className="col-lg-12 col-xl-6">
             <ChartCard
               title={'-4.29%'}

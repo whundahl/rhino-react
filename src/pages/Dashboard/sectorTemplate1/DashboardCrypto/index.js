@@ -40,7 +40,6 @@ const data = [
   },
 ]
 
-
 class DashboardCrypto extends React.Component {
   state = {
     marketHistory: {
@@ -332,9 +331,7 @@ class DashboardCrypto extends React.Component {
             <strong>Sector Chart</strong>
           </div>
           <div className="card">
-            
-                <HighchartWrapper />
-         
+            <HighchartWrapper />
           </div>
           <div className="utils__title utils__title--flat mb-3">
             <strong>Recent Articles</strong>

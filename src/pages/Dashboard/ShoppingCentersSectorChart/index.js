@@ -18,7 +18,21 @@ import applyOffline from 'highcharts/modules/offline-exporting'
 import Tradier from 'tradier-client'
 
 const TRADIER_API_TOKEN = '7svYXqoAjts9fGptLU7mtKo4Z4Oa'
-const REITs = ['AKR', 'BRX', 'DDR', 'FRT', 'KIM', 'KRG', 'REG', 'ROIC', 'RVI', 'UBA', 'UE', 'WRI', 'WSR']
+const REITs = [
+  'AKR',
+  'BRX',
+  'DDR',
+  'FRT',
+  'KIM',
+  'KRG',
+  'REG',
+  'ROIC',
+  'RVI',
+  'UBA',
+  'UE',
+  'WRI',
+  'WSR',
+]
 const SECTOR = 'Shopping Centers Sector'
 
 Highcharts.theme = {
@@ -78,8 +92,8 @@ Highcharts.theme = {
   yAxis: {
     gridLineColor: '#707073',
     labels: {
-      formatter:  function () {
-        return (this.value > 0 ? ' + ' : '') + this.value + '%'; 
+      formatter: function() {
+        return (this.value > 0 ? ' + ' : '') + this.value + '%'
       },
       style: {
         color: '#E0E0E3',
@@ -92,7 +106,6 @@ Highcharts.theme = {
     title: {
       style: {
         color: '#A0A0A3',
-
       },
     },
   },
@@ -101,7 +114,8 @@ Highcharts.theme = {
     style: {
       color: '#F0F0F0',
     },
-    pointFormat: '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+    pointFormat:
+      '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
     valueDecimals: 1,
     split: true,
   },

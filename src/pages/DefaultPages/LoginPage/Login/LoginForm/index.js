@@ -73,19 +73,19 @@ class LoginForm extends React.Component {
             </Button>
           </div>
           <div className-="row">
-          <GoogleLoginButton
-        googleClientId='YOUR_GOOGLE_CLIENT_ID_HERE'
-        onLoginSuccess={(googleUser) => {
-          // console.log('Replace this function to start using this information');
-          // console.log('Google User:', googleUser.getBasicProfile());
-          // console.log('ID token:', googleUser.getAuthResponse().id_token);
-        }}
-        onLoginFailure={() => console.log('Login failed')}
-        width={270}
-        height={40}
-        longTitle={false}
-        theme="light"
-      /> 
+            <GoogleLoginButton
+              googleClientId="YOUR_GOOGLE_CLIENT_ID_HERE"
+              onLoginSuccess={googleUser => {
+                // console.log('Replace this function to start using this information');
+                // console.log('Google User:', googleUser.getBasicProfile());
+                // console.log('ID token:', googleUser.getAuthResponse().id_token);
+              }}
+              onLoginFailure={() => console.log('Login failed')}
+              width={270}
+              height={40}
+              longTitle={false}
+              theme="light"
+            />
           </div>
         </Form>
       </div>
