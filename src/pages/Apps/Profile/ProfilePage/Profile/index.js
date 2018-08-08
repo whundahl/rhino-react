@@ -230,11 +230,6 @@ class ProfileApp extends React.Component {
                   </dd>
                   <dt className="col-xl-3">Bio:</dt>
                   <dd className="col-xl-9">{bio}</dd>
-
-                  <dt className="col-xl-3">Last companies:</dt>
-                  <dd className="col-xl-9">{lastCompanies}</dd>
-                  <dt className="col-xl-3">Personal Information:</dt>
-                  <dd className="col-xl-9">{personal}</dd>
                 </dl>
               </div>
             </div>

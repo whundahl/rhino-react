@@ -304,7 +304,7 @@ export default [
       {
         title: 'Register',
         key: 'register',
-        url: '/pages/register'
+        url: '/pages/register',
       },
       {
         title: 'Support Forum',

@@ -1,110 +1,205 @@
 import React from 'react'
-import { Form, Input, Icon, Checkbox, Button } from 'antd'
+import { Form, Input, Tooltip, Icon, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete } from 'antd';
+const FormItem = Form.Item;
+const Option = Select.Option;
+const AutoCompleteOption = AutoComplete.Option;
 
-const FormItem = Form.Item
 
-class RegisterFormComponent extends React.Component {
+class RegistrationForm extends React.Component {
   state = {
     confirmDirty: false,
-  }
-
-  handleConfirmBlur = e => {
-    const value = e.target.value
-    this.setState({ confirmDirty: this.state.confirmDirty || !!value })
-  }
-
-  handleSubmit = e => {
-    e.preventDefault()
-    this.props.form.validateFields((err, values) => {
+    autoCompleteResult: [],
+  };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log('Received values of form: ', values)
+        console.log('Received values of form: ', values);
       }
-    })
+    });
   }
-
+  handleConfirmBlur = (e) => {
+    const value = e.target.value;
+    this.setState({ confirmDirty: this.state.confirmDirty || !!value });
+  }
   compareToFirstPassword = (rule, value, callback) => {
-    const form = this.props.form
+    const form = this.props.form;
     if (value && value !== form.getFieldValue('password')) {
-      callback('Two passwords that you enter is inconsistent!')
+      callback('Two passwords that you enter is inconsistent!');
     } else {
-      callback()
+      callback();
     }
   }
-
   validateToNextPassword = (rule, value, callback) => {
-    const form = this.props.form
+    const form = this.props.form;
     if (value && this.state.confirmDirty) {
-      form.validateFields(['confirm'], { force: true })
+      form.validateFields(['confirm'], { force: true });
     }
-    callback()
+    callback();
   }
-
+  handleWebsiteChange = (value) => {
+    let autoCompleteResult;
+    if (!value) {
+      autoCompleteResult = [];
+    } else {
+      autoCompleteResult = ['.com', '.org', '.net'].map(domain => `${value}${domain}`);
+    }
+    this.setState({ autoCompleteResult });
+  }
   render() {
-    const { getFieldDecorator } = this.props.form
-    return (
-      <Form onSubmit={this.handleSubmit} className="login-form">
-        <FormItem validateStatus="validating">
-          {getFieldDecorator('Nickname', {
-            rules: [{ required: true, message: 'Please input your Nickname!' }],
-          })(
-            <Input
-              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              placeholder="Email or Nickname"
-            />,
-          )}
-        </FormItem>
-        <FormItem>
-          {getFieldDecorator('password', {
-            rules: [
-              {
-                required: true,
-              },
-              {
-                validator: this.validateToNextPassword,
-              },
-            ],
-          })(
-            <Input
-              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-              type="password"
-              placeholder="Input your password"
-            />,
-          )}
-        </FormItem>
-        <FormItem>
-          {getFieldDecorator('confirm', {
-            rules: [
-              {
-                required: true,
-              },
-              {
-                validator: this.compareToFirstPassword,
-              },
-            ],
-          })(
-            <Input
-              type="password"
-              onBlur={this.handleConfirmBlur}
-              placeholder="Confirm your password"
-            />,
-          )}
-        </FormItem>
+    const { getFieldDecorator } = this.props.form;
+    const { autoCompleteResult } = this.state;
 
-        <div className="form-actions">
-          <Button type="primary" htmlType="submit" className="login-form-button">
-            Sign Up
-          </Button>
-          <span className="ml-3">
-            {getFieldDecorator('mailsubscription', {
-              valuePropName: 'checked',
-              initialValue: true,
-            })(<Checkbox>Mail Subscription</Checkbox>)}
-          </span>
-        </div>
+    const formItemLayout = {
+      labelCol: {
+        xs: { span: 24 },
+        sm: { span: 8 },
+      },
+      wrapperCol: {
+        xs: { span: 24 },
+        sm: { span: 16 },
+      },
+    };
+    const tailFormItemLayout = {
+      wrapperCol: {
+        xs: {
+          span: 24,
+          offset: 0,
+        },
+        sm: {
+          span: 16,
+          offset: 8,
+        },
+      },
+    };
+    const prefixSelector = getFieldDecorator('prefix', {
+      initialValue: '1',
+    })(
+      <Select style={{ width: 70 }}>
+        <Option value="1">+1</Option>
+        <Option value="44">+44</Option>
+        <Option value="91">+91</Option>
+        <Option value="86">+86</Option>
+        <Option value="52">+52</Option>
+        <Option value="56">+56</Option>
+      </Select>
+    );
+
+    const websiteOptions = autoCompleteResult.map(website => (
+      <AutoCompleteOption key={website}>{website}</AutoCompleteOption>
+    ));
+
+    return (
+      <Form onSubmit={this.handleSubmit}>
+        <FormItem
+          {...formItemLayout}
+          label="E-mail"
+        >
+          {getFieldDecorator('email', {
+            rules: [{
+              type: 'email', message: 'The input is not valid E-mail!',
+            }, {
+              required: true, message: 'Please input your E-mail!',
+            }],
+          })(
+            <Input />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="Password"
+        >
+          {getFieldDecorator('password', {
+            rules: [{
+              required: true, message: 'Please input your password!',
+            }, {
+              validator: this.validateToNextPassword,
+            }],
+          })(
+            <Input type="password" />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="Confirm Password"
+        >
+          {getFieldDecorator('confirm', {
+            rules: [{
+              required: true, message: 'Please confirm your password!',
+            }, {
+              validator: this.compareToFirstPassword,
+            }],
+          })(
+            <Input type="password" onBlur={this.handleConfirmBlur} />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label={(
+            <span>
+              Username&nbsp;
+              <Tooltip title="What do you want others to call you?">
+                <Icon type="question-circle-o" />
+              </Tooltip>
+            </span>
+          )}
+        >
+          {getFieldDecorator('nickname', {
+            rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+          })(
+            <Input />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="Phone Number"
+        >
+          {getFieldDecorator('phone', {
+            rules: [{ required: true, message: 'Please input your phone number!' }],
+          })(
+            <Input addonBefore={prefixSelector} style={{ width: '100%' }} />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="Website"
+        >
+          {getFieldDecorator('website', {
+            rules: [{ required: true, message: 'Please input website!' }],
+          })(
+            <AutoComplete
+              dataSource={websiteOptions}
+              onChange={this.handleWebsiteChange}
+              placeholder="website"
+            >
+              <Input />
+            </AutoComplete>
+          )}
+        </FormItem>
+        <FormItem {...tailFormItemLayout}>
+          {getFieldDecorator('agreement', {
+            valuePropName: 'checked',
+          })(
+            <Checkbox>I have read the <a href="">Terms and Conditions</a></Checkbox>
+            
+          )}
+        </FormItem>
+        <FormItem {...tailFormItemLayout}>
+          {getFieldDecorator('morningBlast', {
+            valuePropName: 'checked2',
+          })(
+            <Checkbox>Please add me to the Morning Blast</Checkbox>
+            
+          )}
+          
+        </FormItem>
+        <FormItem {...tailFormItemLayout}>
+          <Button type="primary" htmlType="submit">Register</Button>
+        </FormItem>
       </Form>
-    )
+    );
   }
 }
 
-const RegisterForm = Form.create()(RegisterFormComponent)
+const RegisterForm = Form.create()(RegistrationForm);
 export default RegisterForm
