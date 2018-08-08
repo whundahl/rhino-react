@@ -12,7 +12,7 @@ class Sectors extends React.Component {
           <span className="text-uppercase font-size-16">Rhino Sectors</span>
         </div>
         <div className="row">
-          <div className="col-xl-4">
+          <div className="col-lg-12 col-xl-6">
             <ChartCard
               title={'+ 1.64%'}
               amount={'Health Care'}
@@ -52,7 +52,7 @@ class Sectors extends React.Component {
               }}
             />
           </div>
-          <div className="col-xl-4">
+          <div className="col-lg-12 col-xl-6">
             <ChartCard
               title={'- 0.41%'}
               amount={'Industrial'}
@@ -91,7 +91,9 @@ class Sectors extends React.Component {
               }}
             />
           </div>
-          <div className="col-xl-4">
+          </div>
+          <div className="row">
+          <div className="col-lg-12 col-xl-6">
             <ChartCard
               title={'+ 0.73%'}
               amount={'Infrastructure'}
@@ -111,9 +113,7 @@ class Sectors extends React.Component {
               }}
             />
           </div>
-        </div>
-        <div className="row">
-          <div className="col-xl-4">
+          <div className="col-lg-12 col-xl-6">
             <ChartCard
               title={'+ 7.66%'}
               amount={'Lodging'}
@@ -155,7 +155,9 @@ class Sectors extends React.Component {
               }}
             />
           </div>
-          <div className="col-xl-4">
+          </div>
+          <div className="row">
+          <div className="col-lg-12 col-xl-6">
             <ChartCard
               title={'-4.29%'}
               amount={'Malls'}
@@ -175,12 +177,12 @@ class Sectors extends React.Component {
               }}
             />
           </div>
-          <div className="col-xl-4">
+          <div className="col-lg-12 col-xl-6">
             <ChartCardHouse
               title={'+ 7.46%'}
               amount={'Man. Housing'}
               chartProps={{
-                width: 120,
+                width: 200,
                 height: 107,
                 lines: [
                   {
@@ -192,6 +194,38 @@ class Sectors extends React.Component {
                       46,
                       33,
                       35,
+                      45,
+                      40,
+                      41,
+                      43,
+                      42,
+                      45,
+                      44,
+                      55,
+                      44,
+                      44,
+                      46,
+                      37,
+                      48,
+                      49,
+                      50,
+                      52,
+                      45,
+                      40,
+                      41,
+                      43,
+                      42,
+                      45,
+                      44,
+                      55,
+                      44,
+                      44,
+                      46,
+                      37,
+                      48,
+                      49,
+                      50,
+                      52,
                       45,
                       40,
                       41,

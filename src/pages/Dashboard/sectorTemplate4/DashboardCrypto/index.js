@@ -2,6 +2,7 @@ import React from 'react'
 import { Table, Select, Tag, Divider, Input, Button, Icon } from 'antd'
 import './style.scss'
 import { marketHistory } from './data.json'
+import HighchartWrapper from '../../ShoppingCentersSectorChart/index'
 
 const data = [
   {
@@ -346,9 +347,7 @@ class DashboardCrypto extends React.Component {
             <strong>Sector Chart</strong>
           </div>
           <div className="card">
-            <div className="card-body">
-              <div style={{ height: 700 }} />
-            </div>
+           <HighchartWrapper /> 
           </div>
           <div className="utils__title utils__title--flat mb-3">
             <strong>Recent Articles</strong>

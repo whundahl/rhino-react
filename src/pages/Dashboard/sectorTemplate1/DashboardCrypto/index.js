@@ -40,22 +40,6 @@ const data = [
   },
 ]
 
-tradier
-  .quote('AAPL') // For multiple quotes, separate tickers with a comma: .quote('AAPL,KO,S')
-  .then(quote => {
-    this.setState(`
-      Symbol: ${quote.symbol}     
-      Volume: ${quote.volume} 
-      Open: ${quote.open} 
-      High: ${quote.high}
-      Low: ${quote.low} 
-      Close: ${quote.close}
-      Previous: ${quote.prevclose}  
-    `)
-  })
-  .catch(error => {
-    console.log(error)
-  })
 
 class DashboardCrypto extends React.Component {
   state = {
@@ -348,11 +332,9 @@ class DashboardCrypto extends React.Component {
             <strong>Sector Chart</strong>
           </div>
           <div className="card">
-            <div className="card-body">
-              <div>
+            
                 <HighchartWrapper />
-              </div>
-            </div>
+         
           </div>
           <div className="utils__title utils__title--flat mb-3">
             <strong>Recent Articles</strong>

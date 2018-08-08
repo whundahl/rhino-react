@@ -18,8 +18,8 @@ import applyOffline from 'highcharts/modules/offline-exporting'
 import Tradier from 'tradier-client'
 
 const TRADIER_API_TOKEN = '7svYXqoAjts9fGptLU7mtKo4Z4Oa'
-const REITs = ['ACC', 'APTS', 'AVB', 'CPT', 'EQR', 'ESS', 'IRET', 'IRT', 'NRZ', 'NXRT']
-const SECTOR = 'Residential Sector'
+const REITs = ['ELS', 'SUI', 'UMH']
+const SECTOR = 'Manufactured Housing Sector'
 
 Highcharts.theme = {
   colors: [

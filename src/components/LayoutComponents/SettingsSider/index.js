@@ -111,6 +111,28 @@ class SettingsSider extends React.Component {
                 </div>
               </div>
             </div>
+            <div className="row">
+              <div className="col">
+                <div className="card" style={{ height: 300 }}>
+                  <div className="card-header">
+                    <div className="utils__title">
+                      <strong>Rhino Sectors</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col">
+                <div className="card" style={{ height: 300 }}>
+                  <div className="card-header">
+                    <div className="utils__title">
+                      <strong>Rhino Portfolios</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </Scrollbars>
       </div>
