@@ -1,7 +1,6 @@
 import React from 'react'
 import { Table, Select, Tag, Divider, Input, Button, Icon, Slider, Tabs } from 'antd'
 
-
 const TabPane = Tabs.TabPane
 
 const data = [
@@ -160,7 +159,6 @@ class DashboardAlpha extends React.Component {
                   <strong>Sector Performance</strong>
                 </div>
               </div>
-             
             </div>
           </div>
         </div>
@@ -197,7 +195,6 @@ class DashboardAlpha extends React.Component {
                   <strong>Top Performers</strong>
                 </div>
               </div>
-            
             </div>
           </div>
 
@@ -208,7 +205,6 @@ class DashboardAlpha extends React.Component {
                   <strong>Bottom Performers</strong>
                 </div>
               </div>
-      
             </div>
           </div>
         </div>

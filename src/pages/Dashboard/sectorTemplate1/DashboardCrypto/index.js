@@ -4,7 +4,6 @@ import './style.scss'
 import { marketHistory } from './data.json'
 import HighchartWrapper from '../../highchart/index'
 
-
 import Tradier from 'tradier-client'
 const tradier = new Tradier('TRADIER_ACCESS_TOKEN', 'sandbox')
 
@@ -371,7 +370,6 @@ class DashboardCrypto extends React.Component {
                   <strong>Sector Breakdown</strong>
                 </div>
               </div>
-          
             </div>
           </div>
 
@@ -382,7 +380,6 @@ class DashboardCrypto extends React.Component {
                   <strong>Sector Analysis</strong>
                 </div>
               </div>
-             
             </div>
           </div>
         </div>
@@ -412,9 +409,7 @@ class DashboardCrypto extends React.Component {
                       </span>
                     }
                     key="1"
-                  >
-               
-                  </TabPane>
+                  />
                 </Tabs>
               </div>
             </div>
@@ -428,7 +423,6 @@ class DashboardCrypto extends React.Component {
                   <strong>BUY | SELL | HOLD</strong>
                 </div>
               </div>
-           
             </div>
           </div>
         </div>
