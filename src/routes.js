@@ -15,29 +15,12 @@ const loadable = loader =>
 
 const loadableRoutes = {
   // Default Pages
-  '/documentation': {
-    component: loadable(() => import('pages/DefaultPages/DocumentationPage')),
-  },
+ 
   '/login': {
     component: loadable(() => import('pages/DefaultPages/LoginPage')),
   },
-  '/pages/login-alpha': {
-    component: loadable(() => import('pages/DefaultPages/LoginAlphaPage')),
-  },
-  '/pages/login-beta': {
-    component: loadable(() => import('pages/DefaultPages/LoginBetaPage')),
-  },
   '/pages/register': {
     component: loadable(() => import('pages/DefaultPages/RegisterPage')),
-  },
-  '/pages/lockscreen': {
-    component: loadable(() => import('pages/DefaultPages/LockscreenPage')),
-  },
-  '/pages/pricing-table': {
-    component: loadable(() => import('pages/DefaultPages/PricingTablePage')),
-  },
-  '/pages/invoice': {
-    component: loadable(() => import('pages/DefaultPages/InvoicePage')),
   },
 
   // Dashboards
@@ -47,12 +30,8 @@ const loadableRoutes = {
   '/dashboard/home': {
     component: loadable(() => import('pages/Dashboard/home')),
   },
-  '/dashboard/beta': {
-    component: loadable(() => import('pages/Dashboard/DashboardBetaPage')),
-  },
-  '/dashboard/crypto': {
-    component: loadable(() => import('pages/Dashboard/DashboardCryptoPage')),
-  },
+
+
 
   // Sectors
   '/dashboard/sectorComp': {
@@ -148,9 +127,6 @@ const loadableRoutes = {
   // Apps
   '/apps/messaging': {
     component: loadable(() => import('pages/Apps/Messaging/MessagingChatPage')),
-  },
-  '/apps/mail': {
-    component: loadable(() => import('pages/Apps/Mail/MailListPage')),
   },
   '/apps/profile': {
     component: loadable(() => import('pages/Apps/Profile/ProfilePage')),
