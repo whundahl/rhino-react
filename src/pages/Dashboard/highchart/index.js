@@ -101,7 +101,7 @@ Highcharts.theme = {
       color: '#F0F0F0',
     },
     pointFormat:
-      '<span style="color:{series.color}">{series.name}</span>: <b>{point.y}</b> ({point.change}%)<br/>',
+      '<span style="color:{series.color}">{series.name}</span>: <b>${point.y}</b> ({point.change}%)<br/>',
     valueDecimals: 1,
     split: true,
   },
@@ -302,12 +302,10 @@ class HighchartWrapper extends Component {
       return (
         <div className="app">
           <HighchartsStockChart>
-            <Chart zoomType="x" height={700} />
-
-            <Title>{SECTOR}</Title>
+            <Chart zoomType="x" height={900} />
 
             <Legend>
-              <Legend.Title>REITs</Legend.Title>
+              <Legend.Title>{SECTOR} REITs</Legend.Title>
             </Legend>
 
             <RangeSelector>
@@ -327,7 +325,7 @@ class HighchartWrapper extends Component {
             <Tooltip />
 
             <XAxis>
-              <XAxis.Title>Date1</XAxis.Title>
+              <XAxis.Title>Date</XAxis.Title>
             </XAxis>
 
             <YAxis>
@@ -341,7 +339,6 @@ class HighchartWrapper extends Component {
                 />
               ))}
             </YAxis>
-
             <Navigator>
               {REITs.map((r, idx) => (
                 <Navigator.Series key={'reit-navigation' + idx} seriesId={r} />
