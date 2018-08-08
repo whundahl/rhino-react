@@ -34,9 +34,9 @@ class LoginForm extends React.Component {
 
     return (
       <div className="cat__pages__login__block__form">
-        <h4 className="text-uppercase">
+        <h2 className="text-uppercase">
           <strong>Please log in</strong>
-        </h4>
+        </h2>
         <br />
         <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit(isSubmitForm)}>
           <FormItem label="Email">
@@ -83,8 +83,8 @@ class LoginForm extends React.Component {
               onLoginFailure={() => console.log('Login failed')}
               width={270}
               height={40}
-              longTitle={false}
-              theme="light"
+              longTitle={true}
+              theme="dark"
             />
           </div>
         </Form>

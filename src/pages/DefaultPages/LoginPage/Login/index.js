@@ -37,15 +37,7 @@ class Login extends React.Component {
           <div className="main-login__block main-login__block--extended pb-0">
             <div className="row">
               <div className="col-xl-12">
-                <div className="main-login__block__promo text-black text-center">
-                  <h1 className="mb-3 text-black">
-                    <strong>RHINO PREMIUM</strong>
-                  </h1>
-                  <p>
-                    Providing Real Estate Investment Trust market data, research, and daily market
-                    updates.{' '}
-                  </p>
-                </div>
+         
                 <div className="main-login__block__inner">
                   <div className="main-login__block__form">
                     <LoginForm email={this.state.restoredEmail} />
