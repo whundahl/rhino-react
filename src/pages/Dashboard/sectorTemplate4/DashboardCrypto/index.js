@@ -3,7 +3,6 @@ import { Table, Select, Tag, Divider, Input, Button, Icon } from 'antd'
 import './style.scss'
 import { marketHistory } from './data.json'
 
-
 const data = [
   {
     key: '1',
@@ -346,9 +345,7 @@ class DashboardCrypto extends React.Component {
           <div className="utils__title utils__title--flat mb-3">
             <strong>Sector Chart</strong>
           </div>
-          <div className="card">
-           
-          </div>
+          <div className="card" />
           <div className="utils__title utils__title--flat mb-3">
             <strong>Recent Articles</strong>
           </div>

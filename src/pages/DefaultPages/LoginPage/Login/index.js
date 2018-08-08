@@ -37,7 +37,6 @@ class Login extends React.Component {
           <div className="main-login__block main-login__block--extended pb-0">
             <div className="row">
               <div className="col-xl-12">
-         
                 <div className="main-login__block__inner">
                   <div className="main-login__block__form">
                     <LoginForm email={this.state.restoredEmail} />
