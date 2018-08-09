@@ -20,5 +20,11 @@ export const submit = ({ username, password }: { username: string, password: str
   }
 }
 
+export const submitWithGoogle = (dispatch: Function) => {
+  dispatch(app.addSubmitForm(REDUCER))
+  app.loginWithGoogle(dispatch)
+  dispatch(app.deleteSubmitForm(REDUCER))
+}
+
 const initialState = {}
 export default createReducer({}, initialState)

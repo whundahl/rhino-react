@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { REDUCER, submit } from 'ducks/login'
+import { REDUCER, submit, submitWithGoogle } from 'ducks/login'
 import { Form, Input, Button } from 'antd'
 
 import GoogleLoginButton from 'react-google-login-button'
@@ -27,6 +27,11 @@ class LoginForm extends React.Component {
         }
       })
     }
+  }
+
+  onClickGoogleSign = () => {
+    const { dispatch } = this.props
+    dispatch(submitWithGoogle)
   }
 
   render() {
@@ -72,22 +77,13 @@ class LoginForm extends React.Component {
               Sign Up
             </Button>
           </div>
-          <div className-="row">
-            <GoogleLoginButton
-              googleClientId="YOUR_GOOGLE_CLIENT_ID_HERE"
-              onLoginSuccess={googleUser => {
-                // console.log('Replace this function to start using this information');
-                // console.log('Google User:', googleUser.getBasicProfile());
-                // console.log('ID token:', googleUser.getAuthResponse().id_token);
-              }}
-              onLoginFailure={() => console.log('Login failed')}
-              width={270}
-              height={40}
-              longTitle={true}
-              theme="dark"
-            />
-          </div>
         </Form>
+
+        <div className-="row">
+          <Button className="width-100" htmlType="button" onClick={this.onClickGoogleSign}>
+            Google Sign
+          </Button>
+        </div>
       </div>
     )
   }

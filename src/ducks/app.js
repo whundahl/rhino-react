@@ -86,7 +86,7 @@ export const initAuth = roles => (dispatch, getState) => {
 export async function login(username, password, dispatch) {
   //firebase login
   let status = false
-
+  // auth.doSignInWithGoogle()
   await auth
     .doSignInWithEmailAndPassword(username, password)
     .then(() => {
@@ -109,6 +109,17 @@ export async function login(username, password, dispatch) {
     })
 
   return status
+}
+
+export function loginWithGoogle(dispatch) {
+  auth.doSignInWithGoogle().then(res => {
+    window.localStorage.setItem('app.Authorization', '')
+    window.localStorage.setItem('app.Role', 'administrator')
+    const token = res.credential.accessToken
+    const user = res.user
+    dispatch(_setHideLogin(true))
+    dispatch(push('/dashboard/alpha'))
+  })
 }
 
 export const logout = () => (dispatch, getState) => {
