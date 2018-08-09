@@ -83,9 +83,11 @@ export const initAuth = roles => (dispatch, getState) => {
   }
 }
 
-export function login(username, password, dispatch) {
+export async function login(username, password, dispatch) {
   //firebase login
-  auth
+  let status = false
+
+  await auth
     .doSignInWithEmailAndPassword(username, password)
     .then(() => {
       window.localStorage.setItem('app.Authorization', '')
@@ -98,16 +100,15 @@ export function login(username, password, dispatch) {
         description:
           'Welcome to Rhino Premium. Please be patient as we continue the devlopment of the our new web application.',
       })
-      return true
+      status = true
     })
     .catch(error => {
       console.log(error)
+      dispatch(push('/login'))
+      dispatch(_setFrom(''))
     })
 
-  dispatch(push('/login'))
-  dispatch(_setFrom(''))
-
-  return false
+  return status
 }
 
 export const logout = () => (dispatch, getState) => {
