@@ -9,21 +9,22 @@ export const submit = ({ username, password }: { username: string, password: str
   getState: Function,
 ) => {
   dispatch(app.addSubmitForm(REDUCER))
+  const isLoggined = app.login(username, password, dispatch)
+  dispatch(app.deleteSubmitForm(REDUCER))
 
-  let isLoggined = app.login(username, password, dispatch)
-
-  if (isLoggined) {
-    dispatch(app.deleteSubmitForm(REDUCER))
-  } else {
-    dispatch(app.deleteSubmitForm(REDUCER))
+  if (!isLoggined) {
     message.error('Invalid username or password')
   }
 }
 
 export const submitWithGoogle = (dispatch: Function) => {
   dispatch(app.addSubmitForm(REDUCER))
-  app.loginWithGoogle(dispatch)
+  const isLoggined = app.loginWithGoogle(dispatch)
   dispatch(app.deleteSubmitForm(REDUCER))
+
+  if (!isLoggined) {
+    message.error('Something went wrong with Google Authentication')
+  }
 }
 
 const initialState = {}
