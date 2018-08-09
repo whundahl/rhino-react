@@ -111,6 +111,36 @@ export async function login(username, password, dispatch) {
   return status
 }
 
+export async function loginWithGoogle(dispatch) {
+  //Google Sign in
+  let status = false
+
+  await auth
+    .doSignInWithGoogle()
+    .then(res => {
+      window.localStorage.setItem('app.Authorization', '')
+      window.localStorage.setItem('app.Role', 'administrator')
+      const token = res.credential.accessToken
+      const user = res.user
+      dispatch(_setHideLogin(true))
+      dispatch(push('/dashboard/alpha'))
+      notification.open({
+        type: 'success',
+        message: 'You have successfully logged in!',
+        description:
+          'Welcome to Rhino Premium. Please be patient as we continue the devlopment of the our new web application.',
+      })
+      status = true
+    })
+    .catch(error => {
+      console.log(error)
+      dispatch(push('/login'))
+      dispatch(_setFrom(''))
+    })
+
+  return status
+}
+
 export const logout = () => (dispatch, getState) => {
   dispatch(
     setUserState({
