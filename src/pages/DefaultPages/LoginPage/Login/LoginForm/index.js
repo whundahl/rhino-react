@@ -79,7 +79,7 @@ class LoginForm extends React.Component {
           </div>
 
           <Button className="width-100" htmlType="button" onClick={this.onClickGoogleSign}>
-            Google Sign
+            Google Login
           </Button>
         </Form>
       </div>
