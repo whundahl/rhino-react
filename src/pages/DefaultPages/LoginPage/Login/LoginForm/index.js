@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { REDUCER, submit, submitWithGoogle } from 'ducks/login'
-import { gotoRegister } from 'ducks/app'
+import { gotoRegister, gotoForgetPassword } from 'ducks/app'
 import { Form, Input, Button } from 'antd'
 
 const FormItem = Form.Item
@@ -39,6 +39,11 @@ class LoginForm extends React.Component {
     dispatch(gotoRegister)
   }
 
+  onClickForgetPassword = () => {
+    const { dispatch } = this.props
+    dispatch(gotoForgetPassword)
+  }
+
   render() {
     const { form, isSubmitForm } = this.props
 
@@ -65,8 +70,12 @@ class LoginForm extends React.Component {
             })(<Input size="default" type="password" />)}
           </FormItem>
           <div className="mb-2">
-            <a href="javascript: void(0);" className="utils__link--blue utils__link--underlined">
-              Forgot password
+            <a
+              href="javascript: void(0);"
+              className="utils__link--blue utils__link--underlined"
+              onClick={this.onClickForgetPassword}
+            >
+              Forgot password?
             </a>
           </div>
           <div className="form-actions">

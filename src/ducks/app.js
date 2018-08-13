@@ -207,6 +207,21 @@ export const gotoSignIn = dispatch => {
   dispatch(push('/login'))
 }
 
+export const gotoForgetPassword = dispatch => {
+  dispatch(push('/forgetPassword'))
+}
+
+export const resetPassword = (email, dispatch) => {
+  auth
+    .doPasswordReset(email)
+    .then(() => {
+      console.log('reset password success')
+    })
+    .catch(() => {
+      console.log('reset fail')
+    })
+}
+
 const initialState = {
   // APP STATE
   from: '',
