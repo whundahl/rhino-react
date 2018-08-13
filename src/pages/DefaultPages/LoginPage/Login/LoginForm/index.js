@@ -3,8 +3,6 @@ import { connect } from 'react-redux'
 import { REDUCER, submit, submitWithGoogle } from 'ducks/login'
 import { Form, Input, Button } from 'antd'
 
-import GoogleLoginButton from 'react-google-login-button'
-
 const FormItem = Form.Item
 
 const mapStateToProps = (state, props) => ({
