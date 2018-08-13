@@ -1,8 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Button } from 'antd'
 import RegisterForm from './RegisterForm'
+import { gotoSignIn } from 'ducks/app'
 import './style.scss'
 
+const mapStateToProps = (state, props) => ({})
+
+@connect(mapStateToProps)
 class Register extends React.Component {
   state = {
     backgroundImage: 'url(resources/images/login/4.jpg)',
@@ -21,6 +26,11 @@ class Register extends React.Component {
     })
   }
 
+  gotoLogin = () => {
+    const { dispatch } = this.props
+    dispatch(gotoSignIn)
+  }
+
   render() {
     const { backgroundImage, fullSize } = this.state
 
@@ -34,11 +44,10 @@ class Register extends React.Component {
             <div className="col-lg-4">
               <div className="login__header__menu">
                 <ul className="list-unstyled list-inline">
-                  <li className="list-inline-item">
-                    <a href="javascript: void(0);">&larr; Back</a>
-                  </li>
                   <li className="list-inline-item active">
-                    <a href="javascript: void(0);">Login</a>
+                    <a href="javascript: void(0);" onClick={this.gotoLogin}>
+                      Login
+                    </a>
                   </li>
                   <li className="list-inline-item">
                     <a href="javascript: void(0);">About</a>

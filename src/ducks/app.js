@@ -203,6 +203,10 @@ export const gotoRegister = dispatch => {
   dispatch(push('/register'))
 }
 
+export const gotoSignIn = dispatch => {
+  dispatch(push('/login'))
+}
+
 const initialState = {
   // APP STATE
   from: '',

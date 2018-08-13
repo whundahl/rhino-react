@@ -29,7 +29,6 @@ class RegistrationForm extends React.Component {
     autoCompleteResult: [],
   }
   handleSubmit = e => {
-    console.log('2', this.props)
     e.preventDefault()
     const { form, dispatch } = this.props
     this.props.form.validateFieldsAndScroll((err, values) => {
