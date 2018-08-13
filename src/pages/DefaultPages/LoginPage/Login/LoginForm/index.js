@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { REDUCER, submit, submitWithGoogle } from 'ducks/login'
+import { gotoRegister } from 'ducks/app'
 import { Form, Input, Button } from 'antd'
 
 const FormItem = Form.Item
@@ -30,6 +31,12 @@ class LoginForm extends React.Component {
   onClickGoogleSign = () => {
     const { dispatch } = this.props
     dispatch(submitWithGoogle)
+  }
+
+  onClickRegister = () => {
+    console.log('CLIKED1')
+    const { dispatch } = this.props
+    dispatch(gotoRegister)
   }
 
   render() {
@@ -71,7 +78,7 @@ class LoginForm extends React.Component {
             >
               Login
             </Button>
-            <Button className="width-100" htmlType="button">
+            <Button className="width-100" htmlType="button" onClick={this.onClickRegister}>
               Sign Up
             </Button>
           </div>

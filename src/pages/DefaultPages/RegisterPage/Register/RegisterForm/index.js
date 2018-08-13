@@ -154,17 +154,17 @@ class RegistrationForm extends React.Component {
           }
         >
           {getFieldDecorator('nickname', {
-            rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+            rules: [{ required: false, message: 'Please input your nickname!', whitespace: true }],
           })(<Input />)}
         </FormItem>
         <FormItem {...formItemLayout} label="Phone Number">
           {getFieldDecorator('phone', {
-            rules: [{ required: true, message: 'Please input your phone number!' }],
+            rules: [{ required: false, message: 'Please input your phone number!' }],
           })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
         </FormItem>
         <FormItem {...formItemLayout} label="Website">
           {getFieldDecorator('website', {
-            rules: [{ required: true, message: 'Please input website!' }],
+            rules: [{ required: false, message: 'Please input website!' }],
           })(
             <AutoComplete
               dataSource={websiteOptions}
@@ -178,6 +178,7 @@ class RegistrationForm extends React.Component {
         <FormItem {...tailFormItemLayout}>
           {getFieldDecorator('agreement', {
             valuePropName: 'checked',
+            rules: [{ required: true, message: 'Please check Terms and Conditions' }],
           })(
             <Checkbox>
               I have read the <a href="">Terms and Conditions</a>

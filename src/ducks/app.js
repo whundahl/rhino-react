@@ -35,6 +35,7 @@ export const resetHideLogin = () => (dispatch, getState) => {
 
 export const initAuth = roles => (dispatch, getState) => {
   // Use Axios there to get User Data by Auth Token with Bearer Method Authentication
+  console.log('Init auth called', roles)
 
   const userRole = window.localStorage.getItem('app.Role')
   const state = getState()
@@ -77,8 +78,14 @@ export const initAuth = roles => (dispatch, getState) => {
     default:
       const location = state.routing.location
       const from = location.pathname + location.search
-      dispatch(_setFrom(from))
-      dispatch(push('/login'))
+
+      if (from === '/register') {
+        dispatch(push('/register'))
+      } else {
+        dispatch(push('/login'))
+        dispatch(_setFrom(from))
+      }
+
       return Promise.reject()
   }
 }
@@ -156,6 +163,10 @@ export const logout = () => (dispatch, getState) => {
   auth.doSignOut().then(() => console.log('Log out success'))
 
   dispatch(push('/login'))
+}
+
+export const gotoRegister = dispatch => {
+  dispatch(push('/register'))
 }
 
 const initialState = {

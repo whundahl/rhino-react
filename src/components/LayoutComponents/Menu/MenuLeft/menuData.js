@@ -302,11 +302,6 @@ export default [
         url: '/apps/profile',
       },
       {
-        title: 'Register',
-        key: 'register',
-        url: '/pages/register',
-      },
-      {
         title: 'Support Forum',
         key: 'support',
         url: '/apps/supportForum',

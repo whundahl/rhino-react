@@ -19,7 +19,7 @@ const loadableRoutes = {
   '/login': {
     component: loadable(() => import('pages/DefaultPages/LoginPage')),
   },
-  '/pages/register': {
+  '/register': {
     component: loadable(() => import('pages/DefaultPages/RegisterPage')),
   },
 
