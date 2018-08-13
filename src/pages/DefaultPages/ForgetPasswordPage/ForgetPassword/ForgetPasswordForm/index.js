@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { REDUCER, submit } from 'ducks/forgetPassword'
-import { gotoRegister } from 'ducks/app'
+import { gotoRegister, gotoSignIn } from 'ducks/app'
 import { Form, Input, Button } from 'antd'
 
 const FormItem = Form.Item
@@ -28,6 +28,11 @@ class ForgetPasswordForm extends React.Component {
     }
   }
 
+  onClickBack = () => {
+    const { dispatch } = this.props
+    dispatch(gotoSignIn)
+  }
+
   render() {
     const { form, isSubmitForm } = this.props
 
@@ -40,7 +45,6 @@ class ForgetPasswordForm extends React.Component {
         <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit(isSubmitForm)}>
           <FormItem label="Email">
             {form.getFieldDecorator('email', {
-              initialValue: 'admin@rhinorea.com',
               rules: [
                 { type: 'email', message: 'The input is not a valid e-mail address' },
                 { required: true, message: 'Please input your e-mail address' },
@@ -57,6 +61,10 @@ class ForgetPasswordForm extends React.Component {
               Reset Password
             </Button>
           </div>
+
+          <Button className="width-100" htmlType="button" onClick={this.onClickBack}>
+            Back
+          </Button>
         </Form>
       </div>
     )

@@ -8,14 +8,13 @@ export const submit = ({ email }: { email: string }) => (
   dispatch: Function,
   getState: Function,
 ) => {
-  console.log('email', email)
   dispatch(app.addSubmitForm(REDUCER))
-  app.resetPassword(email, dispatch)
+  const isSuccess = app.resetPassword(email, dispatch)
   dispatch(app.deleteSubmitForm(REDUCER))
 
-  // if (!isSuccess) {
-  //   message.error('Sorry, something went wrong!')
-  // }
+  if (!isSuccess) {
+    message.error('Sorry, something went wrong!')
+  }
 }
 
 const initialState = {}

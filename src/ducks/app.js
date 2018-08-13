@@ -211,15 +211,20 @@ export const gotoForgetPassword = dispatch => {
   dispatch(push('/forgetPassword'))
 }
 
-export const resetPassword = (email, dispatch) => {
-  auth
+export async function resetPassword(email, dispatch) {
+  let status = false
+  await auth
     .doPasswordReset(email)
     .then(() => {
       console.log('reset password success')
+      dispatch(push('/login'))
+      status = true
     })
     .catch(() => {
-      console.log('reset fail')
+      console.log('reset failed')
     })
+
+  return status
 }
 
 const initialState = {
