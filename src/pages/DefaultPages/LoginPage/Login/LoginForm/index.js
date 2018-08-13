@@ -17,6 +17,7 @@ class LoginForm extends React.Component {
 
   // $FlowFixMe
   onSubmit = (isSubmitForm: ?boolean) => event => {
+    console.log('1', this.props)
     event.preventDefault()
     const { form, dispatch } = this.props
     if (!isSubmitForm) {
@@ -34,7 +35,6 @@ class LoginForm extends React.Component {
   }
 
   onClickRegister = () => {
-    console.log('CLIKED1')
     const { dispatch } = this.props
     dispatch(gotoRegister)
   }

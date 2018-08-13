@@ -12,20 +12,30 @@ import {
   Button,
   AutoComplete,
 } from 'antd'
+import { connect } from 'react-redux'
+import { REDUCER, submit } from 'ducks/register'
+
 const FormItem = Form.Item
 const Option = Select.Option
 const AutoCompleteOption = AutoComplete.Option
 
+const mapStateToProps = (state, props) => ({})
+
+@connect(mapStateToProps)
+@Form.create()
 class RegistrationForm extends React.Component {
   state = {
     confirmDirty: false,
     autoCompleteResult: [],
   }
   handleSubmit = e => {
+    console.log('2', this.props)
     e.preventDefault()
+    const { form, dispatch } = this.props
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values)
+        dispatch(submit(values))
       }
     })
   }
@@ -153,8 +163,8 @@ class RegistrationForm extends React.Component {
             </span>
           }
         >
-          {getFieldDecorator('nickname', {
-            rules: [{ required: false, message: 'Please input your nickname!', whitespace: true }],
+          {getFieldDecorator('username', {
+            rules: [{ required: true, message: 'Please input your username!', whitespace: true }],
           })(<Input />)}
         </FormItem>
         <FormItem {...formItemLayout} label="Phone Number">
