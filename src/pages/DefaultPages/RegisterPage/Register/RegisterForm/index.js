@@ -12,10 +12,17 @@ import {
   Button,
   AutoComplete,
 } from 'antd'
+import { connect } from 'react-redux'
+import { REDUCER, submit } from 'ducks/register'
+
 const FormItem = Form.Item
 const Option = Select.Option
 const AutoCompleteOption = AutoComplete.Option
 
+const mapStateToProps = (state, props) => ({})
+
+@connect(mapStateToProps)
+@Form.create()
 class RegistrationForm extends React.Component {
   state = {
     confirmDirty: false,
@@ -23,9 +30,11 @@ class RegistrationForm extends React.Component {
   }
   handleSubmit = e => {
     e.preventDefault()
+    const { form, dispatch } = this.props
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values)
+        dispatch(submit(values))
       }
     })
   }
@@ -121,7 +130,8 @@ class RegistrationForm extends React.Component {
             rules: [
               {
                 required: true,
-                message: 'Please input your password!',
+                message: 'Please input your password or password should be at least 6!',
+                min: 6,
               },
               {
                 validator: this.validateToNextPassword,
@@ -153,18 +163,18 @@ class RegistrationForm extends React.Component {
             </span>
           }
         >
-          {getFieldDecorator('nickname', {
-            rules: [{ required: true, message: 'Please input your nickname!', whitespace: true }],
+          {getFieldDecorator('username', {
+            rules: [{ required: true, message: 'Please input your username!', whitespace: true }],
           })(<Input />)}
         </FormItem>
         <FormItem {...formItemLayout} label="Phone Number">
           {getFieldDecorator('phone', {
-            rules: [{ required: true, message: 'Please input your phone number!' }],
+            rules: [{ required: false, message: 'Please input your phone number!' }],
           })(<Input addonBefore={prefixSelector} style={{ width: '100%' }} />)}
         </FormItem>
         <FormItem {...formItemLayout} label="Website">
           {getFieldDecorator('website', {
-            rules: [{ required: true, message: 'Please input website!' }],
+            rules: [{ required: false, message: 'Please input website!' }],
           })(
             <AutoComplete
               dataSource={websiteOptions}
@@ -178,6 +188,7 @@ class RegistrationForm extends React.Component {
         <FormItem {...tailFormItemLayout}>
           {getFieldDecorator('agreement', {
             valuePropName: 'checked',
+            rules: [{ required: true, message: 'Please check Terms and Conditions' }],
           })(
             <Checkbox>
               I have read the <a href="">Terms and Conditions</a>

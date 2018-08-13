@@ -1,9 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { REDUCER, submit, submitWithGoogle } from 'ducks/login'
+import { gotoRegister } from 'ducks/app'
 import { Form, Input, Button } from 'antd'
-
-import GoogleLoginButton from 'react-google-login-button'
 
 const FormItem = Form.Item
 
@@ -18,6 +17,7 @@ class LoginForm extends React.Component {
 
   // $FlowFixMe
   onSubmit = (isSubmitForm: ?boolean) => event => {
+    console.log('1', this.props)
     event.preventDefault()
     const { form, dispatch } = this.props
     if (!isSubmitForm) {
@@ -32,6 +32,11 @@ class LoginForm extends React.Component {
   onClickGoogleSign = () => {
     const { dispatch } = this.props
     dispatch(submitWithGoogle)
+  }
+
+  onClickRegister = () => {
+    const { dispatch } = this.props
+    dispatch(gotoRegister)
   }
 
   render() {
@@ -73,7 +78,7 @@ class LoginForm extends React.Component {
             >
               Login
             </Button>
-            <Button className="width-100" htmlType="button">
+            <Button className="width-100" htmlType="button" onClick={this.onClickRegister}>
               Sign Up
             </Button>
           </div>

@@ -457,11 +457,6 @@ export default [
             url: '/pages/login-beta',
           },
           {
-            key: 'register',
-            title: 'Register',
-            url: '/pages/register',
-          },
-          {
             key: 'lockscreen',
             title: 'Lockscreen',
             url: '/pages/lockscreen',

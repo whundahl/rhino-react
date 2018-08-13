@@ -1,12 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import { Button } from 'antd'
 import RegisterForm from './RegisterForm'
+import { gotoSignIn } from 'ducks/app'
 import './style.scss'
 
+const mapStateToProps = (state, props) => ({})
+
+@connect(mapStateToProps)
 class Register extends React.Component {
   state = {
     backgroundImage: 'url(resources/images/login/4.jpg)',
-    fullSize: false,
+    fullSize: true,
   }
 
   generateBackground = () => {
@@ -21,12 +26,9 @@ class Register extends React.Component {
     })
   }
 
-  switchSize = () => {
-    let { fullSize } = this.state
-    fullSize = !fullSize
-    this.setState({
-      fullSize: fullSize,
-    })
+  gotoLogin = () => {
+    const { dispatch } = this.props
+    dispatch(gotoSignIn)
   }
 
   render() {
@@ -39,30 +41,13 @@ class Register extends React.Component {
       >
         <div className="login__header">
           <div className="row">
-            <div className="col-lg-8">
-              <div className="login__header__logo">
-                <a href="javascript: void(0);">
-                  <img
-                    src="resources/images/login/logo-inverse.png"
-                    alt="Clean UI Admin Template"
-                  />
-                </a>
-                <Button className="ml-3" onClick={this.switchSize}>
-                  Switch Fullscreen / Windowed
-                </Button>
-                <Button className="ml-3" onClick={this.generateBackground}>
-                  Randomize Background Image
-                </Button>
-              </div>
-            </div>
             <div className="col-lg-4">
               <div className="login__header__menu">
                 <ul className="list-unstyled list-inline">
-                  <li className="list-inline-item">
-                    <a href="javascript: void(0);">&larr; Back</a>
-                  </li>
                   <li className="list-inline-item active">
-                    <a href="javascript: void(0);">Login</a>
+                    <a href="javascript: void(0);" onClick={this.gotoLogin}>
+                      Login
+                    </a>
                   </li>
                   <li className="list-inline-item">
                     <a href="javascript: void(0);">About</a>

@@ -2,7 +2,7 @@ import { createAction, createReducer } from 'redux-act'
 import { push } from 'react-router-redux'
 import { pendingTask, begin, end } from 'react-redux-spinner'
 import { notification } from 'antd'
-import { auth } from '../firebase'
+import { auth, db } from '../firebase'
 
 const REDUCER = 'app'
 const NS = `@@${REDUCER}/`
@@ -35,6 +35,7 @@ export const resetHideLogin = () => (dispatch, getState) => {
 
 export const initAuth = roles => (dispatch, getState) => {
   // Use Axios there to get User Data by Auth Token with Bearer Method Authentication
+  console.log('Init auth called', roles)
 
   const userRole = window.localStorage.getItem('app.Role')
   const state = getState()
@@ -77,8 +78,14 @@ export const initAuth = roles => (dispatch, getState) => {
     default:
       const location = state.routing.location
       const from = location.pathname + location.search
-      dispatch(_setFrom(from))
-      dispatch(push('/login'))
+
+      if (from === '/register') {
+        dispatch(push('/register'))
+      } else {
+        dispatch(push('/login'))
+        dispatch(_setFrom(from))
+      }
+
       return Promise.reject()
   }
 }
@@ -106,6 +113,40 @@ export async function login(username, password, dispatch) {
       console.log(error)
       dispatch(push('/login'))
       dispatch(_setFrom(''))
+    })
+
+  return status
+}
+
+export async function register(email, password, username, dispatch) {
+  console.log('app', email, password)
+  let status = false
+
+  await auth
+    .doCreateUserWithEmailAndPassword(email, password)
+    .then(authUser => {
+      console.log('authUser', authUser, username, email)
+      window.localStorage.setItem('app.Authorization', '')
+      window.localStorage.setItem('app.Role', 'agent')
+      db.doCreateUser(authUser.user.uid, username, email)
+        .then(() => {
+          dispatch(push('/dashboard/alpha'))
+          notification.open({
+            type: 'success',
+            message: 'You have successfully registered!',
+            description:
+              'Welcome to Rhino Premium. Please be patient as we continue the devlopment of the our new web application.',
+          })
+          status = true
+        })
+        .catch(error => {
+          console.log('error', error.message)
+          dispatch(push('/register'))
+          dispatch(_setFrom(''))
+        })
+    })
+    .catch(error => {
+      console.log('error', error.message)
     })
 
   return status
@@ -155,6 +196,14 @@ export const logout = () => (dispatch, getState) => {
 
   auth.doSignOut().then(() => console.log('Log out success'))
 
+  dispatch(push('/login'))
+}
+
+export const gotoRegister = dispatch => {
+  dispatch(push('/register'))
+}
+
+export const gotoSignIn = dispatch => {
   dispatch(push('/login'))
 }
 
