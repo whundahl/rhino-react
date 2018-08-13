@@ -131,7 +131,8 @@ class RegistrationForm extends React.Component {
             rules: [
               {
                 required: true,
-                message: 'Please input your password!',
+                message: 'Please input your password or password should be at least 6!',
+                min: 6,
               },
               {
                 validator: this.validateToNextPassword,
