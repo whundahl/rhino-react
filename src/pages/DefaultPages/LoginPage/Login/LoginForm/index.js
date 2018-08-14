@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { REDUCER, submit, submitWithGoogle } from 'ducks/login'
-import { gotoRegister } from 'ducks/app'
+import { gotoRegister, gotoForgetPassword } from 'ducks/app'
 import { Form, Input, Button } from 'antd'
 
 const FormItem = Form.Item
@@ -39,6 +39,11 @@ class LoginForm extends React.Component {
     dispatch(gotoRegister)
   }
 
+  onClickForgetPassword = () => {
+    const { dispatch } = this.props
+    dispatch(gotoForgetPassword)
+  }
+
   render() {
     const { form, isSubmitForm } = this.props
 
@@ -51,7 +56,6 @@ class LoginForm extends React.Component {
         <Form layout="vertical" hideRequiredMark onSubmit={this.onSubmit(isSubmitForm)}>
           <FormItem label="Email">
             {form.getFieldDecorator('username', {
-              initialValue: 'admin@rhinorea.com',
               rules: [
                 { type: 'email', message: 'The input is not a valid e-mail address' },
                 { required: true, message: 'Please input your e-mail address' },
@@ -60,13 +64,16 @@ class LoginForm extends React.Component {
           </FormItem>
           <FormItem label="Password">
             {form.getFieldDecorator('password', {
-              initialValue: '123123',
               rules: [{ required: true, message: 'Please input your password' }],
             })(<Input size="default" type="password" />)}
           </FormItem>
           <div className="mb-2">
-            <a href="javascript: void(0);" className="utils__link--blue utils__link--underlined">
-              Forgot password
+            <a
+              href="javascript: void(0);"
+              className="utils__link--blue utils__link--underlined"
+              onClick={this.onClickForgetPassword}
+            >
+              Forgot password?
             </a>
           </div>
           <div className="form-actions">

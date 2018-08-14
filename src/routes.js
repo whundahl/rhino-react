@@ -22,6 +22,9 @@ const loadableRoutes = {
   '/register': {
     component: loadable(() => import('pages/DefaultPages/RegisterPage')),
   },
+  '/forgetPassword': {
+    component: loadable(() => import('pages/DefaultPages/ForgetPasswordPage')),
+  },
 
   // Dashboards
   '/dashboard/alpha': {
