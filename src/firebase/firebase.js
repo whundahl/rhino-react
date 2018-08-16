@@ -19,4 +19,10 @@ const db = firebase.database()
 const auth = firebase.auth()
 const googleProvider = new firebase.auth.GoogleAuthProvider()
 
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  if (firebaseUser) {
+    console.log('FIrebawse user', firebaseUser)
+  }
+})
+
 export { db, auth, googleProvider }

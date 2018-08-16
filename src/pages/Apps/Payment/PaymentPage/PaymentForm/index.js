@@ -16,7 +16,13 @@ class _CardForm extends React.Component {
   handleSubmit = ev => {
     ev.preventDefault()
     if (this.props.stripe) {
-      this.props.stripe.createToken().then(payload => console.log('[token]', payload))
+      this.props.stripe.createToken().then(payload => {
+        if (payload.token) {
+          console.log('[token]', payload)
+        } else {
+          console.log('Error creating a token')
+        }
+      })
     } else {
       console.log("Stripe.js hasn't loaded yet.")
     }
