@@ -21,7 +21,7 @@ const googleProvider = new firebase.auth.GoogleAuthProvider()
 
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if (firebaseUser) {
-    console.log('FIrebawse user', firebaseUser)
+    console.log('current user', firebaseUser)
   }
 })
 

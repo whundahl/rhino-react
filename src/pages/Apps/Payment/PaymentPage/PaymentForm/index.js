@@ -14,11 +14,12 @@ import './style.scss'
 
 class _CardForm extends React.Component {
   handleSubmit = ev => {
+    console.log('ev', ev.target, this.props.stripe)
     ev.preventDefault()
     if (this.props.stripe) {
-      this.props.stripe.createToken().then(payload => {
-        if (payload.token) {
-          console.log('[token]', payload)
+      this.props.stripe.createSource({ type: 'card' }).then(payload => {
+        if (payload.source) {
+          console.log('[source]', payload)
         } else {
           console.log('Error creating a token')
         }
