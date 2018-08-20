@@ -14,6 +14,7 @@ import 'chartist-plugin-tooltip'
 import { LocaleProvider } from 'antd'
 import enGB from 'antd/lib/locale-provider/en_GB'
 import registerServiceWorker from 'registerServiceWorker'
+import { StripeProvider } from 'react-stripe-elements'
 
 import Layout from 'components/LayoutComponents/Layout'
 import reducer from 'ducks'
@@ -35,19 +36,41 @@ if (isLogger && process.env.NODE_ENV === 'development') {
 }
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(...middlewares)))
 
-ReactDOM.render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <LocaleProvider locale={enGB}>
-        <div>
-          <Helmet titleTemplate="Rhino R.E.A. | %s" />
-          <Layout />
-        </div>
-      </LocaleProvider>
-    </ConnectedRouter>
-  </Provider>,
-  document.getElementById('root'),
-)
+class App extends React.Component {
+  constructor() {
+    super()
+    this.state = { stripe: null }
+  }
+
+  componentDidMount() {
+    if (window.Stripe) {
+      this.setState({ stripe: window.Stripe('pk_test_h7Lktp5iioRMH4SdjQVQEAZK') })
+    } else {
+      document.querySelector('#stripe-js').addEventListener('load', () => {
+        this.setState({ stripe: window.Stripe('pk_test_h7Lktp5iioRMH4SdjQVQEAZK') })
+      })
+    }
+  }
+
+  render() {
+    return (
+      <StripeProvider stripe={this.state.stripe}>
+        <Provider store={store}>
+          <ConnectedRouter history={history}>
+            <LocaleProvider locale={enGB}>
+              <div>
+                <Helmet titleTemplate="Rhino R.E.A. | %s" />
+                <Layout />
+              </div>
+            </LocaleProvider>
+          </ConnectedRouter>
+        </Provider>
+      </StripeProvider>
+    )
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
 registerServiceWorker()
 
 export default history

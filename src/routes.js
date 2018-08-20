@@ -138,6 +138,9 @@ const loadableRoutes = {
   '/apps/supportForum': {
     component: loadable(() => import('pages/Apps/GitHub/GitHubDiscussPage')),
   },
+  '/payment': {
+    component: loadable(() => import('pages/Apps/Payment/PaymentPage')),
+  },
 
   // Blog
   '/blog/feed': {
