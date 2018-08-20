@@ -96,8 +96,8 @@ export async function login(username, password, dispatch) {
 
   await auth
     .doSignInWithEmailAndPassword(username, password)
-    .then(() => {
-      window.localStorage.setItem('app.Authorization', '')
+    .then(payload => {
+      window.localStorage.setItem('app.Authorization', payload.user.uid)
       window.localStorage.setItem('app.Role', 'administrator')
       dispatch(_setHideLogin(true))
       dispatch(push('/dashboard/home'))
@@ -119,15 +119,14 @@ export async function login(username, password, dispatch) {
 }
 
 export async function register(email, password, username, dispatch) {
-  console.log('app', email, password)
   let status = false
 
   await auth
     .doCreateUserWithEmailAndPassword(email, password)
     .then(authUser => {
       console.log('authUser', authUser, username, email)
-      window.localStorage.setItem('app.Authorization', '')
-      window.localStorage.setItem('app.Role', 'agent')
+      window.localStorage.setItem('app.Authorization', authUser.user.uid)
+      window.localStorage.setItem('app.Role', 'administrator')
       db.doCreateUser(authUser.user.uid, username, email)
         .then(() => {
           dispatch(push('/dashboard/home'))
@@ -158,11 +157,9 @@ export async function loginWithGoogle(dispatch) {
 
   await auth
     .doSignInWithGoogle()
-    .then(res => {
-      window.localStorage.setItem('app.Authorization', '')
+    .then(payload => {
+      window.localStorage.setItem('app.Authorization', payload.user.uid)
       window.localStorage.setItem('app.Role', 'administrator')
-      const token = res.credential.accessToken
-      const user = res.user
       dispatch(_setHideLogin(true))
       dispatch(push('/dashboard/home'))
       notification.open({
