@@ -100,7 +100,7 @@ export async function login(username, password, dispatch) {
       window.localStorage.setItem('app.Authorization', '')
       window.localStorage.setItem('app.Role', 'administrator')
       dispatch(_setHideLogin(true))
-      dispatch(push('/dashboard/alpha'))
+      dispatch(push('/dashboard/home'))
       notification.open({
         type: 'success',
         message: 'You have successfully logged in!',
@@ -130,7 +130,7 @@ export async function register(email, password, username, dispatch) {
       window.localStorage.setItem('app.Role', 'agent')
       db.doCreateUser(authUser.user.uid, username, email)
         .then(() => {
-          dispatch(push('/dashboard/alpha'))
+          dispatch(push('/dashboard/home'))
           notification.open({
             type: 'success',
             message: 'You have successfully registered!',
@@ -164,7 +164,7 @@ export async function loginWithGoogle(dispatch) {
       const token = res.credential.accessToken
       const user = res.user
       dispatch(_setHideLogin(true))
-      dispatch(push('/dashboard/alpha'))
+      dispatch(push('/dashboard/home'))
       notification.open({
         type: 'success',
         message: 'You have successfully logged in!',
