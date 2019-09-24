@@ -1,4 +1,4 @@
-# Rhino Real Estate Advisors Web Application 
+# Rhino Real Estate Advisors Web Application (Now under the iREIT Entity)
 
 Web app for Rhino Real Estate Advisors. Using React, firebase, Tradier API, and Highcharts. This app will allow users to log on and stay up to date with the REIT market. Premium users will have the ability to view articles the day they are published by writers at Rhino R.E.A. This app will have "Live" Market data with a blog type interface to allow users to comment on articles, while administrators have full control over the article managment system. Data Visualization will be provided by Highcharts. 
 
@@ -21,13 +21,6 @@ Yarn start - to correctly serve development
 Yarn run build - to correctly build the app 
 
 firebase deploy - to correctly deploy to firebase
-
-MY FIREBASE CRED.
-
-Login: will@rhinorea.com
-Pass: rhino1234
-
-
 
 ### Necessary Items for Completion  
 
